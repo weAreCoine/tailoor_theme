@@ -8,3 +8,4 @@ npm-debug.log
 yarn-error.log
 /.yarn
 tailoor_bundle.zip
+/resources/views/console
