@@ -40,8 +40,7 @@ use Illuminate\Support\Facades\Log;
 class HubSpotClient
 {
     protected Discovery $hubspot;
-    // Luca su account DEV
-    protected string $defaultOwnerID = '1246251394';
+    protected string $defaultOwnerID;
     use Singleton;
 
     protected array $contactProperties = [
@@ -68,13 +67,16 @@ class HubSpotClient
 
     public function __construct()
     {
+
+        $hubspotConfiguration = config('services.hubspot');
         /**
          * Access token is loaded according to the value of WP_DEBUG.
          * If TRUE, the DEV account token is used, otherwise the account in production is used.
          */
-        $this->token = config('services.hubspot')['auth.key'];
+        $this->token = $hubspotConfiguration['auth_key'];
         assert(!empty($this->token), 'Enter a valid access token to use the Hubspot client.');
-
+        $this->defaultOwnerID = $hubspotConfiguration['owner_id'];
+        assert(!empty($this->defaultOwnerID), 'Enter a valid owner ID to use the Hubspot client.');
         $handlerStack = HandlerStack::create();
         $handlerStack->push(
             RetryMiddlewareFactory::createRateLimitMiddleware(

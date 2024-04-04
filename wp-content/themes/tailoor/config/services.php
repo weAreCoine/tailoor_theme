@@ -31,6 +31,7 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'hubspot' => [
-        'auth.key' => WP_DEBUG ? env('HUBSPOT_API_DEV', '') : env('HUBSPOT_API', ''),
+        'auth_key' => WP_DEBUG ? env('HUBSPOT_API_DEV', '') : env('HUBSPOT_API', ''),
+        'owner_id' => WP_DEBUG ? env('HUBSPOT_OWNER_ID_DEV', '') : env('HUBSPOT_OWNER_ID', ''),
     ]
 ];
