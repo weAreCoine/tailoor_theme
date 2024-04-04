@@ -1,0 +1,341 @@
+@import url(https://fonts.bunny.net/css?family=inter:400,700|poppins:400,600,700);
+
+@tailwind base;
+@tailwind components;
+@layer components {
+  .errors__bag {
+    @apply flex flex-col gap-2 mb-8;
+
+    li {
+      @apply bg-gradient-to-l from-pink to-rose-500 text-white px-6 py-2 rounded-lg m-0 font-header text-sm
+    }
+  }
+
+  .tailoor__form {
+    @apply font-header grid grid-cols-1 sm:grid-cols-2 gap-6;
+
+    label {
+      @apply block;
+
+      span:not(.normal-case) {
+        @apply text-2xs uppercase font-bold tracking-widest mb-1 ml-4 inline-block;
+      }
+
+      input[type='text'], input[type='email'], input[type='password'], textarea, select {
+        @apply border border-mirage-200 bg-mirage-50 w-full rounded px-4 py-2 duration-500 ring-0 focus:outline-0 focus:border-mirage;
+
+
+        &:not(:placeholder-shown):not(.placeholder__shown) {
+          &:valid {
+            @apply border-green-500
+          }
+
+          &:invalid {
+            @apply border-pink-500;
+          }
+        }
+
+        &::placeholder {
+          @apply text-slate-300;
+        }
+
+
+      }
+
+
+      select.placeholder__shown {
+        @apply text-slate-300
+      }
+
+      &:has(*[required]) {
+        p, span {
+          &::after {
+            @apply content-['*'] text-pink-500 ml-1;
+          }
+        }
+      }
+    }
+
+  }
+
+  .pricing__table {
+    > ul li {
+      @apply py-4 cursor-pointer select-none text-sm font-header bg-gray-200 font-medium tracking-wide duration-500 border border-gray-100;
+    }
+
+    .active__plan {
+      @apply bg-pink
+    }
+  }
+
+  .iubenda__button {
+    @apply duration-500 text-xs uppercase bg-mirage-900 py-2 px-4 inline-block border border-transparent hover:border-pink hover:bg-transparent
+  }
+
+  .site__logo {
+    @apply w-[120px] h-auto hover:opacity-80 duration-200
+  }
+
+  .container {
+    @apply max-w-8xl mx-auto px-6
+  }
+
+  .burger__icon {
+    @apply relative h-4 w-6 lg:hidden cursor-pointer;
+
+    div {
+      @apply h-[2px] bg-black absolute w-full duration-500
+    }
+
+    &.dark {
+      div {
+        @apply bg-white;
+      }
+    }
+
+    .first__row {
+      @apply top-0 left-0
+    }
+
+    .second__row {
+      @apply top-1/2 -translate-y-1/2 right-0
+    }
+
+    .third__row {
+      @apply bottom-0 left-0
+    }
+
+    &.open {
+      .first__row {
+        @apply rotate-45 top-1/2 -translate-y-1/2 bg-white
+      }
+
+      .second__row {
+        @apply opacity-0 right-full left-auto bg-white
+      }
+
+      .third__row {
+        @apply bottom-1/2 translate-y-1/2 -rotate-45 bg-white
+      }
+
+    }
+  }
+
+  .nav-primary {
+    .nav__container {
+      @apply fixed text-white lg:text-black top-0 left-0 bg-mirage-950 lg:bg-transparent w-screen h-screen z-20 flex justify-center items-center lg:block lg:static lg:h-auto lg:w-auto lg:top-auto lg:left-auto;
+
+      ul {
+        @apply lg:flex flex-col lg:flex-row justify-end gap-x-12;
+
+        li {
+          @apply font-header text-sm tracking-wider mb-0;
+
+          a {
+            @apply decoration-transparent uppercase underline underline-offset-4 decoration-dotted hover:decoration-black duration-500;
+
+            &::after {
+              @apply content-['.'] text-3xl text-pink pl-1
+            }
+          }
+        }
+      }
+
+      &.dark {
+        ul > li > a {
+          @apply text-white hover:text-rose-200
+        }
+      }
+    }
+  }
+
+  .dark__hero__section .nav-primary .nav__container, .nav-primary .nav__container.dark {
+    ul > li > a {
+      @apply text-white hover:text-rose-200
+    }
+  }
+
+  .e-content {
+    strong {
+      @apply font-bold
+    }
+
+    h2, h3, h4, h5, h6 {
+      @apply font-header;
+
+      strong {
+        @apply font-semibold
+      }
+    }
+
+    h2 {
+      @apply text-3xl mb-4 font-medium;
+    }
+
+    h3 {
+      @apply text-2xl;
+    }
+
+    h4 {
+      @apply text-xl;
+    }
+
+    p {
+      @apply mb-2
+    }
+
+    p, li, a, span, div {
+      @apply tracking-wide leading-loose
+    }
+
+    ol {
+      @apply list-decimal
+    }
+
+    ul {
+      @apply list-disc
+    }
+
+    ul, ol {
+      @apply ml-4;
+
+      li {
+        @apply pl-2 my-6
+      }
+    }
+
+    .wp-block-image img {
+      @apply mx-auto
+    }
+  }
+
+  footer {
+    .footer__logo {
+      @apply mx-auto
+    }
+
+    .colophon {
+      @apply bg-gray-50 py-12;
+
+      > div {
+        @apply container text-center text-gray-500 text-sm;
+      }
+    }
+
+    .credits {
+      @apply bg-mirage py-12
+    }
+  }
+
+
+  .dark, .gradient {
+    footer {
+      .colophon {
+        @apply text-white;
+
+        > div {
+          @apply text-white;
+        }
+
+        a {
+          @apply text-white
+        }
+      }
+
+      .footer__logo {
+        @apply invert;
+      }
+    }
+
+  }
+
+  .dark {
+    footer {
+      .colophon {
+        @apply bg-mirage text-white;
+
+        > div {
+          @apply text-white;
+        }
+
+        a {
+          @apply text-white
+        }
+      }
+
+      .footer__logo {
+        @apply invert;
+      }
+    }
+  }
+
+  .gradient footer {
+    @apply bg-gradient-to-b from-mirage-900 to-mirage;
+
+    .colophon, .credits {
+      @apply bg-transparent;
+    }
+  }
+}
+
+@tailwind utilities;
+@layer utilities {
+  .tailoor__outline {
+    @apply relative z-10;
+
+    &::before {
+      @apply -top-10 -left-10 w-[140%] h-[calc(50%+40px)] bg-gradient-to-b from-mirage-600 to-mirage absolute z-[-1] content-[''] mix-blend-hue;
+    }
+
+    &.accent::before {
+      @apply bg-gradient-to-b from-pink to-pink-300
+    }
+  }
+
+}
+
+.not-scroll {
+  @apply overflow-y-hidden h-screen w-screen
+}
+
+.posts-navigation {
+  @apply my-12 text-xs font-semibold;
+
+  .nav-links {
+    @apply flex justify-center items-center uppercase gap-6 text-mirage;
+
+    .nav-next, .nav-previous {
+      @apply border-b pb-1 hover:border-pink duration-500;
+    }
+
+    .nav-next a::after {
+      @apply content-['\f0da'] ml-2 text-pink;
+      font: var(--fa-font-solid);
+    }
+
+
+    .nav-previous a::before {
+      @apply content-['\f0d9'] mr-2 text-pink;
+      font: var(--fa-font-solid);
+    }
+
+  }
+}
+
+.page-id-1854, .page-id-1862 {
+  h1 {
+    text-align: center
+  }
+}
+
+.page-template-template-transparent-header {
+  position: relative;
+
+  header {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}

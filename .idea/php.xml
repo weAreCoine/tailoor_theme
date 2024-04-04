@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LaravelPint">
+    <laravel_pint_settings>
+      <LaravelPintConfiguration tool_path="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/bin/pint" />
+    </laravel_pint_settings>
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024" />
+      <path value="$PROJECT_DIR$/wp-includes" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/composer" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/bus" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/console" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/macroable" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/routing" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/log" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/cache" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/validation" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/conditionable" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/encryption" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/config" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/collections" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/view" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/http" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/session" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/filesystem" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/translation" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/pipeline" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/illuminate/queue" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/laravel/pint" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/roots/support" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/roots/acorn" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor_2024/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/composer" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/bus" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/console" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/macroable" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/routing" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/log" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/cache" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/validation" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/conditionable" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/encryption" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/config" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/collections" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/view" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/http" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/session" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/filesystem" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/translation" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/pipeline" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/illuminate/queue" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/laravel/pint" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/roots/support" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/roots/acorn" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/giggsey/libphonenumber-for-php" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/giggsey/locale" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/hubspot/api-client" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/fakerphp/faker" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.2">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+  <component name="PhpRuntimeConfiguration">
+    <extensions>
+      <extension name="Ev" enabled="false" />
+      <extension name="SQLite" enabled="false" />
+      <extension name="SplType" enabled="false" />
+      <extension name="Zend OPcache" enabled="false" />
+      <extension name="ZendDebugger" enabled="false" />
+      <extension name="ZendUtils" enabled="false" />
+      <extension name="amqp" enabled="false" />
+      <extension name="apache" enabled="false" />
+      <extension name="apcu" enabled="false" />
+      <extension name="cassandra" enabled="false" />
+      <extension name="couchbase" enabled="false" />
+      <extension name="cubrid" enabled="false" />
+      <extension name="dba" enabled="false" />
+      <extension name="decimal" enabled="false" />
+      <extension name="dio" enabled="false" />
+      <extension name="elastic_apm" enabled="false" />
+      <extension name="enchant" enabled="false" />
+      <extension name="fann" enabled="false" />
+      <extension name="ffmpeg" enabled="false" />
+      <extension name="gearman" enabled="false" />
+      <extension name="geoip" enabled="false" />
+      <extension name="geos" enabled="false" />
+      <extension name="gmagick" enabled="false" />
+      <extension name="gmp" enabled="false" />
+      <extension name="gnupg" enabled="false" />
+      <extension name="grpc" enabled="false" />
+      <extension name="http" enabled="false" />
+      <extension name="ibm_db2" enabled="false" />
+      <extension name="igbinary" enabled="false" />
+      <extension name="imagick" enabled="false" />
+      <extension name="imap" enabled="false" />
+      <extension name="inotify" enabled="false" />
+      <extension name="interbase" enabled="false" />
+      <extension name="judy" enabled="false" />
+      <extension name="libevent" enabled="false" />
+      <extension name="libsodium" enabled="false" />
+      <extension name="mailparse" enabled="false" />
+      <extension name="mcrypt" enabled="false" />
+      <extension name="memcache" enabled="false" />
+      <extension name="memcached" enabled="false" />
+      <extension name="ming" enabled="false" />
+      <extension name="mongo" enabled="false" />
+      <extension name="mongodb" enabled="false" />
+      <extension name="mosquitto-php" enabled="false" />
+      <extension name="mqseries" enabled="false" />
+      <extension name="mssql" enabled="false" />
+      <extension name="mysql" enabled="false" />
+      <extension name="mysql_xdevapi" enabled="false" />
+      <extension name="ncurses" enabled="false" />
+      <extension name="newrelic" enabled="false" />
+      <extension name="oauth" enabled="false" />
+      <extension name="oci8" enabled="false" />
+      <extension name="odbc" enabled="false" />
+      <extension name="opentelemetry" enabled="false" />
+      <extension name="pdflib" enabled="false" />
+      <extension name="pdo_ibm" enabled="false" />
+      <extension name="pdo_pgsql" enabled="false" />
+      <extension name="pgsql" enabled="false" />
+      <extension name="pspell" enabled="false" />
+      <extension name="pthreads" enabled="false" />
+      <extension name="rar" enabled="false" />
+      <extension name="recode" enabled="false" />
+      <extension name="redis" enabled="false" />
+      <extension name="relay" enabled="false" />
+      <extension name="rrd" enabled="false" />
+      <extension name="shmop" enabled="false" />
+      <extension name="snappy" enabled="false" />
+      <extension name="snmp" enabled="false" />
+      <extension name="ssh2" enabled="false" />
+      <extension name="suhosin" enabled="false" />
+      <extension name="svn" enabled="false" />
+      <extension name="sybase" enabled="false" />
+      <extension name="sysvmsg" enabled="false" />
+      <extension name="sysvsem" enabled="false" />
+      <extension name="sysvshm" enabled="false" />
+      <extension name="tidy" enabled="false" />
+      <extension name="v8js" enabled="false" />
+      <extension name="wddx" enabled="false" />
+      <extension name="win32service" enabled="false" />
+      <extension name="wincache" enabled="false" />
+      <extension name="xhprof" enabled="false" />
+      <extension name="xlswriter" enabled="false" />
+      <extension name="xmlrpc" enabled="false" />
+      <extension name="yaml" enabled="false" />
+      <extension name="zend" enabled="false" />
+      <extension name="zmq" enabled="false" />
+    </extensions>
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+</project>

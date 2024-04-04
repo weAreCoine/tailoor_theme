@@ -1,0 +1,35 @@
+{
+  "name": "sage",
+  "private": true,
+  "browserslist": [
+    "extends @roots/browserslist-config"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "bud dev",
+    "build": "bud build",
+    "translate": "npm run translate:pot && npm run translate:update",
+    "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --include=\"theme.json,patterns,app,resources\"",
+    "translate:update": "for file in ./resources/lang/*.po; do wp i18n update-po ./resources/lang/sage.pot $file; done",
+    "translate:compile": "npm run translate:mo && npm run translate:js",
+    "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
+    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang",
+    "bundle": "dir-archiver --src . --dest tailoor_bundle.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md  node_modules .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+  },
+  "devDependencies": {
+    "@roots/bud": "6.20.0",
+    "@roots/bud-compress": "^6.20.0",
+    "@roots/bud-tailwindcss": "6.20.0",
+    "@roots/sage": "6.20.0"
+  },
+  "packageManager": "yarn@3.2.3+sha256.311cd84f5f144680cc21b4bbbdeba97d1a5f32ee8a2eae7037ccbdeff8a3c1ce",
+  "dependencies": {
+    "@alpinejs/collapse": "^3.13.7",
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "alpinejs": "^3.13.7"
+  }
+}
