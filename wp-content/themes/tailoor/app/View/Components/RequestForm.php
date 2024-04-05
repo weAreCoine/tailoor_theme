@@ -259,11 +259,11 @@ class RequestForm extends Component
         if (!empty($errors)) {
             unset($_SESSION['requestFormErrors']);
         }
-        
+
 //        return view('components.request-form')->with([
 //            'formFields' => json_encode([
-//                'firstName' => old('first_name', fake()->firstName()),
-//                'lastName' => old('last_name', fake()->lastName()),
+//                'firstname' => old('first_name', fake()->firstName()),
+//                'lastname' => old('last_name', fake()->lastName()),
 //                'phone' => old('phone', fake()->phoneNumber()),
 //                'email' => old('email', fake()->companyEmail()),
 //                'company' => old('company', fake()->company()),
@@ -281,8 +281,8 @@ class RequestForm extends Component
 
         return view('components.request-form')->with([
             'formFields' => json_encode([
-                'firstName' => old('first_name', ''),
-                'lastName' => old('last_name', ''),
+                'firstname' => old('first_name', ''),
+                'lastname' => old('last_name', ''),
                 'phone' => old('phone', ''),
                 'email' => old('email', ''),
                 'company' => old('company', ''),

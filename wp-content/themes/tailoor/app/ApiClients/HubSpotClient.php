@@ -2,7 +2,7 @@
 
 namespace App\ApiClients;
 
-use App\Traits\Singleton;
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use HubSpot\Client\CommunicationPreferences\ApiException as CommunicationPreferencesException;
@@ -39,11 +39,14 @@ use Illuminate\Support\Facades\Log;
 
 class HubSpotClient
 {
-    protected Discovery $hubspot;
-    protected string $defaultOwnerID;
-    use Singleton;
-
-    protected array $contactProperties = [
+    public array $companyProperties = [
+        'domain',
+        'e_commerce_platform',
+        'business_type',
+        'city',
+        'name',
+    ];
+    public array $contactProperties = [
         'firstname',
         'lastname',
         'phone',
@@ -55,16 +58,13 @@ class HubSpotClient
         'hs_lead_status',
         'hs_legal_basis',
     ];
-    protected array $companyProperties = [
-        'domain',
-        'e_commerce_platform',
-        'business_type',
-        'city',
-        'name',
-    ];
-
+    protected Discovery $hubspot;
+    protected string $defaultOwnerID;
     private string $token;
 
+    /**
+     * @throws Exception
+     */
     public function __construct()
     {
 
@@ -74,9 +74,13 @@ class HubSpotClient
          * If TRUE, the DEV account token is used, otherwise the account in production is used.
          */
         $this->token = $hubspotConfiguration['auth_key'];
-        assert(!empty($this->token), 'Enter a valid access token to use the Hubspot client.');
+        if (empty($this->token)) {
+            throw new Exception('Enter a valid access token to use the Hubspot client.');
+        }
         $this->defaultOwnerID = $hubspotConfiguration['owner_id'];
-        assert(!empty($this->defaultOwnerID), 'Enter a valid owner ID to use the Hubspot client.');
+        if (empty($this->defaultOwnerID)) {
+            throw new Exception('Enter a valid owner ID to use the Hubspot client.');
+        }
         $handlerStack = HandlerStack::create();
         $handlerStack->push(
             RetryMiddlewareFactory::createRateLimitMiddleware(
@@ -104,75 +108,6 @@ class HubSpotClient
         return collect($this->hubspot->crm()->owners()->getAll());
     }
 
-    /**
-     * The flow for saving form content to Hubspot
-     *
-     * @param array $properties The properties (from the completed form) to be stored.
-     *
-     * @return bool True if the properties were successfully stored, false otherwise.
-     */
-    public function store(array $properties): bool
-    {
-        $this->addDefaultAttributes($properties);
-
-        $properties = $this->mapPropertiesKeys($properties);
-        $company = $this->updateOrCreateCompany($properties);
-        $contact = $this->updateOrCreateContact($properties);
-        $this->syncSubscriptions($properties);
-        if ($company !== false && $contact !== false) {
-            $this->assignToOwner($contact);
-
-            return $this->associate($company, $contact);
-        }
-
-        return false;
-    }
-
-    /**
-     * Add default attributes to the contact properties.
-     *
-     * @param array $properties The contact properties.
-     *                         - newsletter: A flag indicating whether the contact has subscribed to the newsletter.
-     *                         - lifecyclestage: The lifecycle stage of the contact.
-     *                         - hs_lead_status: The lead status of the contact.
-     *                         - hs_legal_basis: The legal basis of the contact.
-     */
-    protected function addDefaultAttributes(array &$properties): void
-    {
-        /**
-         * FIXME Per quale motivo i nuovi lead assumono subito lo status ATTEMPTED_TO_CONTACT? Non sarebbe più corretto metterli NEW?
-         */
-        $properties['lifecyclestage'] = 'marketingqualifiedlead';
-        $properties['hs_lead_status'] = 'NEW';
-//        $properties['hs_lead_status'] = 'ATTEMPTED_TO_CONTACT';
-
-        /**
-         * Il form nativo dava sempre il consenso completo (anche a fronte del rifiuto NL)
-         * TODO Era un comportamento voluto e corretto? Se sì, eliminare il caso false
-         */
-        $properties['hs_legal_basis'] = $properties['newsletter'] ? 'Freely given consent from contact' : 'Legitimate interest – prospect/lead';
-    }
-
-    /**
-     * Maps the keys of the properties array based on predetermined mappings from HS CRM.
-     *
-     * @param array $properties The properties array to be mapped.
-     * @return array The properties array with mapped keys.
-     */
-    protected function mapPropertiesKeys(array $properties): array
-    {
-        return array_combine(
-            array_map(fn(string $property) => match ($property) {
-                'first_name' => 'firstname',
-                'last_name' => 'lastname',
-                'website' => 'domain',
-                'platform' => 'e_commerce_platform',
-                'business' => 'business_type',
-                default => $property
-            }, array_keys($properties))
-            , array_values($properties)
-        );
-    }
 
     /**
      * Updates an existing company based on provided properties or creates a new company if it doesn't exist.
@@ -186,9 +121,10 @@ class HubSpotClient
     public function updateOrCreateCompany(array $properties): false|Company
     {
         $company = $this->companyWhere([
-            'name' => $properties['company'],
+            'name' => $properties['name'],
             'city' => $properties['city']
         ]);
+
         $company = $company === false || $company->isEmpty() ? null : $company->first();
 
         return $company !== null ? $this->updateCompany($company, $properties) : $this->createCompany($properties);
@@ -266,58 +202,13 @@ class HubSpotClient
     {
         try {
             return $this->hubspot->crm()->companies()->basicApi()->update($company->getId(), new \HubSpot\Client\Crm\Companies\Model\SimplePublicObjectInput([
-                'properties' => $this->mapPropertiesValues($this->filterCompaniesProperties($companyProperties)),
+                'properties' => $companyProperties,
             ]));
         } catch (CompaniesException $e) {
             return $this->handleExceptions($e);
         }
     }
 
-    /**
-     * Maps the values of the provided properties array based on HS account setup.
-     *
-     * @param array $properties The properties array to map values for.
-     *
-     * @return array Returns the properties array with mapped values.
-     */
-    public function mapPropertiesValues(array $properties): array
-    {
-        foreach ($properties as $key => $value) {
-            $properties[$key] = match ($key) {
-                'e_commerce_platform', 'platform' => match ($value) {
-                    'woocommerce' => 'Wordpress',
-                    default => ucfirst($value)
-                },
-                'business', 'business_type' => match ($value) {
-                    'negozi_su_misura' => 'Negozi su misura',
-                    'altro' => 'altro',
-                    default => ucwords(str_replace('_', ' ', $value)),
-                },
-                default => $value
-            };
-        }
-
-        return $properties;
-    }
-
-    /**
-     * Filters the provided properties array, keeping only the ones that are allowed for a company.
-     *
-     * @param array $properties The properties array to be filtered.
-     *
-     * @return array The filtered properties array.
-     */
-    protected function filterCompaniesProperties(array $properties): array
-    {
-        foreach ($properties as $key => $value) {
-            if (!in_array($key, $this->companyProperties, true)) {
-                unset($properties[$key]);
-            }
-        }
-
-        return $properties;
-
-    }
 
     /**
      * Create a company.
@@ -328,9 +219,8 @@ class HubSpotClient
      */
     public function createCompany(array $companyProperties): false|Company
     {
-        $companyProperties = $this->mapPropertiesValues($companyProperties);
         $simplePublicObjectInput = (new SimplePublicObjectInputForCreateCompany())
-            ->setProperties($this->filterCompaniesProperties($companyProperties));
+            ->setProperties($companyProperties);
         try {
             return $this->hubspot->crm()->companies()->basicApi()->create($simplePublicObjectInput);
         } catch (CompaniesException $e) {
@@ -408,7 +298,7 @@ class HubSpotClient
     {
         try {
             return $this->hubspot->crm()->contacts()->basicApi()->update($contact->getId(), new SimplePublicObjectInput([
-                'properties' => $this->filterContactProperties($contactProperties)
+                'properties' => $contactProperties
             ]));
 
         } catch (ContactsException $e) {
@@ -417,16 +307,6 @@ class HubSpotClient
         }
     }
 
-    protected function filterContactProperties(array $properties): array
-    {
-        foreach ($properties as $key => $value) {
-            if (!in_array($key, $this->contactProperties, true)) {
-                unset($properties[$key]);
-            }
-        }
-
-        return $properties;
-    }
 
     /**
      * Create a contact with the given properties.
@@ -438,7 +318,6 @@ class HubSpotClient
      */
     public function createContact(array $contactProperties): false|Contact
     {
-        $contactProperties = $this->filterContactProperties($contactProperties);
         $simplePublicObjectInput = (new SimplePublicObjectInputForCreate())
             ->setProperties($contactProperties);
         try {
@@ -573,16 +452,6 @@ class HubSpotClient
                 ->subscribe($publicUpdateSubscriptionStatusRequest);
             return !$response instanceof Error;
         } catch (CommunicationPreferencesException $e) {
-            /**
-             * TODO Currently, there seems to be an issue with Hubspot's APIs on this endpoint
-             * @see https://developers.hubspot.com/docs/api/marketing-api/subscriptions-preferences
-             *
-             * The PHP method mentioned in the documentation (erroneously) does not exist in the SDK, and even when calling
-             * the endpoint via cURL, the resubscribe does not successfully occur.
-             *
-             * Unhandled case: a contact subscribes with marketing permissions, then subscribes without permissions, and then
-             * subscribes again with permissions. At this point, I am no longer able to restore their Marketing subscription.
-             */
 
 //            if (str_contains($e->getMessage(), 'unsubscribed')) {
 //                $this->resubscribe($email, $subscription, $consentStatus);
@@ -654,6 +523,24 @@ class HubSpotClient
         }
     }
 
+    /**
+     * Resubscribes a user with the provided email and subscription details.
+     *
+     * TODO Currently, there seems to be an issue with Hubspot's APIs on this endpoint
+     * @see https://developers.hubspot.com/docs/api/marketing-api/subscriptions-preferences
+     *
+     * The PHP method mentioned in the documentation (erroneously) does not exist in the SDK, and even when calling
+     * the endpoint via cURL, the resubscribe does not successfully occur.
+     *
+     * Unhandled case: a contact subscribes with marketing permissions, then subscribes without permissions, and then
+     * subscribes again with permissions. At this point, I am no longer able to restore their Marketing subscription.
+     *
+     * @param string $email The email address of the user to resubscribe.
+     * @param SubscriptionDefinition $subscription The subscription details.
+     * @param bool $consentStatus The consent status of the user.
+     *
+     * @return bool Returns true if the resubscription is successful, otherwise returns false.
+     */
     public function resubscribe(string $email, SubscriptionDefinition $subscription, bool $consentStatus): bool
     {
         $response = $this->hubspot->apiRequest([

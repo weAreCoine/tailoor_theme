@@ -25,7 +25,7 @@
              required
              autofocus
              autocomplete="given_name"
-             x-model="formFields.firstName"
+             x-model="formFields.firstname"
              placeholder="{{__('Insert your first name...', 'sage')}}">
     </label>
     <label for="last_name">
@@ -35,7 +35,7 @@
              type="text"
              required
              autocomplete="family_name"
-             x-model="formFields.lastName"
+             x-model="formFields.lastname"
              placeholder="{{__('Insert your last name...', 'sage')}}">
     </label>
     <label for="phone">

@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\ApiClients\HubSpotClient;
+use App\Http\Controllers\HubspotController;
 use App\Traits\Singleton;
 use Carbon\Carbon;
 
@@ -13,7 +13,7 @@ class RequestFormService
 
     static public function onSubmit(array $validated): void
     {
-        if (HubSpotClient::getInstance()->store($validated)) {
+        if (HubspotController::getInstance()->store($validated)) {
             $validated['exported_at'] = Carbon::now()->format('Y-m-d H:i:s');
         }
         static::getInstance()->storeOnDB($validated);
@@ -33,5 +33,5 @@ class RequestFormService
 
         return $wpdb->update("{$wpdb->prefix}leads", $validated, ['email' => $validated['email']]) !== false;
     }
-    
+
 }
