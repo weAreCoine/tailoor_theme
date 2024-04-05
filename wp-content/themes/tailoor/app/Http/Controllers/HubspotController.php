@@ -52,11 +52,6 @@ class HubspotController
         /**
          * Adding default values
          *
-         * FIXME Per quale motivo i nuovi lead assumono subito lo status ATTEMPTED_TO_CONTACT? Non sarebbe più corretto metterli NEW?
-         *
-         * Il form nativo dava sempre il consenso completo (anche a fronte del rifiuto NL)
-         * TODO Era un comportamento voluto e corretto? Se sì, eliminare il caso false
-         *
          * - newsletter: A flag indicating whether the contact has subscribed to the newsletter.
          * - lifecyclestage: The lifecycle stage of the contact.
          * - hs_lead_status: The lead status of the contact.
@@ -64,8 +59,7 @@ class HubspotController
          */
         $mappedProperties = [
             'lifecyclestage' => 'marketingqualifiedlead',
-            'hs_lead_status' => 'NEW',
-//            'hs_lead_status' => 'ATTEMPTED_TO_CONTACT',
+            'hs_lead_status' => 'ATTEMPTED_TO_CONTACT',
             'hs_legal_basis' => $properties['newsletter'] ? 'Freely given consent from contact' : 'Legitimate interest – prospect/lead',
         ];
 
