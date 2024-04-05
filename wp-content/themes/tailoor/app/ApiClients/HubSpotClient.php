@@ -114,7 +114,6 @@ class HubSpotClient
      *
      * @param array $properties The properties of the company to update or create.
      *
-     * FIXME Il nome dell'azienda non è sicuramente una PK valida. Uso nome azienda e città. È un'opzione valida?
      *
      * @return false|Company Returns false if the company could not be updated or created, otherwise returns the updated or newly created Company object.
      */
@@ -122,7 +121,7 @@ class HubSpotClient
     {
         $company = $this->companyWhere([
             'name' => $properties['name'],
-            'city' => $properties['city']
+            'domain' => $properties['domain']
         ]);
 
         $company = $company === false || $company->isEmpty() ? null : $company->first();
