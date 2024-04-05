@@ -40,7 +40,9 @@ class HubspotController
         if ($company !== false && $contact !== false) {
             $this->hubSpotClient->assignToOwner($contact);
 
-            return $this->hubSpotClient->associate($company, $contact);
+            $this->hubSpotClient->companyBelongsToContact($company, $contact);
+            $this->hubSpotClient->contactBelongsToCompany($company, $contact);
+            return true;
         }
 
         return false;

@@ -45,6 +45,8 @@ class HubSpotClient
         'business_type',
         'city',
         'name',
+        'lifecyclestage',
+        'hs_lead_status',
     ];
     public array $contactProperties = [
         'firstname',
@@ -54,7 +56,7 @@ class HubSpotClient
         'company',
         'country',
         'note',
-        'lifecycle stage',
+        'lifecyclestage',
         'hs_lead_status',
         'hs_legal_basis',
     ];
@@ -494,6 +496,36 @@ class HubSpotClient
     }
 
     /**
+     * Checks if a contact belongs to a company.
+     *
+     * @param Company $company The company object.
+     * @param Contact $contact The contact object.
+     *
+     * @return bool Returns true if the contact belongs to the company, otherwise returns false.
+     */
+    public function contactBelongsToCompany(Company $company, Contact $contact): bool
+    {
+        try {
+            $association = $this->hubspot->crm()->associations()->v4()->basicApi()->create(
+                'contacts',
+                $contact->getId(),
+                'companies',
+                $company->getId(),
+                [
+                    new AssociationSpec([
+                        'association_category' => AssociationSpecWithLabel::CATEGORY_HUBSPOT_DEFINED,
+                        'association_type_id' => AssociationTypes::CONTACT_TO_COMPANY
+                    ])
+                ]);
+
+            return !$association instanceof Error;
+        } catch (AssociationsException $e) {
+            return $this->handleExceptions($e);
+        }
+
+    }
+
+    /**
      * Associates a company with a contact in HubSpot.
      *
      * @param Company $company The company object to associate.
@@ -501,7 +533,7 @@ class HubSpotClient
      *
      * @return bool Returns true if the association is successful, false otherwise.
      */
-    public function associate(Company $company, Contact $contact): bool
+    public function companyBelongsToContact(Company $company, Contact $contact): bool
     {
         try {
             $association = $this->hubspot->crm()->associations()->v4()->basicApi()->create(
