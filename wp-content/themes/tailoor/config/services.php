@@ -32,6 +32,6 @@ return [
     ],
     'hubspot' => [
         'auth_key' => WP_DEBUG ? env('HUBSPOT_API_DEV', '') : env('HUBSPOT_API', ''),
-        'owner_id' => WP_DEBUG ? env('HUBSPOT_OWNER_ID_DEV', '') : env('HUBSPOT_OWNER_ID', ''),
+        'owner_id' => WP_DEBUG ? env('HUBSPOT_DEFAULT_OWNER_ID_DEV', '') : env('HUBSPOT_DEFAULT_OWNER_ID', ''),
     ]
 ];

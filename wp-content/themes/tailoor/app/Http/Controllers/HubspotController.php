@@ -17,6 +17,12 @@ class HubspotController
         $this->hubSpotClient = new HubSpotClient();
     }
 
+    public function hubspot(): HubSpotClient
+    {
+        return $this->hubSpotClient;
+
+    }
+
     /**
      * The flow for saving form content to Hubspot
      *
