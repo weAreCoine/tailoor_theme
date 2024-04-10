@@ -381,7 +381,6 @@ class HubSpotClient
             if (!$response instanceof SubscriptionDefinitionsResponse) {
                 return false;
             }
-
             return collect($response->getSubscriptionDefinitions());
         } catch (CommunicationPreferencesException $e) {
             return $this->handleExceptions($e);
