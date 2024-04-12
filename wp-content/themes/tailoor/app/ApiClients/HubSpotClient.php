@@ -14,6 +14,7 @@ use HubSpot\Client\CommunicationPreferences\Model\SubscriptionDefinitionsRespons
 use HubSpot\Client\Crm\Associations\V4\ApiException as AssociationsException;
 use HubSpot\Client\Crm\Associations\V4\Model\AssociationSpec;
 use HubSpot\Client\Crm\Associations\V4\Model\AssociationSpecWithLabel;
+use HubSpot\Client\Crm\Associations\V4\Model\CollectionResponseMultiAssociatedObjectWithLabelForwardPaging;
 use HubSpot\Client\Crm\Associations\V4\Model\Error;
 use HubSpot\Client\Crm\Companies\ApiException as CompaniesException;
 use HubSpot\Client\Crm\Companies\Model\Filter as CompaniesFilter;
@@ -29,6 +30,9 @@ use HubSpot\Client\Crm\Contacts\Model\SimplePublicObject as Contact;
 use HubSpot\Client\Crm\Contacts\Model\SimplePublicObjectInput;
 use HubSpot\Client\Crm\Contacts\Model\SimplePublicObjectInputForCreate;
 use HubSpot\Client\Crm\Contacts\Model\SimplePublicObjectWithAssociations;
+use HubSpot\Client\Crm\Deals\ApiException as DealException;
+use HubSpot\Client\Crm\Deals\Model\SimplePublicObject as Deal;
+use HubSpot\Client\Crm\Deals\Model\SimplePublicObjectInputForCreate as SimplePublicObjectInputForCreateDeal;
 use HubSpot\Delay;
 use HubSpot\Discovery\Discovery;
 use HubSpot\Enums\AssociationTypes;
@@ -59,6 +63,7 @@ class HubSpotClient
         'lifecyclestage',
         'hs_lead_status',
         'hs_legal_basis',
+        'hs_analytics_source',
     ];
     protected Discovery $hubspot;
     protected string $defaultOwnerID;
@@ -178,11 +183,11 @@ class HubSpotClient
     /**
      * Handle exceptions and log error messages.
      *
-     * @param CommunicationPreferencesException|ContactsException|CompaniesException|AssociationsException $exception The exception to be handled.
+     * @param CommunicationPreferencesException|ContactsException|CompaniesException|AssociationsException|DealException $exception The exception to be handled.
      *
      * @return bool False to indicate that the exception was handled.
      */
-    protected function handleExceptions(CommunicationPreferencesException|ContactsException|CompaniesException|AssociationsException $exception): false
+    protected function handleExceptions(CommunicationPreferencesException|ContactsException|CompaniesException|AssociationsException|DealException $exception): false
     {
         if (config('app.debug')) {
             if (json_validate($exception->getResponseBody())) {
@@ -524,6 +529,15 @@ class HubSpotClient
 
     }
 
+    public function associations(string $fromObjectType, string $toObjectType, string $objectID): bool|CollectionResponseMultiAssociatedObjectWithLabelForwardPaging
+    {
+        try {
+            return $this->hubspot->crm()->associations()->v4()->basicApi()->getPage($fromObjectType, $objectID, $toObjectType, 500);
+        } catch (AssociationsException $e) {
+            return $this->handleExceptions($e);
+        }
+    }
+
     /**
      * Associates a company with a contact in HubSpot.
      *
@@ -584,5 +598,14 @@ class HubSpotClient
             ],
         ]);
         return $response->getStatusCode() === 200;
+    }
+
+    public function createDeal(SimplePublicObjectInputForCreateDeal $objectForCreateDeal): bool|Deal
+    {
+        try {
+            return $this->hubspot->crm()->deals()->basicApi()->create($objectForCreateDeal);
+        } catch (DealException $e) {
+            return $this->handleExceptions($e);
+        }
     }
 }

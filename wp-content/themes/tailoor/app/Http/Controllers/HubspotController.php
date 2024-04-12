@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\ApiClients\HubSpotClient;
 use App\Traits\Singleton;
+use HubSpot\Client\Crm\Deals\Model\AssociationSpec;
+use HubSpot\Client\Crm\Deals\Model\PublicAssociationsForObject;
+use HubSpot\Client\Crm\Deals\Model\PublicObjectId;
+use HubSpot\Client\Crm\Deals\Model\SimplePublicObjectInputForCreate as SimplePublicObjectInputForCreateDeal;
 
 class HubspotController
 {
@@ -42,6 +46,7 @@ class HubspotController
 
             $this->hubSpotClient->companyBelongsToContact($company, $contact);
             $this->hubSpotClient->contactBelongsToCompany($company, $contact);
+            $this->hubSpotClient->createDeal($this->getDealProperties($company->getId(), $company->getProperties()['name']));
             return true;
         }
 
@@ -56,7 +61,7 @@ class HubspotController
      */
     protected function mapProperties(array $properties): array
     {
-
+        $host = $_SERVER['HTTP_REFERER'] ?? '';
         /**
          * Adding default values
          *
@@ -69,6 +74,22 @@ class HubspotController
             'lifecyclestage' => 'marketingqualifiedlead',
             'hs_lead_status' => 'ATTEMPTED_TO_CONTACT',
             'hs_legal_basis' => $properties['newsletter'] ? 'Freely given consent from contact' : 'Legitimate interest – prospect/lead',
+            'hs_latest_source' => match (true) {
+                request()->has('hsa_net') => match (request('hsa')) {
+                    'facebook', 'instagram', 'linkedin', 'youtube' => 'PAID_SOCIAL',
+                    'google', 'bing', 'yahoo' => 'PAID_SEARCH'
+                },
+                str_contains($host, 'google') => 'ORGANIC_SEARCH',
+                str_contains($host, 'bing') => 'ORGANIC_SEARCH',
+                str_contains($host, 'yahoo') => 'ORGANIC_SEARCH',
+                str_contains($host, 'facebook') => 'SOCIAL_MEDIA',
+                str_contains($host, 'linkedin') => 'SOCIAL_MEDIA',
+                str_contains($host, 'twitter') => 'SOCIAL_MEDIA',
+                str_contains($host, 'youtube') => 'SOCIAL_MEDIA',
+                str_contains($host, 'instagram') => 'SOCIAL_MEDIA',
+                empty($host) => 'DIRECT_TRAFFIC',
+                default => 'REFERRALS'
+            }
         ];
 
         foreach ($properties as $key => $value) {
@@ -139,6 +160,38 @@ class HubspotController
         }
 
         return $properties;
+    }
+
+    /**
+     * Get the deal properties for creating a new deal in Hubspot.
+     *
+     * @param string $companyID The ID of the company associated with the deal.
+     * @param string $dealName The name of the deal.
+     *
+     * @return SimplePublicObjectInputForCreateDeal The deal properties.
+     */
+    protected function getDealProperties(string $companyID, string $dealName): SimplePublicObjectInputForCreateDeal
+    {
+        $associationSpec = (new AssociationSpec())
+            ->setAssociationTypeId(5)
+            ->setAssociationCategory('HUBSPOT_DEFINED');
+        $to = new PublicObjectId([
+            'id' => $companyID
+        ]);
+
+        $publicAssociationsForObject = (new PublicAssociationsForObject())
+            ->setTypes([$associationSpec])
+            ->setTo($to);
+
+        $properties = [
+            'dealname' => $dealName,
+            'amount' => '0',
+            'dealstage' => 'decisionmakerboughtin',
+        ];
+
+        return (new SimplePublicObjectInputForCreateDeal())
+            ->setProperties($properties)
+            ->setAssociations([$publicAssociationsForObject]);
     }
 
 }
