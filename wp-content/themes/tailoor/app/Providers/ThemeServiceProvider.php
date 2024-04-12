@@ -6,13 +6,15 @@ use App\Services\AjaxRoutesService;
 use App\Services\RouterService;
 use Roots\Acorn\Sage\SageServiceProvider;
 
-class ThemeServiceProvider extends SageServiceProvider {
+class ThemeServiceProvider extends SageServiceProvider
+{
     /**
      * Register any application services.
      *
      * @return void
      */
-    public function register(): void {
+    public function register(): void
+    {
         parent::register();
         new AjaxRoutesService();
         RouterService::register();
@@ -23,7 +25,8 @@ class ThemeServiceProvider extends SageServiceProvider {
      *
      * @return void
      */
-    public function boot(): void {
+    public function boot(): void
+    {
         parent::boot();
     }
 }

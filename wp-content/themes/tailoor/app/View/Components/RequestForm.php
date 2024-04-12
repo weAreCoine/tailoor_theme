@@ -259,46 +259,46 @@ class RequestForm extends Component
         if (!empty($errors)) {
             unset($_SESSION['requestFormErrors']);
         }
-
-//        return view('components.request-form')->with([
-//            'formFields' => json_encode([
-//                'firstname' => old('first_name', fake()->firstName()),
-//                'lastname' => old('last_name', fake()->lastName()),
-//                'phone' => old('phone', fake()->phoneNumber()),
-//                'email' => old('email', fake()->companyEmail()),
-//                'company' => old('company', fake()->company()),
-//                'website' => old('website', fake()->url()),
-//                'platform' => old('platform', fake()->randomElement(array_keys(RequestForm::platforms()))),
-//                'business' => old('business', fake()->randomElement(array_keys(RequestForm::businessType()))),
-//                'city' => old('city', fake()->city()),
-//                'country' => old('country', fake()->randomElement(array_keys(RequestForm::countries()))),
-//                'note' => old('note', fake()->boolean(30) ? fake()->paragraph(1) : null),
-//                'privacy' => true,
-//                'newsletter' => fake()->boolean(15),
-//            ]),
-//            'errors' => $errors
-//        ]);
-
         return view('components.request-form')->with([
-            'formFields' => json_encode([
-                'firstname' => old('first_name', ''),
-                'lastname' => old('last_name', ''),
-                'phone' => old('phone', ''),
-                'email' => old('email', ''),
-                'company' => old('company', ''),
-                'website' => old('website', ''),
-                'platform' => old('platform', ''),
-                'business' => old('business', ''),
-                'city' => old('city', ''),
-                'country' => old('country', ''),
-                'note' => old('note', ''),
-                'privacy' => false,
-                'newsletter' => false,
-
-            ]),
+            'formFields' => $this->getDefaultValues(),
             'errors' => $errors
         ]);
     }
 
+    public function getDefaultValues(): string
+    {
+        if (WP_DEBUG) {
+            return json_encode([
+                'firstname' => old('first_name', fake()->firstName()),
+                'lastname' => old('last_name', fake()->lastName()),
+                'phone' => old('phone', fake()->phoneNumber()),
+                'email' => old('email', fake()->companyEmail()),
+                'company' => old('company', fake()->company()),
+                'website' => old('website', fake()->url()),
+                'platform' => old('platform', fake()->randomElement(array_keys(RequestForm::platforms()))),
+                'business' => old('business', fake()->randomElement(array_keys(RequestForm::businessType()))),
+                'city' => old('city', fake()->city()),
+                'country' => old('country', fake()->randomElement(array_keys(RequestForm::countries()))),
+                'note' => old('note', fake()->boolean(30) ? fake()->paragraph(1) : null),
+                'privacy' => true,
+                'newsletter' => fake()->boolean(15),
+            ]);
+        }
 
+        return json_encode([
+            'firstname' => old('first_name', ''),
+            'lastname' => old('last_name', ''),
+            'phone' => old('phone', ''),
+            'email' => old('email', ''),
+            'company' => old('company', ''),
+            'website' => old('website', ''),
+            'platform' => old('platform', ''),
+            'business' => old('business', ''),
+            'city' => old('city', ''),
+            'country' => old('country', ''),
+            'note' => old('note', ''),
+            'privacy' => false,
+            'newsletter' => false,
+        ]);
+    }
 }

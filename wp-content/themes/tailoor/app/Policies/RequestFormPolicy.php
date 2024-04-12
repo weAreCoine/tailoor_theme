@@ -4811,7 +4811,8 @@ class RequestFormPolicy extends AbstractPolicy
     {
         $errors = [];
         $validated = [];
-        foreach ($request->except('requestForm_nonce', '_wp_http_referer') as $key => $value) {
+        $fields = $request->except('requestForm_nonce', '_wp_http_referer');
+        foreach ($fields as $key => $value) {
             switch ($key) {
                 case 'first_name':
                 case 'last_name':
@@ -4905,6 +4906,10 @@ class RequestFormPolicy extends AbstractPolicy
         $validated['company'] = $validated['company'] ?? null;
         $validated['city'] = $validated['city'] ?? null;
         $validated['note'] = $validated['note'] ?? null;
+
+        if (!empty($errors)) {
+            flash('old', $fields);
+        }
 
         return [$validated, $errors];
     }

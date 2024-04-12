@@ -10,13 +10,13 @@
 | don't have to worry about manually loading any of our classes later on.
 |
 */
-add_action( 'init', function () {
-    if ( ! session_id() ) {
+add_action('init', function () {
+    if (!session_id()) {
         session_start();
     }
-} );
-if ( ! file_exists( $composer = __DIR__ . '/vendor/autoload.php' ) ) {
-    wp_die( __( 'Error locating autoloader. Please run <code>composer install</code>.', 'sage' ) );
+});
+if (!file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
+    wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
 
 require $composer;
@@ -33,13 +33,13 @@ require $composer;
 |
 */
 
-if ( ! function_exists( '\Roots\bootloader' ) ) {
+if (!function_exists('\Roots\bootloader')) {
     wp_die(
-        __( 'You need to install Acorn to use this theme.', 'sage' ),
+        __('You need to install Acorn to use this theme.', 'sage'),
         '',
         [
-            'link_url'  => 'https://roots.io/acorn/docs/installation/',
-            'link_text' => __( 'Acorn Docs: Installation', 'sage' ),
+            'link_url' => 'https://roots.io/acorn/docs/installation/',
+            'link_text' => __('Acorn Docs: Installation', 'sage'),
         ]
     );
 }
@@ -58,15 +58,15 @@ if ( ! function_exists( '\Roots\bootloader' ) ) {
 |
 */
 
-collect( [ 'setup', 'filters' ] )
-    ->each( function ( $file ) {
-        if ( ! locate_template( $file = "app/{$file}.php", true, true ) ) {
+collect(['setup', 'filters'])
+    ->each(function ($file) {
+        if (!locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
             /* translators: %s is replaced with the relative file path */
-                sprintf( __( 'Error locating <code>%s</code> for inclusion.', 'sage' ), $file )
+                sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file)
             );
         }
-    } );
+    });
 
 /**
  * Gets the current language.
@@ -77,11 +77,34 @@ collect( [ 'setup', 'filters' ] )
  *
  * @return string The current language.
  */
-function getCurrentLanguage(): string {
+function getCurrentLanguage(): string
+{
     static $currentLanguage = null;
-    if ( $currentLanguage === null ) {
-        $currentLanguage = apply_filters( 'wpml_current_language', null ) ?? 'en';
+    if ($currentLanguage === null) {
+        $currentLanguage = apply_filters('wpml_current_language', null) ?? 'en';
     }
 
     return $currentLanguage;
+}
+
+/**
+ * Get the value of a key from the "old" session data.
+ *
+ * @param string|null $key The key to retrieve.
+ * @param mixed $default The default value to return if the key doesn't exist.
+ * @return mixed The value of the key or the default value if it doesn't exist.
+ */
+function old(?string $key = null, mixed $default = null): mixed
+{
+    if (empty($key)) {
+        return $_SESSION['old'] ?? [];
+    }
+
+    return $_SESSION['old'][$key] ?? $default;
+}
+
+function flash(string $key, mixed $value): void
+{
+    $_SESSION[$key] = $value;
+    $_SESSION['counts'][$key] = 1;
 }
