@@ -111,7 +111,7 @@ add_action('after_setup_theme', function () {
  * For a single session flash I have to get to a count of -1.
  */
 add_action('shutdown', function () {
-    foreach ($_SESSION['counts'] as $key => $count) {
+    foreach ($_SESSION['counts'] ?? [] as $key => $count) {
         if ($count === null || $count < 0) {
             unset($_SESSION['counts'][$key], $_SESSION[$key]);
         }
