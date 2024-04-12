@@ -271,7 +271,7 @@ class RequestForm extends Component
             return json_encode([
                 'firstname' => old('first_name', fake()->firstName()),
                 'lastname' => old('last_name', fake()->lastName()),
-                'phone' => old('phone', fake()->phoneNumber()),
+                'phone' => old('phone', fake()->e164PhoneNumber()),
                 'email' => old('email', fake()->companyEmail()),
                 'company' => old('company', fake()->company()),
                 'website' => old('website', fake()->url()),
