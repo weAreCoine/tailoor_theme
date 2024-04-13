@@ -21,7 +21,9 @@
     @yield('content')
   </main>
   <x-modal :visible="false" :name="'get__in__touch__form'">
-    <p class="font-header text-4xl mb-12 text-center font-bold">{{__('Get in Touch', 'sage')}}</p>
+    <p class="font-header text-4xl text-center font-bold">{{__('Request a free demo', 'sage')}}</p>
+    <p
+      class="mb-12 text-center mt-2">{{__('It only takes one step: fill out the form below and choose a free slot. During the 45-minute demo you\'ll discover all the features you can gain by integrating Tailoor into your business.', 'sage')}}</p>
     <x-request-form/>
   </x-modal>
   @hasSection('sidebar')
