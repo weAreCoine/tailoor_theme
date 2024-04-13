@@ -42,11 +42,14 @@ class HubspotController
         $contact = $this->hubSpotClient->updateOrCreateContact($this->filterContactProperties($properties));
         $this->hubSpotClient->syncSubscriptions($properties);
         if ($company !== false && $contact !== false) {
-            $this->hubSpotClient->assignToOwner($contact);
-
+            $deal = $this->hubSpotClient->createDeal($this->getDealProperties($company->getId(), $company->getProperties()['name']));
+            if ($deal !== false) {
+                $this->hubSpotClient->assignDealToOwner($deal);
+            }
+            $this->hubSpotClient->assignContactToOwner($contact);
+            $this->hubSpotClient->assignCompanyToOwner($company);
             $this->hubSpotClient->companyBelongsToContact($company, $contact);
             $this->hubSpotClient->contactBelongsToCompany($company, $contact);
-            $this->hubSpotClient->createDeal($this->getDealProperties($company->getId(), $company->getProperties()['name']));
             return true;
         }
 

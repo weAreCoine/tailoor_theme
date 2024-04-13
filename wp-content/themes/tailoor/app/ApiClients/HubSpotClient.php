@@ -480,15 +480,15 @@ class HubSpotClient
      *
      * @return bool Returns true if the contact was successfully assigned, otherwise returns false.
      */
-    public function assignToOwner(Contact $contact, ?string $ownerID = null): bool
+    public function assignContactToOwner(Contact $contact, ?string $ownerID = null): bool
     {
         if ($ownerID === null) {
             $ownerID = $this->defaultOwnerID;
         }
-        $contactUpdate = new SimplePublicObjectInput();
-        $contactUpdate->setProperties([
-            'hubspot_owner_id' => $ownerID,
-        ]);
+        $contactUpdate = (new SimplePublicObjectInput())
+            ->setProperties([
+                'hubspot_owner_id' => $ownerID,
+            ]);
         try {
             $this->hubspot->crm()->contacts()->basicApi()->update($contact->getId(), $contactUpdate);
 
@@ -497,6 +497,46 @@ class HubSpotClient
             return $this->handleExceptions($e);
         }
 
+    }
+
+    /**
+     * Assigns a company to an owner.
+     *
+     * @param Company $company The company to assign.
+     * @param string|null $ownerID The ID of the owner to assign the company to. If null, the default owner ID will be used.
+     *
+     * @return bool Returns true if the assignment was successful, otherwise returns false.
+     */
+    public function assignCompanyToOwner(Company $company, ?string $ownerID = null): bool
+    {
+        if ($ownerID === null) {
+            $ownerID = $this->defaultOwnerID;
+        }
+        $companyToUpdate = (new \HubSpot\Client\Crm\Companies\Model\SimplePublicObjectInput())
+            ->setProperties([
+                'hubspot_owner_id' => $ownerID,
+            ]);
+        try {
+            $this->hubspot->crm()->companies()->basicApi()->update($company->getId(), $companyToUpdate);
+            return true;
+        } catch (CompaniesException $e) {
+            return $this->handleExceptions($e);
+        }
+    }
+
+    public function assignDealToOwner(Deal $deal, ?string $ownerID = null): bool
+    {
+        if ($ownerID === null) {
+            $ownerID = $this->defaultOwnerID;
+        }
+        $dealToUpdate = (new \HubSpot\Client\Crm\Deals\Model\SimplePublicObjectInput())
+            ->setProperties(['hubspot_owner_id' => $ownerID]);
+        try {
+            $this->hubspot->crm()->deals()->basicApi()->update($deal->getId(), $dealToUpdate);
+            return true;
+        } catch (DealException $e) {
+            return $this->handleExceptions($e);
+        }
     }
 
     /**
