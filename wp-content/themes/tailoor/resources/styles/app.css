@@ -292,6 +292,10 @@
     }
   }
 
+  .to__show__on__window__load {
+    @apply hidden
+  }
+
 }
 
 .not-scroll {
@@ -338,4 +342,8 @@
     top: 0;
     left: 0;
   }
+}
+
+*[x-cloak] {
+  display: none !important;
 }

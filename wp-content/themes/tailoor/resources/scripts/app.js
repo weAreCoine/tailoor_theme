@@ -136,7 +136,9 @@ domReady(async () => {
  * @see {@link https://webpack.js.org/api/hot-module-replacement/}
  */
 if (import.meta.webpackHot) import.meta.webpackHot.accept(console.error);
+
 document.addEventListener('DOMContentLoaded', function () {
+
   let formToggle = document.querySelectorAll('.demo_request a');
   formToggle.forEach(function (toggle) {
     toggle.addEventListener('click', function (event) {
@@ -150,3 +152,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+window.addEventListener('load', function () {
+  /**
+   * Mostra gli elementi che devono essere visibili al Window Load
+   */
+  document.querySelectorAll('.to__show__on__window__load').forEach(function (element) {
+    element.classList.remove('to__show__on__window__load');
+  });
+})
