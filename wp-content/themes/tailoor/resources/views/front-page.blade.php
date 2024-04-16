@@ -169,7 +169,7 @@
         </div>
         <div class="right-block text-part">
           <?php
-          if ( wp_is_mobile() ){ ?>
+          if (wp_is_mobile()){ ?>
           <img src="<?php echo $template_path."img/blocco-6/layer_2.png"; ?>"/>
           <?php } ?>
         </div>
@@ -217,7 +217,7 @@
       <div class="tlr-container wrap">
         <div class="elem-bef"></div>
         <?php
-        if ( wp_is_mobile() ) {
+        if (wp_is_mobile()) {
           echo "<img src='" . $template_path . "img/blocco-8/m_layer_1.png' />";
         }
         ?>
@@ -265,14 +265,14 @@
       </div>
       <div class="xl:col-span-2">
         <div>
-          <?php foreach ( $fields['faq']['faq_questions'] as $key => $value ) : ?>
+          <?php foreach ($fields['faq']['faq_questions'] as $key => $value) : ?>
           <x-faq :question="$value['domanda']" :answer="$value['risposta']" :starts-open="$key === 0"/>
           <?php endforeach; ?>
         </div>
       </div>
     </section>
 
-    <x-clients-carousel class="bg-mirage"/>
+    {{--    <x-clients-carousel class="bg-mirage"/>--}}
   </div>
 
   S
