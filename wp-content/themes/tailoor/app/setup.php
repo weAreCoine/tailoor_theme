@@ -159,3 +159,22 @@ add_action('admin_menu', function () {
         require_once resource_path('views/console/console.php');
     }, 'dashicons-shortcode', 45);
 }, 99);
+
+/**
+ * Close sessions before http requests
+ */
+add_action('pre_http_request', function ($preempt, $args, $url) {
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        session_write_close();
+    }
+    /**
+     * Preempt function
+     *
+     * This function performs some action or logic before executing the main functionality.
+     *
+     * @param string $param1 The first parameter
+     * @param int $param2 The second parameter
+     * @return mixed The result of the preempt action
+     */
+    return $preempt; // Non alterare la risposta predefinita
+}, 10, 3);
