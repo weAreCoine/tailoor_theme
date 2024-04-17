@@ -139,8 +139,10 @@ if (import.meta.webpackHot) import.meta.webpackHot.accept(console.error);
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  let formToggle = document.querySelectorAll('.demo_request a');
-  formToggle.forEach(function (toggle) {
+  /**
+   * Trigger per l'apertura della modale di iscrizione alla demo
+   */
+  document.querySelectorAll('.demo_request a').forEach(function (toggle) {
     toggle.addEventListener('click', function (event) {
       event.preventDefault();
       const requestModalFormEvent = new CustomEvent('request-modal', {
@@ -151,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
       window.dispatchEvent(requestModalFormEvent);
     });
   });
+  
 });
 window.addEventListener('load', function () {
   /**
