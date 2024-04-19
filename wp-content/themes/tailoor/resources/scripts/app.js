@@ -34,6 +34,11 @@ Alpine.data('modal', (visible, name) => ({
   }
 }))
 
+Alpine.data('steps', (json) => ({
+  contents: JSON.parse(json),
+  selected: 0
+}));
+
 Alpine.data('bindSlider', () => ({
   init() {
     new Splide('.splide', {
@@ -153,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
       window.dispatchEvent(requestModalFormEvent);
     });
   });
-  
+
 });
 window.addEventListener('load', function () {
   /**

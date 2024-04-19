@@ -28,5 +28,6 @@ class ThemeServiceProvider extends SageServiceProvider
     public function boot(): void
     {
         parent::boot();
+        ShortcodesProvider::getInstance();
     }
 }

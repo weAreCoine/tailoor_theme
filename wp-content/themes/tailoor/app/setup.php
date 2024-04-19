@@ -52,6 +52,7 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
         'home_navigation' => __('Home Navigation', 'sage'),
+        'landing_navigation' => __('Landings Navigation', 'sage'),
     ]);
 
     /**
