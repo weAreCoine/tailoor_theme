@@ -36,7 +36,7 @@
           </div>
           <div class="text-desc">
             <p><?php echo $fields['section_2']['paragrafo'] ?></p>
-            <a class="btn-tlr demo_request"><?php echo $fields['section_2']['link']['title'] ?></a>
+            <x-form-cta/>
           </div>
         </div>
         <!--<div class="bg-prod"></div>-->
@@ -52,7 +52,7 @@
         <div class="left-text tlr-container">
           <h2><?php echo $fields['section_3']['left_part']['intestazione'] ?><span class="punto">.</span></h2>
           <p><?php echo $fields['section_3']['left_part']['paragrafo'] ?></p>
-          <a class="btn-tlr demo_request"><?php echo $fields['section_3']['left_part']['link']['title'] ?></a>
+          <x-form-cta/>
 
           @if(wp_is_mobile())
             <img src="{{asset('images/blocco-3/layer_1_mobile.png')}}" alt="" style="margin-top:30px;">
@@ -142,7 +142,7 @@
         <div class="text-part">
           <h2><?php echo $fields['section_5']['intestazione'] ?><span class="punto">.</span></h2>
           <p><?php echo $fields['section_5']['paragrafo'] ?></p>
-          <a class="btn-tlr demo_request"><?php echo $fields['section_5']['link']['title'] ?></a>
+          <x-form-cta/>
         </div>
         <div></div>
       </div>
@@ -195,7 +195,7 @@
           <div class="left-block text-part">
             <h2><?php echo $fields['section_7']['left_part']['intestazione'] ?><span class="punto">.</span></h2>
             <p><?php echo $fields['section_7']['left_part']['paragrafo'] ?></p>
-            <a class="btn-tlr demo_request"><?php echo $fields['section_7']['left_part']['link']['title'] ?></a>
+            <x-form-cta/>
             <img src="{{asset('images/blocco-7/layer_4.jpg')}}"/>
           </div>
 
@@ -240,7 +240,7 @@
     </section>
     <section id="block9-3" class="block9-3 tlr flex-center">
       <div class="text-part txt-center">
-        <a class="btn-tlr btn-center demo_request"><?php echo $fields['section_10']['link']['title'] ?></a>
+        <x-form-cta/>
         <h2><?php echo $fields['section_10']['intestazione'] ?><span class="punto">.</span></h2>
         <p><?php echo $fields['section_10']['paragrafo'] ?></p>
       </div>
