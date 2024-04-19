@@ -10,7 +10,7 @@
       <p><?= __('Tailoor is the partner that allows you to sell your customized products by integrating an innovative 3D
         configurator into your website or e-commerce platform. We help grow your business and boost sales through
         technology support, harnessing the capabilities of= real-time 3D configuration.', 'sage') ?></p>
-      <x-form-cta/>
+      <x-form-cta class="mt-12"/>
     </div>
   </div>
   <div class="my-32 container">
@@ -52,7 +52,7 @@
     <div class="boxed">
       <p class="uppercase text-2xl mb-8 text-white">{!! __('Request now your <span
           class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') !!}</p>
-      <x-form-cta/>
+      <x-form-cta class="mt-12"/>
     </div>
   </div>
   <div class="py-20 relative scroll-mt-48 bg-gradient-to-b from-slate-800 to-mirage" id="integrazioni">
@@ -156,7 +156,7 @@
     <div class="container">
       <p class="uppercase text-2xl mb-8 text-white">{!! __('Request now your <span
           class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') !!}</p>
-      <x-form-cta/>
+      <x-form-cta class="mt-12"/>
     </div>
 
   </div>

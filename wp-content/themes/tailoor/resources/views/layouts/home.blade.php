@@ -8,7 +8,7 @@
   @yield('scripts', '')
 </head>
 
-<body @php(body_class('bg-mirage'))>
+<body @php(body_class('bg-mirage font-header text-white'))>
 @php(wp_body_open())
 <div id="app">
   <a class="sr-only focus:not-sr-only" href="#main">
@@ -16,7 +16,7 @@
   </a>
 
   @include('sections.header-home')
-  <main id="main" class="main">
+  <main id="main" class="main snap-mandatory scroll-smooth">
     @yield('content')
   </main>
   <x-modal :visible="false" :name="'get__in__touch__form'">

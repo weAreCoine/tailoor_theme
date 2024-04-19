@@ -11,6 +11,35 @@
     }
   }
 
+  .before__border__label {
+    &::before {
+      @apply absolute h-full w-2 bg-transparent top-0 right-full content-[''] duration-300;
+    }
+
+    &.active::before {
+      @apply bg-mirage
+    }
+  }
+
+  .snap-mandatory > section {
+    @apply snap-start snap-always;
+  }
+
+  .button {
+    @apply duration-500 uppercase font-header inline-block;
+    padding-inline: 3em;
+    padding-block: .5em;
+    border-radius: .5em;
+
+    &.secondary {
+      @apply border-2 border-mirage hover:bg-mirage hover:text-white;
+
+      &.dark {
+        @apply border-white hover:bg-white hover:text-mirage
+      }
+    }
+  }
+
   .tailoor__form {
     @apply font-header grid grid-cols-1 sm:grid-cols-2 gap-6;
 
@@ -280,6 +309,11 @@
 
 @tailwind utilities;
 @layer utilities {
+  .text-2x {
+    font-size: 2em;
+    line-height: 0;
+  }
+
   .tailoor__outline {
     @apply relative z-10;
 
@@ -294,6 +328,10 @@
 
   .to__show__on__window__load {
     @apply hidden
+  }
+
+  .shadow-solid {
+    box-shadow: -1rem -1rem 0 0 white;
   }
 
 }

@@ -38,9 +38,9 @@ add_action('enqueue_block_editor_assets', function () {
  */
 add_action('after_setup_theme', function () {
     /**
-     * Disable full-site editing support.
+     * Disable full-site editing support.2
      *
-     * @link https://wptavern.com/gutenberg-10-5-embeds-pdfs-adds-verse-block-color-options-and-introduces-new-patterns
+     * @link htt4ps://wptavern.com/gutenberg-10-5-embeds-pdfs-adds-verse-block-color-options-and-introduces-new-patterns
      */
     remove_theme_support('block-templates');
 
