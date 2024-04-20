@@ -21,10 +21,6 @@
     }
   }
 
-  .snap-mandatory > section {
-    @apply snap-start snap-always;
-  }
-
   .button {
     @apply duration-500 uppercase font-header inline-block;
     padding-inline: 3em;

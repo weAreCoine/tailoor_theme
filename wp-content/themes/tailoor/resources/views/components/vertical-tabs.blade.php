@@ -1,4 +1,5 @@
-<div x-data="{visible:0}" class="grid grid-cols-3 gap-6 text-left my-24 items-center ">
+<div x-data="{visible:0}" x-on:home-new-tab.window="visible = $event.detail.currentTab"
+     class="grid grid-cols-3 gap-6 text-left my-24 items-center ">
   <p
     class="uppercase text-4xl text-center mb-6 col-span-3">{{__('How does it works', 'sage')}}
     <span

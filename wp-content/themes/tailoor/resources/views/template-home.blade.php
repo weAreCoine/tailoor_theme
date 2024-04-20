@@ -3,8 +3,14 @@
 --}}
 @extends('layouts.home')
 @section('content')
-  <section id="tailoor" aria-labelledby="pageTitle" class="min-h-screen py-32 flex items-center">
-    <div class="container">
+  <section id="tailoor" aria-labelledby="pageTitle"
+           class="min-h-screen py-32 flex items-center relative overflow-hidden">
+    <video autoplay muted loop class="absolute min-h-full min-w-full top-0 left-0 max-w-none opacity-20">
+      <source src="https://dev.tailoor.com/wp-content/uploads/2024/04/test_scarpe.mp4"
+              type="video/mp4">
+    </video>
+    <div class="absolute top-0 left-0 min-h-full min-w-full bg-gradient-to-b from-transparent to-mirage"></div>
+    <div class="container relative">
       <h1
         class="text-5xl uppercase leading-tight">
         {{__('Elevate your business with 3D Technology to offer unique, personalized products', 'sage')}}<span
@@ -22,8 +28,7 @@
     <div class="container text-center">
       <h2 class="uppercase text-4xl">{{__('The perfect solution for every product category', 'sage')}}<span
           class="text-pink text-2x">.</span></h2>
-      <div class="my-24">
-      </div>
+      <x-products-carousel/>
       <p
         class="text-xl">{{__('Make your offer ever closer to the needs of your customers. Thanks to our 3D configurator, integrated directly into your website and/or e-commerce, your customers will be able to choose from your entire catalog of models and materials. We will take care of rendering them in 3D, making the virtual experience faithful to the real one.')}}</p>
       <x-form-cta class="mt-12"/>
@@ -38,8 +43,8 @@
           class="text-xl mt-4">{{__('Tailoor is also a Customer Dashboard that helps you manage all your stores and appointments with your clients. It also collects all their data and orders for a comprehensive and optimized management of your business.')}}</p>
         <x-form-cta class="mt-12"/>
       </div>
-      <div>{!! wp_get_attachment_image(1929, 'full', false, ['alt' => 'Tailoor benefits']) !!}</div>
-      <div>{!! wp_get_attachment_image(1931, 'full', false, ['alt' => 'Tailoor benefits']) !!}</div>
+      <div id="benefits__img"> {!! wp_get_attachment_image(1929, 'full', false, ['alt' => 'Tailoor benefits']) !!}</div>
+      <div id="reports__img">{!! wp_get_attachment_image(1931, 'full', false, ['alt' => 'Tailoor reports']) !!}</div>
       <div class="text-right">
         <h2 class="uppercase text-4xl">{{__('Monitor your performance in real time', 'sage')}}<span
             class="text-pink text-2x">.</span></h2>

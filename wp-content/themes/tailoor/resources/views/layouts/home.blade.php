@@ -16,7 +16,7 @@
   </a>
 
   @include('sections.header-home')
-  <main id="main" class="main snap-mandatory scroll-smooth">
+  <main id="main" class="main scroll-smooth">
     @yield('content')
   </main>
   <x-modal :visible="false" :name="'get__in__touch__form'">

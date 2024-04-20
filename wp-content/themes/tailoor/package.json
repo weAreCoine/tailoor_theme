@@ -30,6 +30,7 @@
     "@alpinejs/collapse": "^3.13.7",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
-    "alpinejs": "^3.13.7"
+    "alpinejs": "^3.13.7",
+    "gsap": "^3.12.5"
   }
 }
