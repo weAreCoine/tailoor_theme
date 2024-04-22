@@ -15,10 +15,12 @@ use function Roots\bundle;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    bundle('app')->enqueue();
-    if (is_front_page()) {
-        bundle('home')->enqueue();
-    }
+    bundle('app')->enqueue()->localize('tailoor', [
+        'isFrontPage' => is_front_page(),
+    ]);
+//    if (is_front_page()) {
+//        bundle('home')->enqueue();
+//    }
     bundle('fontawesome')->enqueue();
 }, 100);
 

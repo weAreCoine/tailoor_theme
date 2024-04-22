@@ -10,6 +10,9 @@
 | don't have to worry about manually loading any of our classes later on.
 |
 */
+
+use App\Policies\GDPR;
+
 add_action('init', function () {
     if (!session_id()) {
         session_start();
@@ -107,4 +110,9 @@ function flash(string $key, mixed $value): void
 {
     $_SESSION[$key] = $value;
     $_SESSION['counts'][$key] = 1;
+}
+
+function GDPR(): GDPR
+{
+    return GDPR::getInstance();
 }

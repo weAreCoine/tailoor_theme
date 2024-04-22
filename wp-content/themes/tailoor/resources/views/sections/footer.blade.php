@@ -33,18 +33,21 @@
         A4707H7</p>
       <ul class="flex items-center justify-center gap-6 mt-8">
         <li class="m-0">
+          <a href="#"
+             class="iubenda__button iubenda-cs-preferences-link "
+             title="Privacy Policy ">{{__('GDPR Settings', 'sage')}}</a>
+        </li>
+        <li class="m-0">
           <a href="https://www.iubenda.com/privacy-policy/23976788"
              class="iubenda__button iubenda-black no-brand iubenda-noiframe iubenda-embed iubenda-noiframe "
              title="Privacy Policy ">Privacy
             Policy</a>
-
         </li>
         <li class="m-0">
           <a href="https://www.iubenda.com/privacy-policy/23976788/cookie-policy"
              class="iubenda__button iubenda-black no-brand iubenda-noiframe iubenda-embed iubenda-noiframe "
              title="Cookie Policy ">Cookie
             Policy</a>
-
         </li>
         <li class="m-0">
           <a href="https://www.iubenda.com/terms-and-conditions/23976788"

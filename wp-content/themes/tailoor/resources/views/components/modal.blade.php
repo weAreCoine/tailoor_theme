@@ -16,16 +16,23 @@
       x-transition:leave.duration.300ms
       x-cloak
       x-on:click.stop>
-      <div class="text-right">
-        <div class="inline-block w-8 h-8 relative group cursor-pointer hover:bg-pink-100 duration-500 rounded"
-             x-on:click="visible = false">
+      <div class="flex justify-between items-center gap-6 mb-4">
+        <div>
+          @unless(empty($title))
+            <p class="text-xl uppercase">{{$title}}</p>
+          @endunless
+        </div>
+        <div class="text-right">
+          <div class="inline-block w-8 h-8 relative group cursor-pointer hover:bg-pink-100 duration-500 rounded"
+               x-on:click="visible = false">
         <span
           class="absolute h-[2px] w-6 bg-mirage left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45 group-hover:rotate-0 duration-500"></span>
-          <span
-            class="absolute h-[2px] w-6 bg-mirage left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45 duration-500 group-hover:rotate-0"></span>
+            <span
+              class="absolute h-[2px] w-6 bg-mirage left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45 duration-500 group-hover:rotate-0"></span>
+          </div>
         </div>
-      </div>
-      {!! $slot !!}
+
+      </div> {!! $slot !!}
     </div>
   </div>
 </div>

@@ -4,80 +4,10 @@ import collapse from '@alpinejs/collapse'
 import '@splidejs/splide/css/core';
 import Splide from "@splidejs/splide";
 import {AutoScroll} from '@splidejs/splide-extension-auto-scroll';
-import {gsap} from "gsap";
+import {TailoorAnimations} from './animations/animations.js'
 
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+TailoorAnimations.bind();
 
-/**
- * HOME ANIMATIONS
- */
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.timeline({
-  scrollTrigger: {
-    trigger: document.querySelector('#products__carousel__container').closest('section'),
-    start: 'top top',
-    end: 'bottom top',
-    markers: false,
-    scrub: 1,
-    pin: document.querySelector('#products__carousel__container').closest('section'),
-    snap: {
-      snapTo: [0, .25, .5, .75, 1],
-      duration: {min: .1, max: .4},
-      directional: false,
-    },
-    invalidateOnRefresh: true,
-    anticipatePin: true,
-    pinSpacing: true,
-  }
-}).fromTo(
-  '#products__carousel__container #screen__carousel img',
-  {x: '-40%', ease: "none"},
-  {x: '40%', ease: "none"}
-);
-gsap.from('#benefits__img', {
-  opacity: 0,
-  y: '-75%',
-  scrollTrigger: {
-    trigger: '#benefits__img',
-    start: 'top bottom',
-    end: 'top 50%',
-    scrub: 1,
-    markers: false,
-    invalidateOnRefresh: true,
-  }
-});
-let currentTab = 0;
-gsap.timeline({
-  scrollTrigger: {
-    trigger: document.querySelector('#phygital'),
-    start: 'top top',
-    end: 'bottom top',
-    markers: false,
-    scrub: 1,
-    pin: document.querySelector('#phygital > .container'),
-    snap: {
-      snapTo: [0, .3333, .6666, 1],
-      duration: {min: .1, max: .4},
-      directional: true,
-    },
-    onUpdate({progress}) {
-      let currentRealTab = Math.floor(progress / .33);
-      if (currentRealTab !== currentTab) {
-        currentTab = currentRealTab;
-        console.log(progress)
-        let changeTabEvent = new CustomEvent('home-new-tab', {
-          detail: {currentTab: currentTab},
-          bubbles: true,
-        });
-        window.dispatchEvent(changeTabEvent);
-      }
-    },
-    invalidateOnRefresh: true,
-    anticipatePin: true,
-    pinSpacing: true,
-  }
-})
 window.Alpine = Alpine;
 Alpine.plugin(collapse);
 window.Splide = Splide;

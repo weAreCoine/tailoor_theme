@@ -17,10 +17,11 @@
           class="text-pink text-2x">.</span></h1>
       <p
         class="text-xl mt-6">{{__('Offer a unique and personalized experience to your customers: we are the partner that allow you to offer your products through the integration of an innovative AI-powered 3D configurator.', 'sage')}}</p>
-      <div class="mt-12 flex items-center gap-4">
+      <div x-data="{}" class="mt-12 flex items-center gap-4">
         <x-form-cta/>
         <p>{{__('or')}}</p>
-        <a href="#" class="underline inline-block">{{__('watch the video', 'sage')}}</a>
+        <a href="#" x-on:click.prevent="$dispatch('request-modal', {modalName: 'watch__video'})"
+           class="underline inline-block">{{__('watch the video', 'sage')}}</a>
       </div>
     </div>
   </section>
@@ -68,8 +69,8 @@
       <x-form-cta class="mt-16"/>
     </div>
   </section>
-  <section id="experience" class="min-h-screen py-32 flex items-center">
-    <div class="container grid grid-cols-4">
+  <section id="experience" class="min-h-screen py-32 flex items-center bg-mirage">
+    <div class="container grid grid-cols-4 items-center">
       <div>
         <h2 class="uppercase text-4xl">{{__('Make the experience even more real', 'sage')}}<span
             class="text-pink text-2x">.</span></h2>
@@ -77,11 +78,23 @@
           class="text-xl mt-8">{{__('Make your products real with Tailoor: your customers can configure and visualize them even within a real environment of their choice, bridging the boundaries between virtual and physical experience.', 'sage')}}</p>
         <x-form-cta class="mt-16"/>
       </div>
+      <div
+        class="col-span-3 text-right relative">
+        <div class="absolute top-0 left-0 w-full h-full">
+          {!! wp_get_attachment_image(1951, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-full w-auto object-contain', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
+        </div>
+        {!! wp_get_attachment_image(1949, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative tailoor__touch']) !!}
+      </div>
     </div>
   </section>
-  <section id="twins" class="min-h-screen py-32 flex items-center">
-    <div class="container grid grid-cols-2">
-      <div class="border-2 border-white p-6 rounded-2xl grid grid-cols-2">
+  <section id="twins" class="min-h-screen py-32 flex items-center bg-mirage">
+    <div class="container relative grid grid-cols-2">
+      <div
+        class="absolute bottom-3/4 left-1/2 ">
+        {!! wp_get_attachment_image(1959, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
+      </div>
+
+      <div class="border-2 border-white p-6 rounded-2xl grid grid-cols-2 ">
         <div>
           <h2 class="uppercase text-4xl">{{__('Unique products through digital twins', 'sage')}}<span
               class="text-pink text-2x">.</span></h2>
@@ -89,36 +102,47 @@
             class="text-xl mt-8">{{__('A digital twin can be integrated into your products. You can instruct it with any information, for example telling your product & brand, so that your customers can interact with it.', 'sage')}}</p>
           <x-form-cta class="mt-16"/>
         </div>
+        <div>
+          {!! wp_get_attachment_image(1955, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative scale-125 translate-x-1/4']) !!}
+        </div>
+      </div>
+      <div>
+        {!! wp_get_attachment_image(1957, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative']) !!}
       </div>
     </div>
   </section>
-  <section id="virtual" class="min-h-screen py-32 flex items-center">
-    <div class="container grid grid-cols-2 gap-32">
-      <div class="col-span-2 text-center">
-        <h2 class="uppercase text-5xl">{{__('Unique products through digital twins', 'sage')}}<span
+  <section id="virtual" class="min-h-screen py-32 flex items-center bg-gradient-to-b from-transparent to-mirage-900">
+    <div class="container relative grid grid-cols-2 gap-32">
+      <div class="absolute top-0 left-0 w-full h-full ">
+        {!! wp_get_attachment_image(1961, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-full w-auto object-contains mx-auto', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
+      </div>
+      <div class="col-span-2 text-center relative z-10">
+        <h2
+          class="uppercase text-5xl">{{__('Enhance your customers\' experience with the advice of he virtual tailor', 'sage')}}
+          <span
             class="text-pink text-2x">.</span></h2>
         <p
           class="text-xl mt-4">{{__('Your customers can chat with a virtual tailor, ready to answer any style or pairing doubts they may have, supporting them in the product configuration.', 'sage')}}</p>
       </div>
-      <div>
+      <div class="relative z-10">
         <h2 class="uppercase text-3xl">{!! __('Easily manage<br>your appointments', 'sage') !!}<span
             class="text-pink text-2x">.</span></h2>
         <p
           class="text-lg mt-4">{{__('Your customers can chat with a virtual tailor, ready to answer any style or pairing doubts they may have, supporting them in the product configuration.', 'sage')}}</p>
       </div>
-      <div class="text-right">
+      <div class="text-right relative">
         <h2 class="uppercase text-3xl">{!! __('Taking measurements...<br>in a few clicks', 'sage') !!}<span
             class="text-pink text-2x">.</span></h2>
         <p
           class="text-lg mt-4">{{__('Your customers can chat with a virtual tailor, ready to answer any style or pairing doubts they may have, supporting them in the product configuration.', 'sage')}}</p>
       </div>
-      <div class="col-span-2 text-center">
-        {!! wp_get_attachment_image(1929, 'full', false, ['alt' => 'Tailoor benefits', 'class' => 'mx-auto']) !!}
-        <x-form-cta class="mt-32"/>
+      <div class="col-span-2 text-center relative">
+        {!! wp_get_attachment_image(1953, 'full', false, ['alt' => 'Tailoor benefits', 'class' => 'mx-auto shadow-2xl']) !!}
+        <x-form-cta class="mt-32 relative"/>
       </div>
     </div>
   </section>
-  <section id="window" class="min-h-screen py-32 flex items-center flex-col">
+  <section id="window" class="min-h-screen py-32 flex items-center flex-col bg-gradient-to-b from-mirage-900 to-mirage">
     <div class="container">
       <div
         class="grid z-10 grid-cols-3 gap-16 bg-rose-100 px-8 pt-16 rounded-t-[4rem] border-rose-200 border-x-[1.5rem] border-t-[1.5rem] text-mirage">
@@ -144,6 +168,23 @@
       </div>
     </div>
   </section>
+  <section class="container min-h-screen overflow-hidden text-white gap-8 py-32">
+    <div class=" max-h-screen overflow-hidden relative">
+      <div class="absolute top-0 left-0 w-full h-auto aspect-video mix-blend-lighten">
+        {!! wp_get_attachment_image(1965, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'h-auto w-full object-contains']) !!}
+      </div>
+      {!! wp_get_attachment_image(1963, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'relative h-full w-auto object-contains']) !!}
+      <div class="absolute bottom-0 left-0 h-1/3 w-full bg-gradient-to-b from-transparent to-mirage"></div>
+    </div>
+    <h2
+      class="uppercase text-5xl text-center">
+      {{__('Simple & Fast integration', 'sage')}}<span
+        class="text-pink text-2x">.</span></h2>
+    <p
+      class="text-xl mt-4 text-center">{{__('Tailoor is an open API platform and is easily integrable with any e-commerce platform.', 'sage')}}</p>
+    {!! wp_get_attachment_image(1967, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'relative h-full w-auto object-contains mx-auto invert mix-blend-screen']) !!}
+
+  </section>
   <section class="container grid xl:grid-cols-3 text-white gap-8 py-32">
     <div class="py-12 relative">
       <h2 class="text-4xl font-header mb-4">{{ __('Frequently Asked Questions', 'sage') }}</h2>
@@ -158,5 +199,23 @@
       </div>
     </div>
   </section>
-
+  <x-modal :visible="false" :name="'watch__video'" :title="__('Discover Tailoor', 'sage')">
+    @if(GDPR()->marketing())
+      <iframe title="vimeo-player" src="https://player.vimeo.com/video/862001692?h=23b06a6727" width="640" height="360"
+              frameborder="0" allowfullscreen class="w-full h-auto aspect-video"></iframe>
+    @else
+      <div class="aspect-video w-full h-auto bg-mirage p-6 text-white flex justify-center items-center">
+        <div>
+          <p>{{__('The video embed has been removed to honor your cookie settings.', 'sage')}}</p>
+          <div class="mt-12 flex gap-4 items-center">
+            <a href="#"
+               class="py-2 px-4 bg-rose-100 text-mirage uppercase inline-block text-sm iubenda-cs-preferences-link"
+               title="Privacy Policy ">{{__('Update GDPR Settings', 'sage')}}</a>
+            {{__('or', 'sage')}} <a href="#" x-on:click.prevent="visible = false"
+                                    class="underline">{{__('close', 'sage')}}</a>
+          </div>
+        </div>
+      </div>
+    @endif
+  </x-modal>
 @endsection

@@ -19,7 +19,7 @@
       <li
         x-on:click="visible = <?= $index ?>"
         class="mb-0 rounded-r-2xl p-6 border-2 duration-300 select-none"
-        :class="{'border-white/20 rounded-l-2xl -translate-x-0 hover:-translate-x-2 hover:border-white bg-transparent hover:bg-white/5 cursor-pointer before__border__label text-white/60 hover:text-white': visible !== <?= $index ?>, 'border-rose-200 relative cursor-default -translate-x-6 bg-mirage before__border__label active': visible === <?= $index ?>}"
+        :class="{'border-white/20 rounded-l-2xl -translate-x-0 hover:-translate-x-2 hover:border-white bg-transparent hover:bg-white/5 cursor-pointer before__border__label text-white/60 hover:text-white': visible !== <?= $index ?>, 'border-rose-200 relative cursor-default -translate-x-6 before__border__label active': visible === <?= $index ?>}"
       >{{ $label }}</li>
     @endforeach
   </ul>
