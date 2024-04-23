@@ -47,6 +47,7 @@ class HubSpotClient
         'domain',
         'e_commerce_platform',
         'business_type',
+        'country',
         'city',
         'name',
         'lifecyclestage',
