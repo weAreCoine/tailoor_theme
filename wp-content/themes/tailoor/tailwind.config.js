@@ -3,6 +3,20 @@ const config = {
   content: ['./app/**/*.php', './resources/**/*.{php,vue,js}'],
   theme: {
     extend: {
+      screens: {
+        tallest: {
+          raw: '(min-height: 1200px)'
+        },
+        tall: {
+          raw: '(min-height: 1024px)'
+        },
+        'tall-md': {
+          raw: '(min-height: 768px)'
+        },
+        'tall-sm': {
+          raw: '(min-height: 650px)'
+        }
+      },
       fontSize: {
         '2xs': ['.65rem', '.85rem']
       },

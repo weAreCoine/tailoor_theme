@@ -16,11 +16,11 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue()->localize('tailoor', [
-        'isFrontPage' => is_front_page(),
+        'needAnimations' => is_front_page() || WP_DEBUG,
     ]);
-//    if (is_front_page()) {
-//        bundle('home')->enqueue();
-//    }
+    if (is_front_page()) {
+        bundle('home')->enqueue();
+    }
     bundle('fontawesome')->enqueue();
 }, 100);
 
