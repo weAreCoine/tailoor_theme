@@ -8,7 +8,7 @@ use App\Traits\Singleton;
 class GDPR
 {
     use Singleton;
-    
+
     protected array $purposes;
 
     public function __construct()
@@ -17,7 +17,7 @@ class GDPR
             foreach ($_COOKIE as $name => $value) {
                 $cookie = str_starts_with($name, '_iub_cs-');
                 if ($cookie) {
-                    $value = json_decode($value, true);
+                    $value = json_decode(stripslashes($value), true);
                     if (isset($value['purposes'])) {
                         $this->purposes = $value['purposes'];
                         break;

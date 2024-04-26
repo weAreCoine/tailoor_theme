@@ -5,17 +5,17 @@
     <span
       class="text-pink">?</span></p>
   <div
-    class="md:col-span-2 h-full relative rounded-l-2xl rounded-r-2xl md:rounded-r-none p-6 border-2 border-rose-200 duration-300"
+    class="md:col-span-2 h-full relative rounded-l-2xl rounded-r-2xl md:rounded-r-none p-6 border-2 border-rose-200 duration-300 !box-border"
     :class="{'md:rounded-tr-2xl': visible !== 0, 'md:rounded-br-2xl': visible !== 3}">
     @foreach($tabsContent as $index => $tabContent)
       <div x-show="visible === <?= $index ?>"
-           class="md:absolute top-6 left-6 right-12 bottom-6 grid grid-cols-1 gap-y-8 lg:grid-cols-2 gap-8 items-center">
+           class=" grid grid-cols-1 gap-y-8 lg:grid-cols-2 gap-8 items-center">
         {!! $tabContent !!}
       </div>
     @endforeach
 
   </div>
-  <ul class="flex flex-col justify-between text-lg gap-y-6 mt-0">
+  <ul class="flex flex-col h-full justify-between text-lg gap-y-6 mt-0">
     @foreach($labels as $index => $label)
       <li
         x-on:click="visible = <?= $index ?>"
@@ -25,4 +25,3 @@
     @endforeach
   </ul>
 </div>
-F

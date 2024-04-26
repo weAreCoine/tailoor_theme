@@ -6,7 +6,7 @@
   <section id="tailoor" aria-labelledby="pageTitle"
            class="min-h-screen py-32 flex items-center relative overflow-hidden">
     <video autoplay muted loop class="absolute min-h-full min-w-full top-0 left-0 max-w-none opacity-20">
-      <source src="https://dev.tailoor.com/wp-content/uploads/2024/04/test_scarpe.mp4"
+      <source src="{{ wp_get_attachment_url(2019) }}"
               type="video/mp4">
     </video>
     <div class="absolute top-0 left-0 min-h-full min-w-full bg-gradient-to-b from-transparent to-mirage"></div>
@@ -45,9 +45,9 @@
         <x-form-cta class="mt-12"/>
       </div>
       <div id="benefits__img"
-           class="order-1 md:order-2"> {!! wp_get_attachment_image(1929, 'full', false, ['alt' => 'Tailoor benefits']) !!}</div>
+           class="order-1 md:order-2"> {!! wp_get_attachment_image(1997, 'full', false, ['alt' => 'Tailoor benefits']) !!}</div>
       <div id="reports__img"
-           class="order-3">{!! wp_get_attachment_image(1931, 'full', false, ['alt' => 'Tailoor reports']) !!}</div>
+           class="order-3">{!! wp_get_attachment_image(1987, 'full', false, ['alt' => 'Tailoor reports']) !!}</div>
       <div class="text-right order-4">
         <h2 class="uppercase text-4xl">{{__('Monitor your performance in real time', 'sage')}}<span
             class="text-pink text-2x">.</span></h2>
@@ -83,9 +83,9 @@
       <div
         class="lg:col-span-3 text-right relative">
         <div class="absolute top-0 left-0 w-full h-full">
-          {!! wp_get_attachment_image(1951, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-full w-auto object-contain', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
+          {!! wp_get_attachment_image(1995, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-full w-auto object-contain', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
         </div>
-        {!! wp_get_attachment_image(1949, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative tailoor__touch']) !!}
+        {!! wp_get_attachment_image(2003, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative tailoor__touch']) !!}
       </div>
     </div>
   </section>
@@ -93,7 +93,7 @@
     <div class="container relative grid grid-cols-1 lg:grid-cols-2">
       <div
         class="absolute bottom-3/4 left-1/2 ">
-        {!! wp_get_attachment_image(1959, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative hidden tallest:block', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
+        {!! wp_get_attachment_image(1989, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative hidden tallest:block', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
       </div>
 
       <div class="border-2 border-white p-6 rounded-2xl grid grid-cols-1 gap-y-8 lg:gap-y-0 lg:grid-cols-2 ">
@@ -105,18 +105,18 @@
           <x-form-cta class="mt-16 "/>
         </div>
         <div class="order-1 lg:order-2">
-          {!! wp_get_attachment_image(1955, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative scale-75 lg:scale-125 lg:translate-x-1/4']) !!}
+          {!! wp_get_attachment_image(2005, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative scale-75 lg:scale-125 lg:translate-x-1/4']) !!}
         </div>
       </div>
       <div class="hidden lg:block">
-        {!! wp_get_attachment_image(1957, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative']) !!}
+        {!! wp_get_attachment_image(1999, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative']) !!}
       </div>
     </div>
   </section>
   <section id="virtual" class="min-h-screen py-32 flex items-center bg-gradient-to-b from-transparent to-mirage-900">
     <div class="container relative grid grid-cols-2 gap-32">
       <div class="absolute top-0 left-0 w-full h-full ">
-        {!! wp_get_attachment_image(1961, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-full max-h-screen w-auto object-contains mx-auto', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
+        {!! wp_get_attachment_image(1991, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-full max-h-screen w-auto object-contains mx-auto', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
       </div>
       <div class="col-span-2 text-center relative z-10">
         <h2
@@ -139,7 +139,7 @@
           class="text-lg mt-4">{{__('Your customers can chat with a virtual tailor, ready to answer any style or pairing doubts they may have, supporting them in the product configuration.', 'sage')}}</p>
       </div>
       <div class="col-span-2 text-center relative">
-        {!! wp_get_attachment_image(1953, 'full', false, ['alt' => 'Tailoor benefits', 'class' => 'mx-auto shadow-2xl']) !!}
+        {!! wp_get_attachment_image(1983, 'full', false, ['alt' => 'Tailoor benefits', 'class' => 'mx-auto shadow-2xl']) !!}
         <x-form-cta class="mt-32 relative"/>
       </div>
     </div>
@@ -156,7 +156,7 @@
             class="text-lg mt-4 relative z-10">{{__('Thanks to the digitization of all your products, models, and materials, it will be much easier for your customers to access your entire catalog. Simplify their evaluation and selection process, encouraging the creation of thousands of different configurations.', 'sage')}}</p>
         </div>
         <div class="lg:col-span-2 overflow-hidden shadow-solid mb-[1.5rem] ">
-          {!! wp_get_attachment_image(1939, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'w-full h-auto lg:w-auto lg:h-full object-cover']) !!}
+          {!! wp_get_attachment_image(2013, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'w-full h-auto lg:w-auto lg:h-full object-cover']) !!}
         </div>
       </div>
     </div>
@@ -173,9 +173,9 @@
   <section class="container min-h-screen overflow-hidden text-white gap-8 py-32">
     <div class=" max-h-screen overflow-hidden relative">
       <div class="absolute top-0 left-0 w-full h-auto aspect-video mix-blend-lighten">
-        {!! wp_get_attachment_image(1965, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'h-auto w-full object-contains']) !!}
+        {!! wp_get_attachment_image(2023, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'h-auto w-full object-contains']) !!}
       </div>
-      {!! wp_get_attachment_image(1963, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'relative h-full w-auto object-contains max-w-max max-h-[1280px]']) !!}
+      {!! wp_get_attachment_image(2001, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'relative h-full w-auto object-contains max-w-max max-h-[1280px]']) !!}
       <div class="absolute bottom-0 left-0 h-1/3 w-full bg-gradient-to-b from-transparent to-mirage"></div>
     </div>
     <h2
@@ -184,14 +184,14 @@
         class="text-pink text-2x">.</span></h2>
     <p
       class="text-xl mt-4 text-center">{{__('Tailoor is an open API platform and is easily integrable with any e-commerce platform.', 'sage')}}</p>
-    {!! wp_get_attachment_image(1967, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'relative h-full w-auto object-contains mx-auto invert mix-blend-screen']) !!}
+    {!! wp_get_attachment_image(1993, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'relative h-full w-auto object-contains mx-auto invert mix-blend-screen']) !!}
 
   </section>
   <section class="container grid xl:grid-cols-3 text-white gap-8 py-32">
     <div class="py-12 relative">
       <h2 class="text-4xl font-header mb-4">{{ __('Frequently Asked Questions', 'sage') }}</h2>
       <p class="text-lg font-header mb-16">{{ __('Haven\'t found what you were looking for?', 'sage') }}</p>
-      {!! wp_get_attachment_image(1941, 'full', false, ['alt' => 'Tailoor decoration', 'class' => 'absolute top-0 translate-y-full']) !!}
+      {!! wp_get_attachment_image(2021, 'full', false, ['alt' => 'Tailoor decoration', 'class' => 'absolute top-0 translate-y-full']) !!}
     </div>
     <div class="xl:col-span-2">
       <div>

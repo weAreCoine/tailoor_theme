@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="df5d1299-bee3-4c45-8fa2-7856677db570" name="tailoor.com" url="https://tailoor.com">
+        <fileTransfer rootFolder="/var/www/vhosts/tailoor.com/httpdocs" accessType="SFTP" host="78.46.164.192" port="22" sshConfigId="05f9c7bd-e584-4f87-b597-cfde7530e0be" sshConfig="tail_com@78.46.164.192:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
