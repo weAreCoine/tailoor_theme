@@ -11,7 +11,6 @@ export const TailoorAnimations = {
   },
   home() {
     gsap.matchMedia().add(`(min-height: 800px)`, () => {
-
       gsap.timeline({
         scrollTrigger: {
           trigger: document.querySelector('#products__carousel__container')?.closest('section'),
@@ -23,17 +22,21 @@ export const TailoorAnimations = {
           snap: {
             snapTo: [0, .25, .5, .75, 1],
             duration: {min: .1, max: .4},
-            directional: false,
+            directional: true,
           },
           invalidateOnRefresh: true,
           anticipatePin: true,
           pinSpacing: true,
-        }
-      }).fromTo(
-        '#products__carousel__container #screen__carousel img',
-        {x: '-40%', ease: "none"},
-        {x: '40%', ease: "none"}
-      );
+          onUpdate({progress}) {
+            let currentTab = Math.floor(progress / .25);
+            let changeTabEvent = new CustomEvent('home-product-new-tab', {
+              detail: {currentTab: currentTab},
+              bubbles: true,
+            });
+            window.dispatchEvent(changeTabEvent);
+          },
+        },
+      });
     });
     gsap.from('#benefits__img', {
       opacity: 0,
@@ -86,7 +89,7 @@ export const TailoorAnimations = {
           pin: document.querySelector('#phygital > .container'),
           snap: {
             snapTo: [0, .3333, .6666, 1],
-            duration: {min: .1, max: .4},
+            duration: 0,
             directional: true,
           },
           onUpdate({progress}) {

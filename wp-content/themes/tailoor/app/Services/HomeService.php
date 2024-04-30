@@ -17,10 +17,10 @@ class HomeService
     static public function homeTabsContent(): array
     {
         return array_map(function (array $content) {
-            $image = wp_get_attachment_image($content['imageID'], 'full', false, ['alt' => 'Tailoor tab image content', 'class' => 'h-full w-auto']);
+            $image = wp_get_attachment_image($content['imageID'], 'full', false, ['alt' => 'Tailoor tab image content', 'class' => 'h-full w-auto md:h-auto md:w-full mx-auto']);
             return <<<HTML
             <p>{$content['p']}</p>
-            <div>$image</div>
+            <div class="mt-6 md:mt-0 aspect-[76/100]">$image</div>
             HTML;
         }, [
             [

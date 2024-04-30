@@ -4,7 +4,8 @@
 @extends('layouts.home')
 @section('content')
   <section id="tailoor" aria-labelledby="pageTitle"
-           class="min-h-screen py-32 flex items-center relative overflow-hidden">
+           class="min-h-screen
+             py-32 flex items-center relative overflow-hidden">
     <video autoplay muted loop class="absolute min-h-full min-w-full top-0 left-0 max-w-none opacity-20">
       <source src="{{ wp_get_attachment_url(2019) }}"
               type="video/mp4">
@@ -25,9 +26,10 @@
       </div>
     </div>
   </section>
-  <section id="carousel" class="min-h-screen py-32 flex items-center">
+  <section id="carousel" class="py-32 flex items-center">
     <div class="container text-center">
-      <h2 class="uppercase text-3xl sm:text-4xl">{{__('The perfect solution for every product category', 'sage')}}<span
+      <h2 class="uppercase text-3xl sm:text-4xl">{{__('The perfect solution for every product category', 'sage')}}
+        <span
           class="text-pink text-2x">.</span></h2>
       <x-products-carousel/>
       <p
@@ -35,7 +37,7 @@
       <x-form-cta class="mt-12"/>
     </div>
   </section>
-  <section id="features" class="min-h-screen py-32 flex items-center">
+  <section id="features" class="py-32 flex items-center">
     <div class="container grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-16 sm:gap-y-48 items-center">
       <div class="order-2 md:order-1">
         <h2 class="uppercase text-4xl">{{__('Manage your store whenever and however you want', 'sage')}}<span
@@ -57,7 +59,7 @@
       </div>
     </div>
   </section>
-  <section id="phygital" class="min-h-screen py-32 flex items-center">
+  <section id="phygital" class="py-32 flex items-center">
     <div class="container text-center">
       <p class="uppercase text-xl">{{ __('Tailor made solutions for your business', 'sage') }}</p>
       <h2 class="uppercase text-6xl">{{__('Make it phygital', 'sage')}}<span
@@ -71,7 +73,7 @@
       <x-form-cta class="mt-16"/>
     </div>
   </section>
-  <section id="experience" class="min-h-screen py-32 flex items-center bg-mirage">
+  <section id="experience" class="py-32 mb-40 flex items-center bg-mirage">
     <div class="container grid lg:grid-cols-4 lg:gap-x-8 items-center">
       <div>
         <h2 class="uppercase text-4xl">{{__('Make the experience even more real', 'sage')}}<span
@@ -85,16 +87,16 @@
         <div class="absolute top-0 left-0 w-full h-full">
           {!! wp_get_attachment_image(1995, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-full w-auto object-contain', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
         </div>
-        {!! wp_get_attachment_image(2003, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative tailoor__touch']) !!}
+        {!! wp_get_attachment_image(2003, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative z-10 tailoor__touch']) !!}
       </div>
     </div>
   </section>
-  <section id="twins" class="min-h-screen py-32 flex items-center bg-mirage">
+  <section id="twins" class="py-32 flex items-center bg-mirage">
     <div class="container relative grid grid-cols-1 lg:grid-cols-2">
-      <div
-        class="absolute bottom-3/4 left-1/2 ">
-        {!! wp_get_attachment_image(1989, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative hidden tallest:block', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
-      </div>
+      {{--      <div--}}
+      {{--        class="absolute bottom-3/4 left-1/2 ">--}}
+      {{--        {!! wp_get_attachment_image(1989, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'ml-auto relative hidden tallest:block', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}--}}
+      {{--      </div>--}}
 
       <div class="border-2 border-white p-6 rounded-2xl grid grid-cols-1 gap-y-8 lg:gap-y-0 lg:grid-cols-2 ">
         <div class="order-2 lg:order-1">
@@ -113,13 +115,13 @@
       </div>
     </div>
   </section>
-  <section id="virtual" class="min-h-screen py-32 flex items-center bg-gradient-to-b from-transparent to-mirage-900">
+  <section id="virtual" class="py-32 flex items-center bg-gradient-to-b from-transparent to-mirage-900">
     <div class="container relative grid grid-cols-2 gap-32">
       <div class="absolute top-0 left-0 w-full h-full ">
         {!! wp_get_attachment_image(1991, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-full max-h-screen w-auto object-contains mx-auto', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
       </div>
       <div class="col-span-2 text-center relative z-10">
-        <h2
+        <h2=
           class="uppercase text-4xl sm:text-5xl">{{__('Enhance your customers\' experience with the advice of he virtual tailor', 'sage')}}
           <span
             class="text-pink text-2x">.</span></h2>
@@ -144,7 +146,8 @@
       </div>
     </div>
   </section>
-  <section id="window" class="min-h-screen py-32 flex items-center flex-col bg-gradient-to-b from-mirage-900 to-mirage">
+  <section id="window"
+           class="py-32 flex items-center flex-col bg-gradient-to-b from-mirage-900 to-mirage">
     <div class="container">
       <div
         class="grid z-10 grid-cols-1 lg:grid-cols-3 gap-16 bg-rose-100 px-8 pt-16 rounded-t-[4rem] border-rose-200 border-x-[1.5rem] border-t-[1.5rem] text-mirage">
@@ -170,7 +173,7 @@
       </div>
     </div>
   </section>
-  <section class="container min-h-screen overflow-hidden text-white gap-8 py-32">
+  <section class="container overflow-hidden text-white gap-8 py-32">
     <div class=" max-h-screen overflow-hidden relative">
       <div class="absolute top-0 left-0 w-full h-auto aspect-video mix-blend-lighten">
         {!! wp_get_attachment_image(2023, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'h-auto w-full object-contains']) !!}
@@ -203,7 +206,8 @@
   </section>
   <x-modal :visible="false" :name="'watch__video'" :title="__('Discover Tailoor', 'sage')">
     @if(GDPR()->marketing())
-      <iframe title="vimeo-player" src="https://player.vimeo.com/video/862001692?h=23b06a6727" width="640" height="360"
+      <iframe title="vimeo-player" src="https://player.vimeo.com/video/862001692?h=23b06a6727" width="640"
+              height="360"
               frameborder="0" allowfullscreen class="w-full h-auto aspect-video"></iframe>
     @else
       <div class="aspect-video w-full h-auto bg-mirage p-6 text-white flex justify-center items-center">

@@ -31,7 +31,7 @@
       <p class="text-xs mt-2">Reda Industries Srl, 25 Robiolio Street 13835 Valdilana ITALY | VAT IT01686900026 |
         SDI:
         A4707H7</p>
-      <ul class="flex items-center justify-center gap-6 mt-8">
+      <ul class="grid grid-cols-2 sm:flex items-center justify-center gap-2 sm:gap-6 mt-8">
         <li class="m-0">
           <a href="#"
              class="iubenda__button iubenda-cs-preferences-link "
