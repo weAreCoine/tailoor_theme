@@ -172,3 +172,20 @@ add_action('pre_http_request', function ($preempt, $args, $url) {
     }
     return $preempt; // Non alterare la risposta predefinita
 }, 10, 3);
+
+/**
+ * Hooks to handle session management
+ */
+add_action('init', function () {
+    if (!session_id()) {
+        session_start();
+    }
+});
+
+function endSession(): void
+{
+    session_destroy();
+}
+
+add_action('wp_logout', 'endSession');
+add_action('wp_login', 'endSession');

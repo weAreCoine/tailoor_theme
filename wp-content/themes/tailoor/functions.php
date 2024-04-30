@@ -13,11 +13,6 @@
 
 use App\Policies\GDPR;
 
-add_action('init', function () {
-    if (!session_id()) {
-        session_start();
-    }
-});
 if (!file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
     wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
