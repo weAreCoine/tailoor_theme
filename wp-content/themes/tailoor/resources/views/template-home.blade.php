@@ -2,11 +2,13 @@
   Template Name: Home page
 --}}
 @extends('layouts.home')
+@section('footerWrapper.class', 'gradient')
 @section('content')
   <section id="tailoor" aria-labelledby="pageTitle"
            class="min-h-screen
              py-32 flex items-center relative overflow-hidden">
-    <video autoplay muted loop class="absolute min-h-full min-w-full top-0 left-0 max-w-none opacity-20">
+    <video autoplay muted loop
+           class="hidden md:block absolute min-h-full min-w-full top-0 left-0 max-w-none opacity-20">
       <source src="{{ wp_get_attachment_url(2019) }}"
               type="video/mp4">
     </video>
@@ -118,13 +120,14 @@
   <section id="virtual" class="py-32 flex items-center bg-gradient-to-b from-transparent to-mirage-900">
     <div class="container relative grid grid-cols-2 gap-32">
       <div class="absolute top-0 left-0 w-full h-full ">
-        {!! wp_get_attachment_image(1991, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-full max-h-screen w-auto object-contains mx-auto', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
+        {!! wp_get_attachment_image(1991, 'full', false, ['alt' => 'Tailoor Touch', 'class'=> 'h-auto  w-full object-contains mx-auto', 'x-data'=> sprintf('animateOnMouseMove($el, %s, %s)', json_encode(fake()->boolean()),json_encode(fake()->boolean()))]) !!}
       </div>
       <div class="col-span-2 text-center relative z-10">
         <h2=
-          class="uppercase text-4xl sm:text-5xl">{{__('Enhance your customers\' experience with the advice of he virtual tailor', 'sage')}}
-          <span
-            class="text-pink text-2x">.</span></h2>
+        class="uppercase text-4xl
+        sm:text-5xl">{{__('Enhance your customers\' experience with the advice of he virtual tailor', 'sage')}}
+        <span
+          class="text-pink text-2x">.</span></h2>
         <p
           class="text-xl mt-4">{{__('Your customers can chat with a virtual tailor, ready to answer any style or pairing doubts they may have, supporting them in the product configuration.', 'sage')}}</p>
       </div>
@@ -190,20 +193,24 @@
     {!! wp_get_attachment_image(1993, 'full', false, ['alt' => 'Tailoor showcase', 'class' => 'relative h-full w-auto object-contains mx-auto invert mix-blend-screen']) !!}
 
   </section>
-  <section class="container grid xl:grid-cols-3 text-white gap-8 py-32">
-    <div class="py-12 relative">
-      <h2 class="text-4xl font-header mb-4">{{ __('Frequently Asked Questions', 'sage') }}</h2>
-      <p class="text-lg font-header mb-16">{{ __('Haven\'t found what you were looking for?', 'sage') }}</p>
-      {!! wp_get_attachment_image(2021, 'full', false, ['alt' => 'Tailoor decoration', 'class' => 'absolute top-0 translate-y-full']) !!}
-    </div>
-    <div class="xl:col-span-2">
-      <div>
-        <?php foreach (\App\Services\FaqService::generalFaqs() as $key => $value) : ?>
-        <x-faq :question="$value['question']" :answer="$value['answer']" :starts-open="$key === 0"/>
-        <?php endforeach; ?>
+  <section class="bg-gradient-to-b from-mirage to-mirage-900">
+    <div class="container grid xl:grid-cols-3 text-white gap-8 py-32">
+      <div class="py-12 relative">
+        <h2 class="text-4xl font-header mb-4">{{ __('Frequently Asked Questions', 'sage') }}</h2>
+        <p class="text-lg font-header mb-16">{{ __('Haven\'t found what you were looking for?', 'sage') }}</p>
+        {!! wp_get_attachment_image(2021, 'full', false, ['alt' => 'Tailoor decoration', 'class' => 'absolute top-0 translate-y-full']) !!}
+      </div>
+      <div class="xl:col-span-2">
+        <div>
+          <?php foreach (\App\Services\FaqService::generalFaqs() as $key => $value) : ?>
+          <x-faq :question="$value['question']" :answer="$value['answer']" :starts-open="$key === 0"/>
+          <?php endforeach; ?>
+        </div>
       </div>
     </div>
   </section>
+  <x-clients-carousel class="bg-mirage-900"/>
+
   <x-modal :visible="false" :name="'watch__video'" :title="__('Discover Tailoor', 'sage')">
     @if(GDPR()->marketing())
       <iframe title="vimeo-player" src="https://player.vimeo.com/video/862001692?h=23b06a6727" width="640"
@@ -214,9 +221,9 @@
         <div>
           <p>{{__('The video embed has been removed to honor your cookie settings.', 'sage')}}</p>
           <div class="mt-12 flex gap-4 items-center">
-            <a href="#"
-               class="py-2 px-4 bg-rose-200 text-mirage uppercase inline-block text-sm iubenda-cs-preferences-link"
-               title="Privacy Policy ">{{__('Update GDPR Settings', 'sage')}}</a>
+            r<a href="#"
+                class="py-2 px-4 bg-rose-200 text-mirage uppercase inline-block text-sm iubenda-cs-preferences-link"
+                title="Privacy Policy ">{{__('Update GDPR Settings', 'sage')}}</a>
             {{__('or', 'sage')}} <a href="#" x-on:click.prevent="visible = false"
                                     class="underline">{{__('close', 'sage')}}</a>
           </div>

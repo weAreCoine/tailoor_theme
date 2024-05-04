@@ -4819,7 +4819,9 @@ class RequestFormPolicy extends AbstractPolicy
                 case 'company':
                     $value = sanitize_text_field($value);
                     if (empty($value)) {
-                        $errors[] = sprintf(__('The %s field is mandatory, please fill it in.', 'sage'), match ($key) {
+                        $errors[] = sprintf(
+                        /* translators: %s: field name */
+                            __('The %s field is mandatory, please fill it in.', 'sage'), match ($key) {
                             'first_name' => __('first name', 'sage'),
                             'last_name' => __('last name', 'sage'),
                             'company' => __('company', 'sage'),

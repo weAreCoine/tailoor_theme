@@ -163,7 +163,7 @@
               class="text-center">{!! __('Are you in need of a customized plan? Fill out the form with your information, and our team of experts will contact you to define the best solution together with a tailored plan designed to achieve your goals.', 'sage') !!}
             </p>
           </div>
-          <div class="mt-12 text-center">
+          <div class="mt-12 text-center demo_request">
             <a href="#"
                class="inline-block py-2 px-12 bg-pink border-pink-400 hover:bg-pink-300 border duration-500 text-lg font-header uppercase rounded-lg"
             >{{__('Get started', 'sage')}}</a>

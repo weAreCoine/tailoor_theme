@@ -20,7 +20,7 @@
         x-transition.opacity.duration.500ms
         class="nav__container dark">
         <div x-on:click.stop>
-          {!! wp_nav_menu(['theme_location' => 'landing_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
+          {!! wp_nav_menu(['theme_location' => apply_filters('tailoor_navigation', 'landing_navigation', url()->current()), 'menu_class' => 'nav', 'echo' => false]) !!}
         </div>
       </div>
     </nav>

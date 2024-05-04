@@ -16,7 +16,7 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue()->localize('tailoor', [
-        'needAnimations' => is_front_page() || WP_DEBUG,
+        'needAnimations' => is_front_page(),
     ]);
 //    if (is_front_page()) {
 //        bundle('home')->enqueue();
@@ -186,7 +186,7 @@ add_action('init', function () {
  * Close session
  * @return void
  */
-function endSession(): void
+function end_session(): void
 {
 
     $params = session_get_cookie_params();
@@ -198,5 +198,18 @@ function endSession(): void
     session_destroy();
 }
 
-add_action('wp_logout', 'endSession');
-add_action('wp_login', 'endSession');
+add_action('wp_logout', 'end_session');
+
+// Per il momento utilizzo la funzione in questo modo perché altrimenti non viene riconosciuta come dichiarata.
+add_action('wp_login', function (): void {
+
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
+
+    session_destroy();
+});
+
+

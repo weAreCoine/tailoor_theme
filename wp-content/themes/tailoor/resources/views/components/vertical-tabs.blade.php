@@ -17,14 +17,15 @@
   <ul class="flex flex-col h-full justify-start text-lg gap-y-6 mt-0">
     @foreach($labels as $index => $label)
       <li
-        x-on:click="visible = <?= $index ?>"
+        x-data="{open: <?= $index?> === 0 }"
+        x-on:click="visible = <?= $index ?>; open = true;"
         class="mb-0 rounded-r-2xl p-6 border-2 duration-300 select-none"
         :class="{'border-white/20 rounded-l-2xl -translate-x-0 md:hover:-translate-x-2 md:hover:border-white bg-transparent hover:bg-white/5 cursor-pointer before__border__label text-white/60 hover:text-white': visible !== <?= $index ?>, 'border-rose-200 rounded-l-2xl md:rounded-l-none relative cursor-default md:-translate-x-6 md:before__border__label active': visible === <?= $index ?>}"
       >
         <p
           class="duration-500"
-          :class="{'uppercase text-xl md:normal-case': visible === <?= $index ?>, '': visible !== <?= $index ?>}">{{ $label }}</p>
-        <div class="mt-8 md:hidden" x-show="visible === <?= $index ?>"
+          :class="{'uppercase text-xl md:normal-case': visible === <?= $index ?> || open }">{{ $label }}</p>
+        <div class="mt-8 md:hidden" x-show="visible === <?= $index ?> || open"
              x-collapse.duration.300ms>
           {!! $tabsContent[$index] !!}
         </div>

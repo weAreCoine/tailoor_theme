@@ -27,14 +27,18 @@ class PricesService
             [
                 'monthly' => [
                     'price' => 99,
-                    'href' => 'https://onboarding-staging.tailoor.com/it/wizard/landing/base/10',
-                    'label' => __('Try for free', 'sage'),
+//                    'href' => 'https://onboarding-staging.tailoor.com/it/wizard/landing/base/10',
+//                    'label' => __('Try for free', 'sage'),
+                    'href' => '#monthly',
+                    'label' => __('Get a free demo', 'sage'),
 
                 ],
                 'annual' => [
                     'price' => 84,
-                    'href' => 'https://onboarding-staging.tailoor.com/it/wizard/landing/base/20',
-                    'label' => __('Try for free', 'sage'),
+//                    'href' => 'https://onboarding-staging.tailoor.com/it/wizard/landing/base/20',
+//                    'label' => __('Try for free', 'sage'),
+                    'href' => '#annual',
+                    'label' => __('Get a free demo', 'sage'),
                 ]
             ],
             [
@@ -67,8 +71,8 @@ class PricesService
             ],
             true, // Indica se è il piano consigliato,
             __('Starter', 'sage'),
-            true,
-            true,
+            true, // Indica se il piano è attivo
+            false, // Se vero, il piano è vendibile direttamente, se falso compare il form di contatto
         ];
     }
 
@@ -79,12 +83,15 @@ class PricesService
                 'monthly' => [
                     'price' => 329,
                     'href' => '#monthly',
-                    'label' => __('Get in touch', 'sage'),
+//                    'label' => __('Get in touch', 'sage'),
+                    'label' => __('Get a free demo', 'sage'),
                 ],
                 'annual' => [
                     'price' => 279,
                     'href' => '#annual',
-                    'label' => __('Get in touch', 'sage'),
+//                    'label' => __('Get in touch', 'sage'),
+                    'label' => __('Get a free demo', 'sage'),
+
                 ]
             ],
             [
@@ -134,12 +141,14 @@ class PricesService
                 'monthly' => [
                     'price' => 799,
                     'href' => '#monthly',
-                    'label' => __('Get in touch', 'sage'),
+//                    'label' => __('Get in touch', 'sage'),
+                    'label' => __('Get a free demo', 'sage'),
                 ],
                 'annual' => [
                     'price' => 679,
                     'href' => '#annual',
-                    'label' => __('Get in touch', 'sage'),
+//                    'label' => __('Get in touch', 'sage'),
+                    'label' => __('Get a free demo', 'sage'),
                 ]
             ],
             [

@@ -24,3 +24,9 @@ add_filter('ajax_routes', fn(array $routes) => array_merge([
 add_filter('get_home_tabs_labels', [HomeService::class, 'homeTabsLabels']);
 
 add_filter('get_home_tabs_contents', [HomeService::class, 'homeTabsContent']);
+add_filter('tailoor_navigation', function (string $defaultNavigation, string $currentUrl): string {
+    return match (true) {
+        str_contains($currentUrl, '/pricing') => 'primary_navigation',
+        default => $defaultNavigation
+    };
+}, 10, 2);

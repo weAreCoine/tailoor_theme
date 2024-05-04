@@ -141,7 +141,10 @@
         </div>
         <label for="privacy" class="cursor-pointer">
         <span
-          class="normal-case">{!! sprintf(__('I confirm that I have read and understood the %s', 'sage'), '<a class="underline" href="https://www.iubenda.com/privacy-policy/65011295/legal">Privacy Policy</a>') !!}<span
+          class="normal-case">
+          {!! sprintf(
+                    /* translators: %s: privacy policy link html */
+                __('I confirm that I have read and understood the %s', 'sage'), '<a class="underline" href="https://www.iubenda.com/privacy-policy/65011295/legal">Privacy Policy</a>') !!}<span
             class="inline-block !ml-1 text-pink-500">*</span>
         </span>
         </label>

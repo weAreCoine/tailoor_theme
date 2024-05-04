@@ -9,7 +9,7 @@
           class="text-rose-200">?</span></h1>
       <p><?= __('Tailoor is the partner that allows you to sell your customized products by integrating an innovative 3D
         configurator into your website or e-commerce platform. We help grow your business and boost sales through
-        technology support, harnessing the capabilities of= real-time 3D configuration.', 'sage') ?></p>
+        technology support, harnessing the capabilities of real-time 3D configuration.', 'sage') ?></p>
       <x-form-cta class="mt-12"/>
     </div>
   </div>
@@ -21,21 +21,21 @@
         class="text-rose-200">?</span>
     </h2>
     <div class="max-w-5xl mx-auto">
-      <p><?= __('Tailoor is a platform that leverages 3D technology and artificial intelligence to provide innovative
+      <p class="mb-2 last:mb-0"><?= __('Tailoor is a platform that leverages 3D technology and artificial intelligence to provide innovative
         solutions for customization in the retail market.', 'sage') ?></p>
-      <p><?= __('It can be easily integrated into your website or e-commerce, regardless of the platform you use. In case you
+      <p class="mb-2 last:mb-0"><?= __('It can be easily integrated into your website or e-commerce, regardless of the platform you use. In case you
         do not have an online storefront for your business yet, we will assist you in creating one.', 'sage') ?></p>
-      <p><?= __('Our goal is to help you ensure a unique and
+      <p class="mb-2 last:mb-0"><?= __('Our goal is to help you ensure a unique and
         sustainable shopping experience for your customers, allowing them
         to customize your Made to Order and Made to Measure products online.', 'sage') ?></p>
-      <p><?= __('With the 3D configurator, your customers will have access to an experience that combines physical and virtual
+      <p class="mb-2 last:mb-0"><?= __('With the 3D configurator, your customers will have access to an experience that combines physical and virtual
         elements: even if they start their configuration online, they will always have the option to visit your
         store to finalize the purchase and examine the details together.', 'sage') ?></p>
     </div>
   </div>
-  <div class="py-32 scroll-mt-48 bg-gradient-to-b from-mirage to-slate-800" id="come_funziona">
+  <div class="py-32 scroll-mt-48 bg-gradient-to-b from-mirage to-mirage-900" id="come_funziona">
     <div class="container">
-      <h2 class="uppercase text-4xl mb-12 text-center text-white"><?= __('How does it work', 'sage') ?><span
+      <h2 class="uppercase text-4xl mb-12 text-center text-white"><?= (__('How does it work', 'sage')) ?><span
           class="text-rose-200">?</span>
       </h2>
       <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -48,14 +48,14 @@
       </ul>
     </div>
   </div>
-  <div class="py-40 text-center bg-slate-800">
+  <div class="py-40 text-center bg-mirage-900">
     <div class="boxed">
       <p class="uppercase text-2xl mb-8 text-white">{!! __('Request now your <span
           class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') !!}</p>
       <x-form-cta class="mt-12"/>
     </div>
   </div>
-  <div class="py-20 relative scroll-mt-48 bg-gradient-to-b from-slate-800 to-mirage" id="integrazioni">
+  <div class="py-20 relative scroll-mt-48 bg-gradient-to-b from-mirage-900 to-mirage" id="integrazioni">
     <div
       class="hidden lg:block absolute top-0 left-0  w-1/2 h-full bg-[url('https://tailoor.com/wp-content/uploads/2024/04/tailoor_supported.png')] bg-no-repeat bg-right bg-contain"></div>
     <div class="container grid lg:grid-cols-2 gap-x-52 items-center">
@@ -71,7 +71,10 @@
       </div>
     </div>
   </div>
-  <div class="container my-32 scroll-mt-48" id="attivazione" x-data="steps('<?=$steps?>')">
+  <script>
+    const stepsData = <?= sprintf("\"%s\"", $steps) ?>;
+  </script>
+  <div class="container my-32 scroll-mt-48" id="attivazione" x-data='steps(stepsData)'>
     <p
       class="text-center text-3xl text-white uppercase mb-12"><?= __('What happens after I have filled out the form', 'sage') ?>
       <span
@@ -142,7 +145,7 @@
     </ul
 
   </div>
-  <div class=" mt-32 pb-32 scroll-mt-48 bg-gradient-to-b from-transparent to-slate-800" id="faq">
+  <div class=" mt-32 pb-32 scroll-mt-48 bg-gradient-to-b from-transparent to-mirage-900" id="faq">
     <div class="container">
       <h2 class="uppercase text-4xl mb-12 text-white text-center">Faq<span
           class="text-rose-200 text-5xl">.</span></h2>
@@ -152,7 +155,7 @@
     </div>
   </div>
 
-  <div class="py-40 text-center bg-gradient-to-b from-slate-800 to-mirage">
+  <div class="py-40 text-center bg-gradient-to-b from-mirage-900 to-mirage">
     <div class="container">
       <p class="uppercase text-2xl mb-8 text-white">{!! __('Request now your <span
           class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') !!}</p>

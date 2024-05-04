@@ -27,7 +27,6 @@ Alpine.data('modal', (visible, name) => ({
   onChangeVisibility(value) {
     if (this.body === null) {
       this.body = document.querySelector('body');
-      console.log('entrato')
     }
     if (value) {
       this.body.classList.add('not-scroll');
@@ -39,12 +38,15 @@ Alpine.data('modal', (visible, name) => ({
 
 Alpine.data('steps', (json) => ({
   contents: JSON.parse(json),
+  init() {
+    console.log(this.contents);
+  },
   selected: 0
 }));
 
 Alpine.data('bindSlider', () => ({
   init() {
-    new Splide('.splide', {
+    new Splide('#clients__carousel', {
       type: 'loop',
       drag: 'free',
       // snap: true,
@@ -78,17 +80,24 @@ Alpine.data('animateOnMouseMove', (image, positiveDirectionX, positiveDirectionY
   positiveDirectionX,
   positiveDirectionY,
   maxHeight: 0,
+  hasTouch: false,
   gap: 0,
   coordinates: {},
   init() {
-    this.maxHeight = window.innerHeight;
-    this.maxWidth = window.innerWidth;
-    this.velocityX = this.maxMovement / (window.innerWidth / 2);
-    this.velocityY = this.maxMovement / (window.innerHeight / 2);
+    if (!this.isTouchDevice()) {
+      this.maxHeight = window.innerHeight;
+      this.maxWidth = window.innerWidth;
+      this.velocityX = this.maxMovement / (window.innerWidth / 2);
+      this.velocityY = this.maxMovement / (window.innerHeight / 2);
 
-    document.addEventListener('mousemove', (e) => this.mouseMove(e));
-    window.addEventListener('resize', this.debounceOnResize(this, this.init, 500));
-
+      document.addEventListener('mousemove', (e) => this.mouseMove(e));
+      window.addEventListener('resize', this.debounceOnResize(this, this.init, 500));
+    }
+  },
+  isTouchDevice() {
+    return (('ontouchstart' in window) ||
+      (navigator.maxTouchPoints > 0) ||
+      (navigator.msMaxTouchPoints > 0));
   },
   debounceOnResize(context, func, delay) {
     let inDebounce;
@@ -99,6 +108,7 @@ Alpine.data('animateOnMouseMove', (image, positiveDirectionX, positiveDirectionY
     };
   },
   mouseMove(e) {
+
     const scrollY = window.scrollY || window.pageYOffset;
     let xOffset = Math.min(this.maxMovement, Math.max(-this.maxMovement, (e.pageX - this.maxWidth / 2) * this.velocityX)),
       yOffset = Math.min(this.maxMovement, Math.max(-this.maxMovement, (e.pageY - scrollY - window.innerHeight / 2) * this.velocityY));

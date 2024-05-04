@@ -1,0 +1,2509 @@
+# Copyright (C) 2024 Luca Barbi
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Tailoor 10.8.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/tailoor\n"
+"POT-Creation-Date: 2024-05-04T07:29:26+00:00\n"
+"PO-Revision-Date: 2024-05-04 09:52+0200\n"
+"Last-Translator: Luca Barbi <luca@coine.it>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Domain: sage\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Tailoor"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://roots.io/sage/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Template Tailoor basato su Sage."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Luca Barbi"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://roots.io/"
+msgstr ""
+
+#: app/filters.php:18
+msgid "Continued"
+msgstr ""
+
+#: app/Http/Controllers/RequestFormController.php:17
+msgid "Something goes wrong. Please, try again in a few minutes."
+msgstr ""
+
+#. translators: %s: field name
+#: app/Policies/RequestFormPolicy.php:4824
+msgid "The %s field is mandatory, please fill it in."
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4825
+msgid "first name"
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4826
+msgid "last name"
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4827
+msgid "company"
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4836
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4852
+msgid "Please enter a valid url."
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4859
+msgid "The selected country is invalid. Choose one from the list."
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4866
+msgid "The selected e-commerce platform is invalid. Choose one from the list."
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4873
+msgid "The selected business type is not valid. Choose one from the list."
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4880
+msgid "You must agree to the terms of the privacy policy to continue."
+msgstr ""
+
+#: app/Policies/RequestFormPolicy.php:4890
+msgid "Enter a valid phone number (including area code)."
+msgstr ""
+
+#: app/Services/FaqService.php:11 app/Services/FaqService.php:49
+msgid "What is Tailoor used for?"
+msgstr ""
+
+#: app/Services/FaqService.php:12 app/Services/FaqService.php:50
+msgid ""
+"Tailoor is an on-demand SaaS platform that allows you to reach a broader "
+"audience by expanding your sales channels in an omnichannel perspective. "
+"With Tailoor's innovative 3D configurator, you can sell your products online "
+"and provide an immersive experience both in-store and online. Based on your "
+"needs, we will work together to build the most suitable offer for your "
+"requirements."
+msgstr ""
+
+#: app/Services/FaqService.php:15 app/Services/FaqService.php:53
+msgid "Why should I opt for this type of service?"
+msgstr ""
+
+#: app/Services/FaqService.php:16 app/Services/FaqService.php:54
+msgid ""
+"The platform can be integrated into your website or e-commerce, offering an "
+"innovative system for personalization and customization. This enables you to "
+"scale your business and maximize sales, increasing the loyalty of existing "
+"customers and reaching new ones."
+msgstr ""
+
+#: app/Services/FaqService.php:19 app/Services/FaqService.php:57
+msgid "What is the cost of the platform?"
+msgstr ""
+
+#: app/Services/FaqService.php:20 app/Services/FaqService.php:58
+msgid ""
+"Tailoor is a modulable SaaS platform with costs based on three components: "
+"set up, monthly fee, and order fee. Contact us, and we will identify the "
+"subscription plan that best suits your needs."
+msgstr ""
+
+#: app/Services/FaqService.php:23 app/Services/FaqService.php:61
+msgid "What is the benefit of having a 3D configurator?"
+msgstr ""
+
+#: app/Services/FaqService.php:24 app/Services/FaqService.php:62
+msgid ""
+"Having a 3D configurator allows you to offer your customers a unique and "
+"immersive experience, bridging the gap between online and offline. Customers "
+"can customize products in real-time using our technology, faithfully "
+"highlighting all the strengths and details of your items. For each product "
+"category, Tailoor can drive traffic to your e-commerce and ensure an "
+"innovative experience, leading to increased orders from your customers."
+msgstr ""
+
+#: app/Services/FaqService.php:27 app/Services/FaqService.php:65
+msgid "What types of products can I customize?"
+msgstr ""
+
+#: app/Services/FaqService.php:28 app/Services/FaqService.php:66
+msgid ""
+"With the end-to-end Tailoor platform, there are no limits to the product "
+"categories you can customize for your customers. Whatever your business, we "
+"will build the most appropriate and effective solution together with you!"
+msgstr ""
+
+#: app/Services/FaqService.php:31 app/Services/FaqService.php:69
+msgid "How can I customize the platform?"
+msgstr ""
+
+#: app/Services/FaqService.php:32 app/Services/FaqService.php:70
+msgid ""
+"The platform can be personalized according to your preferences in every "
+"aspect, starting from logos, fonts, colors, fabrics, and backgrounds. You "
+"can choose the product categories to include, define customization options, "
+"along with descriptions, model details, and checkout preferences."
+msgstr ""
+
+#: app/Services/FaqService.php:35 app/Services/FaqService.php:73
+msgid "How does Tailoor help me optimize and simplify my business?"
+msgstr ""
+
+#: app/Services/FaqService.php:36 app/Services/FaqService.php:74
+msgid ""
+"Thanks to the Tailoor Dashboard, an integrated tool within the platform, you "
+"can easily monitor all orders and customer requests and schedule in-store "
+"appointments. The dashboard provides numerous benefits, allowing you to "
+"manage orders independently, send them directly to your suppliers, and "
+"oversee your stores and resources, including pricing, inventory, fabrics, "
+"and collections. With Tailoor, it is also easier to monitor customer buying "
+"behaviors through CRM and Business Intelligence."
+msgstr ""
+
+#: app/Services/FaqService.php:39 app/Services/FaqService.php:77
+msgid "How can I get more information?"
+msgstr ""
+
+#: app/Services/FaqService.php:40 app/Services/FaqService.php:78
+msgid ""
+"We look forward to connecting with you! For more information, request your "
+"free demo through the dedicated form or contact us at info@tailoor.com."
+msgstr ""
+
+#: app/Services/HomeService.php:10
+msgid "Your customers can choose a model from those available"
+msgstr ""
+
+#: app/Services/HomeService.php:11
+msgid "Select the material and all possible customizations"
+msgstr ""
+
+#: app/Services/HomeService.php:12
+msgid "Configure the product with all its details"
+msgstr ""
+
+#: app/Services/HomeService.php:13
+msgid "Finalize the order and make the purchase"
+msgstr ""
+
+#: app/Services/HomeService.php:28
+msgid ""
+"You will be able to choose which product categories you want your customers "
+"to customize by uploading your product catalog. The 3D visualization of the "
+"product will be visible in real-time."
+msgstr ""
+
+#: app/Services/HomeService.php:32
+msgid ""
+"All the materials you want to include in the configurator will be digitally "
+"rendered by us, offering your customers a wide range of options."
+msgstr ""
+
+#: app/Services/HomeService.php:36
+msgid ""
+"Every detail can be customized, offering your customers a unique result, "
+"entirely created by and for them."
+msgstr ""
+
+#: app/Services/HomeService.php:40
+msgid ""
+"Once the order is finalized, you have two options: allow your customers to "
+"receive the product at home or enable them to schedule an appointment at "
+"your store to review the final details of their purchase together."
+msgstr ""
+
+#: app/Services/PricesService.php:33 app/Services/PricesService.php:41
+#: app/Services/PricesService.php:87 app/Services/PricesService.php:93
+#: app/Services/PricesService.php:145 app/Services/PricesService.php:151
+#: resources/views/components/form-cta.blade.php:4
+msgid "Get a free demo"
+msgstr ""
+
+#: app/Services/PricesService.php:45 app/Services/PricesService.php:98
+#: app/Services/PricesService.php:155
+msgid "Platform free trial (10 days)"
+msgstr ""
+
+#: app/Services/PricesService.php:46 app/Services/PricesService.php:99
+#: app/Services/PricesService.php:156
+msgid "3D Platform"
+msgstr ""
+
+#: app/Services/PricesService.php:47 app/Services/PricesService.php:100
+msgid "Online and In-Store Configurator"
+msgstr ""
+
+#: app/Services/PricesService.php:48
+msgid "Materials Catalog (up to 10)"
+msgstr ""
+
+#: app/Services/PricesService.php:49
+msgid "Model Categories x 1"
+msgstr ""
+
+#: app/Services/PricesService.php:50 app/Services/PricesService.php:103
+#: app/Services/PricesService.php:160
+msgid "Model Option Management"
+msgstr ""
+
+#: app/Services/PricesService.php:52 app/Services/PricesService.php:105
+#: app/Services/PricesService.php:162
+msgid "E-commerce Platform"
+msgstr ""
+
+#: app/Services/PricesService.php:53 app/Services/PricesService.php:106
+#: app/Services/PricesService.php:163
+msgid "E-commerce Module"
+msgstr ""
+
+#: app/Services/PricesService.php:54 app/Services/PricesService.php:107
+#: app/Services/PricesService.php:164
+msgid "Drive to Store Module"
+msgstr ""
+
+#: app/Services/PricesService.php:55
+msgid "Order Fee 1%"
+msgstr ""
+
+#: app/Services/PricesService.php:56 app/Services/PricesService.php:109
+#: app/Services/PricesService.php:166
+msgid "Payments Fee starting from 0.2%"
+msgstr ""
+
+#: app/Services/PricesService.php:58 app/Services/PricesService.php:112
+#: app/Services/PricesService.php:169
+msgid "Platform Features"
+msgstr ""
+
+#: app/Services/PricesService.php:59
+msgid "Dashboard account x 1"
+msgstr ""
+
+#: app/Services/PricesService.php:60
+msgid "Monthly orders up to 100"
+msgstr ""
+
+#: app/Services/PricesService.php:61
+msgid "Sales Countries x 1"
+msgstr ""
+
+#: app/Services/PricesService.php:62 app/Services/PricesService.php:118
+#: app/Services/PricesService.php:175
+msgid "CRM"
+msgstr ""
+
+#: app/Services/PricesService.php:64 app/Services/PricesService.php:120
+#: app/Services/PricesService.php:177
+msgid "1 Digital Twin"
+msgstr ""
+
+#: app/Services/PricesService.php:65 app/Services/PricesService.php:121
+#: app/Services/PricesService.php:178
+msgid "Platform Analytics"
+msgstr ""
+
+#: app/Services/PricesService.php:66 app/Services/PricesService.php:122
+#: app/Services/PricesService.php:179
+msgid "Google Analytics"
+msgstr ""
+
+#: app/Services/PricesService.php:68 app/Services/PricesService.php:124
+#: app/Services/PricesService.php:182
+msgid "Platform Support"
+msgstr ""
+
+#: app/Services/PricesService.php:69 app/Services/PricesService.php:125
+#: app/Services/PricesService.php:183
+msgid "Technical support"
+msgstr ""
+
+#: app/Services/PricesService.php:73
+#: resources/views/template-prices.blade.php:60
+msgid "Starter"
+msgstr ""
+
+#: app/Services/PricesService.php:101
+msgid "Materials Catalog (up to 130)"
+msgstr ""
+
+#: app/Services/PricesService.php:102
+msgid "Model Categories x 4"
+msgstr ""
+
+#: app/Services/PricesService.php:108
+msgid "Order Fee 0.8%"
+msgstr ""
+
+#: app/Services/PricesService.php:110 app/Services/PricesService.php:167
+msgid "Shopify and Woocommerce Integration"
+msgstr ""
+
+#: app/Services/PricesService.php:113
+msgid "Dashboard account x 3"
+msgstr ""
+
+#: app/Services/PricesService.php:114
+msgid "Monthly orders up to 250"
+msgstr ""
+
+#: app/Services/PricesService.php:115
+msgid "Sales Countries x 3"
+msgstr ""
+
+#: app/Services/PricesService.php:116
+msgid "Multi Currency"
+msgstr ""
+
+#: app/Services/PricesService.php:117
+msgid "Custom Price for Each Sales Country"
+msgstr ""
+
+#: app/Services/PricesService.php:130
+#: resources/views/template-prices.blade.php:58
+msgid "Essential"
+msgstr ""
+
+#: app/Services/PricesService.php:157
+msgid "Online and In-store Configurator"
+msgstr ""
+
+#: app/Services/PricesService.php:158
+msgid "Materials Catalog (up to 250)"
+msgstr ""
+
+#: app/Services/PricesService.php:159
+msgid "Model Categories x 8"
+msgstr ""
+
+#: app/Services/PricesService.php:165
+msgid "Order Fee 0.6%"
+msgstr ""
+
+#: app/Services/PricesService.php:170
+msgid "Dashboard Account x 9"
+msgstr ""
+
+#: app/Services/PricesService.php:171
+msgid "Monthly Orders up to 750"
+msgstr ""
+
+#: app/Services/PricesService.php:172
+msgid "Unlimited Sales Countries"
+msgstr ""
+
+#: app/Services/PricesService.php:173
+msgid "Multi-currency"
+msgstr ""
+
+#: app/Services/PricesService.php:174
+msgid "Custom Pricing for Each Sales Country"
+msgstr ""
+
+#: app/Services/PricesService.php:180
+msgid "Tailoor BI DASHBOARD"
+msgstr ""
+
+#: app/Services/PricesService.php:184
+msgid "Customer Care Module"
+msgstr ""
+
+#: app/Services/PricesService.php:188
+#: resources/views/template-prices.blade.php:62
+msgid "Professional"
+msgstr ""
+
+#: app/setup.php:55
+msgid "Primary Navigation"
+msgstr ""
+
+#: app/setup.php:56
+msgid "Home Navigation"
+msgstr ""
+
+#: app/setup.php:57
+msgid "Landings Navigation"
+msgstr ""
+
+#: app/setup.php:138
+msgid "Primary"
+msgstr ""
+
+#: app/setup.php:143
+msgid "Footer"
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:20
+msgid ""
+"You will have the freedom to choose which product categories you want to "
+"make customizable for your customers. You can decide which elements will be "
+"customizable, from materials to designs, even down to the smallest details "
+"that make your products unique."
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:21
+msgid ""
+"We will take care of digitizing your products, materials, and details in 3D. "
+"It will be much easier for your customers to access your entire catalog. "
+"Simplify their evaluation and selection process, encouraging the creation of "
+"thousands of different configurations."
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:22
+msgid ""
+"With the support of the Dashboard, you can keep track of all orders placed, "
+"both online and in-store. Customer data is an incredible asset for your "
+"business. You can analyze it to create targeted offers and business "
+"strategies, reduce waste through more effective raw material sourcing, and "
+"identify sales trends."
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:23
+msgid ""
+"The benefits you will gain are numerous: from significant time savings to "
+"the ability to optimize your sales strategies. You can increase your profits "
+"by offering your customers a unique shopping experience, thanks to the "
+"complete digitization of your business."
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:46
+msgid "Call"
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:47
+msgid "Introductory video call"
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:48
+msgid ""
+"After you have filled out the form and requested your free demo, you will "
+"receive an email inviting you to choose a suitable day and time for our "
+"initial video call. Our goal is to understand your needs and the specifics "
+"of your business, so that we can tailor our offer perfectly to your "
+"requirements. We will provide you with a detailed overview of the platform's "
+"functionality and the various subscription plans."
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:54
+#: app/View/Components/BusinessLandingPage.php:55
+msgid "Analysis"
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:56
+msgid ""
+"Following the initial call, we will continue to study your business, "
+"creating the perfect solution for you. Together, we will analyze the "
+"requirements and steps necessary for integration, guiding you through the "
+"world of Tailoor and the benefits it offers."
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:62
+msgid "Support"
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:63
+msgid "Active Support"
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:64
+msgid ""
+"If you decide to choose Tailoor as a partner to boost your sales and provide "
+"your customers with a unique, customized service, you will have our full and "
+"ongoing support in platform integration. In the meantime, we will work on "
+"rendering your products and materials in 3D, ensuring a perfect match with "
+"the original physical prototypes."
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:70
+msgid "Go!"
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:71
+msgid "Let's Get Started!"
+msgstr ""
+
+#: app/View/Components/BusinessLandingPage.php:72
+msgid ""
+"Once all the necessary operational steps for setting up the online "
+"configurator for your business are finalized, we will be ready to launch! "
+"With the assistance of the Dashboard, managing orders and customer data will "
+"be extremely easy."
+msgstr ""
+
+#: app/View/Components/RequestForm.php:240
+msgid "Tailor"
+msgstr ""
+
+#: app/View/Components/RequestForm.php:241
+msgid "Shirt maker"
+msgstr ""
+
+#: app/View/Components/RequestForm.php:242
+msgid "Tailor shop"
+msgstr ""
+
+#: app/View/Components/RequestForm.php:243
+msgid "Other"
+msgstr ""
+
+#: app/View/Components/RequestForm.php:244
+msgid "Brand"
+msgstr ""
+
+#: app/View/Components/RequestForm.php:245
+msgid "Accessory Brand"
+msgstr ""
+
+#: app/View/Components/RequestForm.php:246
+msgid "Shoes Brand"
+msgstr ""
+
+#: app/View/Components/RequestForm.php:247
+msgid "Clothing Brand"
+msgstr ""
+
+#: app/View/Components/RequestForm.php:248
+msgid "Fabric Manufacturer"
+msgstr ""
+
+#: app/View/Components/RequestForm.php:249
+msgid "Clothing Manufacturer"
+msgstr ""
+
+#. translators: %1$s is replaced with the number of comments and %2$s with the post title
+#: app/View/Composers/Comments.php:44
+msgctxt "comments title"
+msgid "%1$s response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/View/Composers/Comments.php:45
+msgctxt "comments title"
+msgid "One"
+msgstr ""
+
+#: app/View/Composers/Comments.php:80
+msgid "&larr; Older comments"
+msgstr ""
+
+#: app/View/Composers/Comments.php:96
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: app/View/Composers/Post.php:49
+msgid "Latest Posts"
+msgstr ""
+
+#. translators: %s is replaced with the search query
+#: app/View/Composers/Post.php:59
+msgid "Search Results for %s"
+msgstr ""
+
+#: app/View/Composers/Post.php:65
+msgid "Not Found"
+msgstr ""
+
+#: app/View/Composers/Post.php:80
+msgid "Pages:"
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:8
+#: resources/views/components/business-landing-page.blade.php:20
+#: resources/views/components/business-landing-page.blade.php:21
+msgid "What is Tailoor"
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:10
+msgid ""
+"Tailoor is the partner that allows you to sell your customized products by "
+"integrating an innovative 3D\n"
+"        configurator into your website or e-commerce platform. We help grow "
+"your business and boost sales through\n"
+"        technology support, harnessing the capabilities of real-time 3D "
+"configuration."
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:24
+#: resources/views/components/business-landing-page.blade.php:25
+msgid ""
+"Tailoor is a platform that leverages 3D technology and artificial "
+"intelligence to provide innovative\n"
+"        solutions for customization in the retail market."
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:26
+#: resources/views/components/business-landing-page.blade.php:27
+msgid ""
+"It can be easily integrated into your website or e-commerce, regardless of "
+"the platform you use. In case you\n"
+"        do not have an online storefront for your business yet, we will "
+"assist you in creating one."
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:28
+#: resources/views/components/business-landing-page.blade.php:29
+msgid ""
+"Our goal is to help you ensure a unique and\n"
+"        sustainable shopping experience for your customers, allowing them\n"
+"        to customize your Made to Order and Made to Measure products online."
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:31
+#: resources/views/components/business-landing-page.blade.php:32
+msgid ""
+"With the 3D configurator, your customers will have access to an experience "
+"that combines physical and virtual\n"
+"        elements: even if they start their configuration online, they will "
+"always have the option to visit your\n"
+"        store to finalize the purchase and examine the details together."
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:38
+#: resources/views/components/business-landing-page.blade.php:39
+msgid "How does it work"
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:67
+#: resources/views/components/business-landing-page.blade.php:69
+msgid ""
+"Tailoor is an open API platform. This means that it can be easily integrated "
+"into any existing e-commerce\n"
+"          seamlessly, fitting perfectly with what is already in place "
+"without requiring any manual intervention on\n"
+"          your part. Alternatively, if you do not have an e-commerce yet, we "
+"will build it together. Don't worry –\n"
+"          we will provide you with complete support for the integration "
+"process."
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:79
+#: resources/views/components/business-landing-page.blade.php:81
+msgid "What happens after I have filled out the form"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Custom Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Home page"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Landing page"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Prices"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Transparent Header"
+msgstr ""
+
+#: resources/views/404.blade.php:7
+msgid "Nothing here"
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:17
+msgid "Tailoor preview screenshots"
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:55
+#: resources/views/components/business-landing-page.blade.php:163
+msgid ""
+"Request now your <span\n"
+"          class=\"text-rose-200 font-bold\">free demo</span><br>and make "
+"your business grow!"
+msgstr ""
+
+#: resources/views/components/business-landing-page.blade.php:67
+msgid "How can I<br>integrate Tailoor"
+msgstr ""
+
+#: resources/views/components/price-card.blade.php:9
+msgid "yearly billed"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:23
+msgid "First name"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:31
+msgid "Insert your first name..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:34
+msgid "Last name"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:41
+msgid "Insert your last name..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:44
+msgid "Phone"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:51
+msgid "Insert your phone number..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:54
+msgid "Email"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:61
+msgid "Insert your email address..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:64
+msgid "Company"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:71
+msgid "Insert your company..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:74
+msgid "Website"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:81
+msgid "Insert your website..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:84
+msgid "E-Commerce Platform"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:88
+msgid "Select your platform..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:96
+msgid "Business Type"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:100
+msgid "Select your business type..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:108
+msgid "City"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:114
+msgid "Insert your city..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:118
+msgid "Country"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:121
+msgid "Select your country..."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:130
+msgid "Note"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:138
+msgid ""
+"Tailoor is committed to protecting and respecting your privacy and we'll use "
+"your personal information only to administer your account and to provide the "
+"products and services you requested from us."
+msgstr ""
+
+#. translators: %s: privacy policy link html
+#: resources/views/components/request-form.blade.php:152
+msgid "I confirm that I have read and understood the %s"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:160
+msgid "You must accept our Privacy Policy in order to continue."
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:171
+msgid "I agree to receive other communications from Tailoor"
+msgstr ""
+
+#: resources/views/components/request-form.blade.php:181
+msgid "Submit"
+msgstr ""
+
+#: resources/views/components/search-form.blade.php:3
+#: resources/views/components/search-form.blade.php:8
+msgid "Search"
+msgstr ""
+
+#: resources/views/components/vertical-tabs.blade.php:5
+msgid "How does it works"
+msgstr ""
+
+#: resources/views/forms/search.blade.php:4
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: resources/views/forms/search.blade.php:10
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: resources/views/forms/search.blade.php:16
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: resources/views/index.blade.php:8
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: resources/views/layouts/app.blade.php:24
+#: resources/views/layouts/home.blade.php:24
+#: resources/views/layouts/landing.blade.php:24
+msgid "Request a free demo"
+msgstr ""
+
+#: resources/views/layouts/app.blade.php:26
+#: resources/views/layouts/home.blade.php:26
+#: resources/views/layouts/landing.blade.php:26
+msgid ""
+"It only takes one step: fill out the form below and choose a free slot. "
+"During the 30-minute demo you'll discover all the features you can gain by "
+"integrating Tailoor into your business."
+msgstr ""
+
+#: resources/views/partials/comments.blade.php:37
+msgid "Comments are closed."
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:6
+msgid "13 Pietro Maroncelli Street, 20154, Milan, Italy"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:31
+msgid "All Rights Reserved"
+msgstr ""
+
+#: resources/views/sections/footer.blade.php:39
+msgid "GDPR Settings"
+msgstr ""
+
+#: resources/views/template-home.blade.php:19
+msgid ""
+"Elevate your business with 3D Technology to offer unique, personalized "
+"products"
+msgstr ""
+
+#: resources/views/template-home.blade.php:22
+msgid ""
+"Offer a unique and personalized experience to your customers: we are the "
+"partner that allow you to offer your products through the integration of an "
+"innovative AI-powered 3D configurator."
+msgstr ""
+
+#: resources/views/template-home.blade.php:27
+msgid "watch the video"
+msgstr ""
+
+#: resources/views/template-home.blade.php:33
+msgid "The perfect solution for every product category"
+msgstr ""
+
+#: resources/views/template-home.blade.php:46
+msgid "Manage your store whenever and however you want"
+msgstr ""
+
+#: resources/views/template-home.blade.php:57
+msgid "Monitor your performance in real time"
+msgstr ""
+
+#: resources/views/template-home.blade.php:67
+msgid "Tailor made solutions for your business"
+msgstr ""
+
+#: resources/views/template-home.blade.php:68
+msgid "Make it phygital"
+msgstr ""
+
+#: resources/views/template-home.blade.php:82
+msgid "Make the experience even more real"
+msgstr ""
+
+#: resources/views/template-home.blade.php:85
+msgid ""
+"Make your products real with Tailoor: your customers can configure and "
+"visualize them even within a real environment of their choice, bridging the "
+"boundaries between virtual and physical experience."
+msgstr ""
+
+#: resources/views/template-home.blade.php:108
+msgid "Unique products through digital twins"
+msgstr ""
+
+#: resources/views/template-home.blade.php:111
+msgid ""
+"A digital twin can be integrated into your products. You can instruct it "
+"with any information, for example telling your product & brand, so that your "
+"customers can interact with it."
+msgstr ""
+
+#: resources/views/template-home.blade.php:134
+msgid "Enhance your customers' experience with the advice of he virtual tailor"
+msgstr ""
+
+#: resources/views/template-home.blade.php:139
+#: resources/views/template-home.blade.php:145
+#: resources/views/template-home.blade.php:151
+msgid ""
+"Your customers can chat with a virtual tailor, ready to answer any style or "
+"pairing doubts they may have, supporting them in the product configuration."
+msgstr ""
+
+#: resources/views/template-home.blade.php:142
+msgid "Easily manage<br>your appointments"
+msgstr ""
+
+#: resources/views/template-home.blade.php:148
+msgid "Taking measurements...<br>in a few clicks"
+msgstr ""
+
+#: resources/views/template-home.blade.php:167
+msgid "Your library of fabrics and materials in a digital format"
+msgstr ""
+
+#: resources/views/template-home.blade.php:170
+msgid ""
+"Thanks to the digitization of all your products, models, and materials, it "
+"will be much easier for your customers to access your entire catalog. "
+"Simplify their evaluation and selection process, encouraging the creation of "
+"thousands of different configurations."
+msgstr ""
+
+#: resources/views/template-home.blade.php:181
+msgid "Manage your marketing strategy<br>like never before"
+msgstr ""
+
+#: resources/views/template-home.blade.php:184
+msgid ""
+"With Tailoor, you have a powerful ally on your side: data. Thanks to the "
+"Customer Dashboard, you'll have all your customer data, both online and in-"
+"store, in one place. You can analyze them to create targeted offers and "
+"business strategies, reduce waste through more efficient sourcing of raw "
+"materials, and identify sales trends"
+msgstr ""
+
+#: resources/views/template-home.blade.php:200
+msgid "Simple & Fast integration"
+msgstr ""
+
+#: resources/views/template-home.blade.php:203
+msgid ""
+"Tailoor is an open API platform and is easily integrable with any e-commerce "
+"platform."
+msgstr ""
+
+#: resources/views/template-home.blade.php:211
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: resources/views/template-home.blade.php:212
+msgid "Haven't found what you were looking for?"
+msgstr ""
+
+#: resources/views/template-home.blade.php:235
+msgid "The video embed has been removed to honor your cookie settings."
+msgstr ""
+
+#: resources/views/template-home.blade.php:239
+msgid "Update GDPR Settings"
+msgstr ""
+
+#: resources/views/template-home.blade.php:240
+msgid "or"
+msgstr ""
+
+#: resources/views/template-home.blade.php:241
+msgid "close"
+msgstr ""
+
+#: resources/views/template-prices.blade.php:15
+msgid "Start for free"
+msgstr ""
+
+#: resources/views/template-prices.blade.php:19
+msgid "Start now"
+msgstr ""
+
+#: resources/views/template-prices.blade.php:93
+msgid "Dashboard CRM"
+msgstr ""
+
+#: resources/views/template-prices.blade.php:101
+msgid ""
+"A unique hub powered by AI where you can collect all the information related "
+"to your clients. Easily manage it all, optimizing your sales strategy."
+msgstr ""
+
+#: resources/views/template-prices.blade.php:104
+msgid "3D technology"
+msgstr ""
+
+#: resources/views/template-prices.blade.php:112
+msgid ""
+"Exploit 3D technology to render your entire catalogue. Offer your customers "
+"a unique, immersive experience through innovative technologies."
+msgstr ""
+
+#: resources/views/template-prices.blade.php:115
+msgid "Virtual Assistant"
+msgstr ""
+
+#: resources/views/template-prices.blade.php:123
+msgid ""
+"Provide your customers with a phygital experience, made possible by the "
+"Virtual Assistant, ready to solve every doubt they may have, as in a one to "
+"one consultancy."
+msgstr ""
+
+#: resources/views/template-prices.blade.php:126
+msgid "Digital<br>Twin"
+msgstr ""
+
+#: resources/views/template-prices.blade.php:134
+msgid ""
+"Make the best of your opportunities through AI-Powered Digital Twin "
+"technology. Instruct it with every information about your brand and "
+"products, increasing your customers engagement rate."
+msgstr ""
+
+#: resources/views/template-prices.blade.php:160
+msgid "Seeking a more tailored approach for your business needs?"
+msgstr ""
+
+#: resources/views/template-prices.blade.php:164
+msgid ""
+"Are you in need of a customized plan? Fill out the form with your "
+"information, and our team of experts will contact you to define the best "
+"solution together with a tailored plan designed to achieve your goals."
+msgstr ""
+
+#: resources/views/template-prices.blade.php:171
+msgid "Get started"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Inherit"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Current"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Transparent"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Black"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Slate 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gray 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zinc 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Neutral 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Red 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Amber 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Yellow 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lime 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Green 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Emerald 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Teal 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Blue 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Indigo 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Violet 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Purple 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Fuchsia 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink DEFAULT"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Rose 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 50"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 100"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 200"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 300"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 400"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 500"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 600"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 700"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 800"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 900"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage 950"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Mirage DEFAULT"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Ui-serif"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Ui-monospace"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Poppins"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "xs"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "sm"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "base"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "lg"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "xl"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "2xl"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "3xl"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "4xl"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "5xl"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "6xl"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "7xl"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "8xl"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "9xl"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "2xs"
+msgstr ""

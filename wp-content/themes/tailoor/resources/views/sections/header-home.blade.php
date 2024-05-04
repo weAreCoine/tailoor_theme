@@ -18,7 +18,7 @@
         x-show="open || isLargeScreen"
         x-transition.opacity.duration.500ms
         class="nav__container dark">
-        {!! wp_nav_menu(['theme_location' => 'home_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
+        {!! wp_nav_menu(['theme_location' => apply_filters('tailoor_navigation', 'home_navigation', url()->current()), 'menu_class' => 'nav', 'echo' => false]) !!}
       </div>
     </nav>
   @endif

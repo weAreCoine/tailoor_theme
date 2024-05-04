@@ -31,7 +31,7 @@
       @yield('sidebar')
     </aside>
   @endif
-  <div class="dark">
+  <div class="@yield('footerWrapper.class', 'dark')">
     @include('sections.footer')
   </div>
 </div>

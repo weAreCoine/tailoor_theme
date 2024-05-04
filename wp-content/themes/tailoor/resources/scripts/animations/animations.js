@@ -10,15 +10,17 @@ export const TailoorAnimations = {
     }
   },
   home() {
-    gsap.matchMedia().add(`(min-height: 800px)`, () => {
+    const productCarousel = document.querySelector('#products__carousel__container');
+
+    gsap.matchMedia().add(`(min-height: 650px)`, () => {
       gsap.timeline({
         scrollTrigger: {
-          trigger: document.querySelector('#products__carousel__container')?.closest('section'),
-          start: 'top top',
+          trigger: productCarousel,
+          start: '50% 50%',
           end: 'bottom top',
           markers: false,
           scrub: 1,
-          pin: document.querySelector('#products__carousel__container')?.closest('section'),
+          pin: productCarousel,
           snap: {
             snapTo: [0, .25, .5, .75, 1],
             duration: {min: .1, max: .4},
