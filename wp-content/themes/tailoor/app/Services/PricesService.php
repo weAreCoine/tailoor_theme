@@ -57,7 +57,7 @@ class PricesService
                 ],
                 __('Platform Features', 'sage') => [
                     __('Dashboard account x 1', 'sage'),
-                    __('Monthly orders up to 100', 'sage'),
+                    __('Yearly orders up to 100', 'sage'),
                     __('Sales Countries x 1', 'sage'),
                     __('CRM', 'sage')
                 ],
@@ -111,7 +111,7 @@ class PricesService
                 ],
                 __('Platform Features', 'sage') => [
                     __('Dashboard account x 3', 'sage'),
-                    __('Monthly orders up to 250', 'sage'),
+                    __('Yearly orders up to 250', 'sage'),
                     __('Sales Countries x 3', 'sage'),
                     __('Multi Currency', 'sage'),
                     __('Custom Price for Each Sales Country', 'sage'),
@@ -168,7 +168,7 @@ class PricesService
                 ],
                 __('Platform Features', 'sage') => [
                     __('Dashboard Account x 9', 'sage'),
-                    __('Monthly Orders up to 750', 'sage'),
+                    __('Yearly orders up to 750', 'sage'),
                     __('Unlimited Sales Countries', 'sage'),
                     __('Multi-currency', 'sage'),
                     __('Custom Pricing for Each Sales Country', 'sage'),

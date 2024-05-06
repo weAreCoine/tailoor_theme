@@ -19,9 +19,9 @@
           class="text-pink text-2x">.</span></h1>
       <p
         class="text-lg sm:text-xl mt-6"><?= __('Offer a unique and personalized experience to your customers: we are the partner that allow you to offer your products through the integration of an innovative AI-powered 3D configurator.', 'sage') ?></p>
-      <div x-data="{}" class="mt-12 sm:flex items-center gap-4">
+      <div x-data="{}" class="mt-12 inline-flex flex-col sm:flex-row sm:flex sm:items-center gap-x-4 gap-y-6">
         <x-form-cta/>
-        <p class="inline-block sm:block mt-6 sm:mt-0 whitespace-nowrap"><?= __('or', 'sage') ?>
+        <p class="inline-block sm:block whitespace-nowrap"><?= __('or', 'sage') ?>
           <a href="#" x-on:click.prevent="$dispatch('request-modal', {modalName: 'watch__video'})"
              class="underline inline-block"><?= __('watch the video', 'sage') ?></a>
         </p>
