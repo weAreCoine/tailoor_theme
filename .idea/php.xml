@@ -191,6 +191,8 @@
       <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/giggsey/locale" />
       <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/hubspot/api-client" />
       <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/gettext/gettext" />
+      <path value="$PROJECT_DIR$/wp-content/themes/tailoor/vendor/gettext/languages" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2">

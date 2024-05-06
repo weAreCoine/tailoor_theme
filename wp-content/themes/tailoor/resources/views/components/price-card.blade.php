@@ -6,11 +6,11 @@
       <p class="text-2xl">{{strtoupper($translatedTitle)}}</p>
       <p class="text-5xl font-bold" x-text="yearlyPrices ? annual.price : monthly.price"></p>
       <p>€/month <span class="text-2xs text-gray-600"
-                       x-text="yearlyPrices ? '({{__('yearly billed', 'sage')}})': ''"></span>
+                       x-text="yearlyPrices ? '(<?= __('yearly billed', 'sage') ?>)': ''"></span>
 
       @if($accent)
         <p
-          class="bg-white border-2 text-pink-500 -rotate-1 shadow-lg border-pink rounded-lg font-header uppercase text-sm py-2 px-8 absolute top-full -translate-y-1/2 left-1/2 -translate-x-1/2">{{__('Best seller')}}</p>
+          class="bg-white border-2 text-pink-500 -rotate-1 shadow-lg border-pink rounded-lg font-header uppercase text-sm py-2 px-8 absolute top-full -translate-y-1/2 left-1/2 -translate-x-1/2"><?= __('Best seller') ?></p>
       @endif
     </div>
     <ul class="px-4 mt-16 font-header">

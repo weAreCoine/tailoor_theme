@@ -2,7 +2,7 @@
      class="grid md:grid-cols-3 gap-6 text-left my-24 items-center">
   <p
     class="uppercase text-4xl text-center mb-6 md:col-span-3">
-    {{__('How does it works', 'sage')}}<span class="text-pink">?</span></p>
+    <?= __('How does it works', 'sage') ?><span class="text-pink">?</span></p>
   <div
     class="hidden md:block md:col-span-2 h-full relative rounded-l-2xl md:rounded-br-2xl rounded-r-2xl md:rounded-r-none p-6 border-2 border-rose-200 duration-300 !box-border"
     :class="{'md:rounded-tr-2xl': visible !== 0}">

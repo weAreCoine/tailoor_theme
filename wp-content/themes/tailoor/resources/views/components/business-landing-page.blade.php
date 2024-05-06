@@ -3,7 +3,7 @@
     class="relative flex items-center justify-center mt-2 lg:mt-20 scroll-mt-48 mb-32 min-h-[66vh]"
     id="request_demo">
     <div
-      class="absolute top-0 left-0 h-full w-full mix-blend-lighten opacity-20">{!! wp_get_attachment_image(1974, 'full',false , ['alt'=>'Tailoor background', 'class'=>'object-cover w-full h-auto']) !!}</div>
+      class="absolute top-0 left-0 h-full w-full mix-blend-lighten opacity-20"><?= wp_get_attachment_image(1974, 'full', false, ['alt' => 'Tailoor background', 'class' => 'object-cover w-full h-auto']) ?></div>
     <div class="text-center container relative">
       <h1 class="text-4xl text-white uppercase mb-6"><?= __('What is Tailoor', 'sage') ?><span
           class="text-rose-200">?</span></h1>
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="my-32 container">
-    {!! wp_get_attachment_image(1916, 'full', false , ['alt' => __('Tailoor preview screenshots','sage'), 'class'=> 'mx-auto']) !!}
+    <?= wp_get_attachment_image(1916, 'full', false, ['alt' => __('Tailoor preview screenshots', 'sage'), 'class' => 'mx-auto']) ?>
   </div>
   <div class="my-32 boxed text-center wysiwyg scroll-mt-48" id="tailoor">
     <h2 class="uppercase text-4xl mb-12 text-white"><?= __('What is Tailoor', 'sage') ?><span
@@ -50,8 +50,8 @@
   </div>
   <div class="py-40 text-center bg-mirage-900">
     <div class="boxed">
-      <p class="uppercase text-2xl mb-8 text-white">{!! __('Request now your <span
-          class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') !!}</p>
+      <p class="uppercase text-2xl mb-8 text-white"><?= __('Request now your <span
+          class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') ?></p>
       <x-form-cta class="mt-12"/>
     </div>
   </div>
@@ -62,7 +62,7 @@
       <div>
       </div>
       <div class="text-center lg:text-right">
-        <h2 class="uppercase text-4xl mb-12 text-white">{!! __('How can I<br>integrate Tailoor', 'sage') !!}<span
+        <h2 class="uppercase text-4xl mb-12 text-white"><?= __('How can I<br>integrate Tailoor', 'sage') ?><span
             class="text-rose-200">?</span></h2>
         <p><?= __('Tailoor is an open API platform. This means that it can be easily integrated into any existing e-commerce
           seamlessly, fitting perfectly with what is already in place without requiring any manual intervention on
@@ -157,8 +157,8 @@
 
   <div class="py-40 text-center bg-gradient-to-b from-mirage-900 to-mirage">
     <div class="container">
-      <p class="uppercase text-2xl mb-8 text-white">{!! __('Request now your <span
-          class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') !!}</p>
+      <p class="uppercase text-2xl mb-8 text-white"><?= __('Request now your <span
+          class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') ?></p>
       <x-form-cta class="mt-12"/>
     </div>
 
