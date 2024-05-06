@@ -1,4 +1,7 @@
-<div x-data="getInTouchForm(JSON.parse('<?= $formFields ?>'))" class="relative">
+<script>
+  const contactFormDataJson = JSON.parse('<?= $formFields ?>');
+</script>
+<div x-data="getInTouchForm(contactFormDataJson)" class="relative">
   @unless(empty($errors))
     <ul class="errors__bag" x-show="!submitting" x-collapse.duration.300ms
         x-init="$dispatch('request-modal', {modalName: 'get__in__touch__form'})">
