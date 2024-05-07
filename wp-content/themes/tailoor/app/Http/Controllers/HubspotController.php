@@ -77,7 +77,7 @@ class HubspotController
             'lifecyclestage' => 'marketingqualifiedlead',
             'hs_lead_status' => 'ATTEMPTED_TO_CONTACT',
             'hs_legal_basis' => $properties['newsletter'] ? 'Freely given consent from contact' : 'Legitimate interest – prospect/lead',
-            'hs_latest_source' => match (true) {
+            'hs_analytics_source' => match (true) {
                 request()->has('hsa_net') => match (request('hsa')) {
                     'facebook', 'instagram', 'linkedin', 'youtube' => 'PAID_SOCIAL',
                     'google', 'bing', 'yahoo' => 'PAID_SEARCH'
@@ -189,7 +189,7 @@ class HubspotController
         $properties = [
             'dealname' => $dealName,
             'amount' => '0',
-            'dealstage' => 'decisionmakerboughtin',
+            'dealstage' => 'qualifiedtobuy',
         ];
 
         return (new SimplePublicObjectInputForCreateDeal())
