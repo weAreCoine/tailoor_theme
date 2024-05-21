@@ -13,7 +13,6 @@ class HubspotController
 {
     use Singleton;
 
-
     protected HubSpotClient $hubSpotClient;
 
     public function __construct()
@@ -30,8 +29,7 @@ class HubspotController
     /**
      * The flow for saving form content to Hubspot
      *
-     * @param array $properties The properties (from the completed form) to be stored.
-     *
+     * @param  array  $properties  The properties (from the completed form) to be stored.
      * @return bool True if the properties were successfully stored, false otherwise.
      */
     public function store(array $properties): bool
@@ -42,14 +40,16 @@ class HubspotController
         $contact = $this->hubSpotClient->updateOrCreateContact($this->filterContactProperties($properties));
         $this->hubSpotClient->syncSubscriptions($properties);
         if ($company !== false && $contact !== false) {
-            $deal = $this->hubSpotClient->createDeal($this->getDealProperties($company->getId(), $company->getProperties()['name']));
+            $deal = $this->hubSpotClient->createDeal($this->getDealProperties($company->getId(), implode(' | ', [$company->getProperties()['name'], $company->getProperties()['domain']])));
             if ($deal !== false) {
                 $this->hubSpotClient->assignDealToOwner($deal);
             }
-            $this->hubSpotClient->assignContactToOwner($contact);
-            $this->hubSpotClient->assignCompanyToOwner($company);
-            $this->hubSpotClient->companyBelongsToContact($company, $contact);
+            //            $this->hubSpotClient->assignContactToOwner($contact);
             $this->hubSpotClient->contactBelongsToCompany($company, $contact);
+            //            $this->hubSpotClient->assignCompanyToOwner($company);
+            $this->hubSpotClient->companyBelongsToContact($company, $contact);
+            $this->hubSpotClient->dealBelongsToContact($deal, $contact);
+
             return true;
         }
 
@@ -59,12 +59,12 @@ class HubspotController
     /**
      * Maps the keys and values of the provided properties array based on predetermined mappings and HS account setup.
      *
-     * @param array $properties The properties array to be mapped.
+     * @param  array  $properties  The properties array to be mapped.
      * @return array The properties array with both keys and values mapped.
      */
     protected function mapProperties(array $properties): array
     {
-        $host = $_SERVER['HTTP_REFERER'] ?? '';
+        $host = wp_get_referer() !== false ? wp_get_referer() : ($_SERVER['HTTP_REFERER'] ?? '');
         /**
          * Adding default values
          *
@@ -73,26 +73,15 @@ class HubspotController
          * - hs_lead_status: The lead status of the contact.
          * - hs_legal_basis: The legal basis of the contact.
          */
+        $source = $this->getReferrer();
+
         $mappedProperties = [
             'lifecyclestage' => 'marketingqualifiedlead',
             'hs_lead_status' => 'ATTEMPTED_TO_CONTACT',
             'hs_legal_basis' => $properties['newsletter'] ? 'Freely given consent from contact' : 'Legitimate interest – prospect/lead',
-            'hs_analytics_source' => match (true) {
-                request()->has('hsa_net') => match (request('hsa')) {
-                    'facebook', 'instagram', 'linkedin', 'youtube' => 'PAID_SOCIAL',
-                    'google', 'bing', 'yahoo' => 'PAID_SEARCH'
-                },
-                str_contains($host, 'google') => 'ORGANIC_SEARCH',
-                str_contains($host, 'bing') => 'ORGANIC_SEARCH',
-                str_contains($host, 'yahoo') => 'ORGANIC_SEARCH',
-                str_contains($host, 'facebook') => 'SOCIAL_MEDIA',
-                str_contains($host, 'linkedin') => 'SOCIAL_MEDIA',
-                str_contains($host, 'twitter') => 'SOCIAL_MEDIA',
-                str_contains($host, 'youtube') => 'SOCIAL_MEDIA',
-                str_contains($host, 'instagram') => 'SOCIAL_MEDIA',
-                empty($host) => 'DIRECT_TRAFFIC',
-                default => 'REFERRALS'
-            }
+            'hs_analytics_source' => $source,
+            'hs_analytics_source_data_1' => $source,
+            'hs_analytics_source_data_2' => $source,
         ];
 
         foreach ($properties as $key => $value) {
@@ -127,11 +116,36 @@ class HubspotController
         return $mappedProperties;
     }
 
+    public function getReferrer(): string
+    {
+        if (request()->has('hsa_net') || request('utm_medium') === 'paid') {
+            return match (request('hsa_net')) {
+                'facebook', 'instagram', 'linkedin', 'youtube' => 'PAID_SOCIAL',
+                'google', 'bing', 'yahoo' => 'PAID_SEARCH',
+                default => 'REFERRALS',
+            };
+        }
+
+        $host = wp_get_referer() ?: ($_SERVER['HTTP_REFERER'] ?? '');
+
+        return match (true) {
+            str_contains($host, 'google') => 'ORGANIC_SEARCH',
+            str_contains($host, 'bing') => 'ORGANIC_SEARCH',
+            str_contains($host, 'yahoo') => 'ORGANIC_SEARCH',
+            str_contains($host, 'facebook') => 'SOCIAL_MEDIA',
+            str_contains($host, 'linkedin') => 'SOCIAL_MEDIA',
+            str_contains($host, 'twitter') => 'SOCIAL_MEDIA',
+            str_contains($host, 'youtube') => 'SOCIAL_MEDIA',
+            str_contains($host, 'instagram') => 'SOCIAL_MEDIA',
+            empty($host) => 'DIRECT_TRAFFIC',
+            default => 'REFERRALS'
+        };
+    }
+
     /**
      * Filters the provided properties array, keeping only the ones that are allowed for a company.
      *
-     * @param array $properties The properties array to be filtered.
-     *
+     * @param  array  $properties  The properties array to be filtered.
      * @return array The filtered properties array.
      */
     protected function filterCompaniesProperties(array $properties): array
@@ -139,7 +153,7 @@ class HubspotController
         $properties['name'] = $properties['company'];
 
         foreach (array_keys($properties) as $key) {
-            if (!in_array($key, $this->hubSpotClient->companyProperties, true)) {
+            if (! in_array($key, $this->hubSpotClient->companyProperties, true)) {
                 unset($properties[$key]);
             }
         }
@@ -150,14 +164,13 @@ class HubspotController
     /**
      * Filters the contact properties to only include the ones defined in $this->contactProperties.
      *
-     * @param array $properties The properties to filter.
-     *
+     * @param  array  $properties  The properties to filter.
      * @return array The filtered properties, including only the ones defined in $this->contactProperties.
      */
     protected function filterContactProperties(array $properties): array
     {
         foreach (array_keys($properties) as $key) {
-            if (!in_array($key, $this->hubSpotClient->contactProperties, true)) {
+            if (! in_array($key, $this->hubSpotClient->contactProperties, true)) {
                 unset($properties[$key]);
             }
         }
@@ -168,9 +181,8 @@ class HubspotController
     /**
      * Get the deal properties for creating a new deal in Hubspot.
      *
-     * @param string $companyID The ID of the company associated with the deal.
-     * @param string $dealName The name of the deal.
-     *
+     * @param  string  $companyID  The ID of the company associated with the deal.
+     * @param  string  $dealName  The name of the deal.
      * @return SimplePublicObjectInputForCreateDeal The deal properties.
      */
     protected function getDealProperties(string $companyID, string $dealName): SimplePublicObjectInputForCreateDeal
@@ -179,7 +191,7 @@ class HubspotController
             ->setAssociationTypeId(5)
             ->setAssociationCategory('HUBSPOT_DEFINED');
         $to = new PublicObjectId([
-            'id' => $companyID
+            'id' => $companyID,
         ]);
 
         $publicAssociationsForObject = (new PublicAssociationsForObject())
@@ -196,5 +208,4 @@ class HubspotController
             ->setProperties($properties)
             ->setAssociations([$publicAssociationsForObject]);
     }
-
 }

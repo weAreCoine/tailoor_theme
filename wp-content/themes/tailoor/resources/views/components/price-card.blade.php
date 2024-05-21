@@ -1,16 +1,16 @@
 <div x-data="JSON.parse('{{$prices}}')"
-     class="bg-white rounded-3xl flex p-6 flex-col justify-between gap-20 shadow-xl overflow-hidden {{$accent ? 'lg:scale-105 lg:shadow-2xl' : ''}} h-full {{!$enabled ? 'grayscale opacity-50' : ''}}">
+     class="bg-white text-black rounded-3xl flex p-6 flex-col justify-between gap-20 shadow-xl overflow-hidden {{$accent ? 'lg:scale-105 lg:shadow-2xl' : ''}} h-full {{!$enabled ? 'grayscale opacity-50' : ''}}">
   <div class="relative">
     <div
       class="font-header flex flex-col justify-center items-center gap-2 bg-gray-50 rounded-2xl tailoor__outline {{$accent ? 'accent' : ''}}  px-4 py-10 border">
       <p class="text-2xl">{{strtoupper($translatedTitle)}}</p>
       <p class="text-5xl font-bold" x-text="yearlyPrices ? annual.price : monthly.price"></p>
-      <p>€/month <span class="text-2xs text-gray-600"
-                       x-text="yearlyPrices ? '(<?= __('yearly billed', 'sage') ?>)': ''"></span>
+      <p>€/<?= __('month', 'sage') ?> <span class="text-2xs text-gray-600"
+                                            x-text="yearlyPrices ? '(<?= __('yearly billed', 'sage') ?>)': ''"></span>
 
       @if($accent)
         <p
-          class="bg-white border-2 text-pink-500 -rotate-1 shadow-lg border-pink rounded-lg font-header uppercase text-sm py-2 px-8 absolute top-full -translate-y-1/2 left-1/2 -translate-x-1/2"><?= __('Best seller') ?></p>
+          class="bg-white border-2 text-pink-500 -rotate-1 shadow-lg border-pink rounded-lg font-header uppercase text-sm py-2 px-8 absolute top-full -translate-y-1/2 left-1/2 -translate-x-1/2"><?= __('Best seller', 'sage') ?></p>
       @endif
     </div>
     <ul class="px-4 mt-16 font-header">

@@ -194,8 +194,9 @@ function end_session(): void
         $params["path"], $params["domain"],
         $params["secure"], $params["httponly"]
     );
-
-    session_destroy();
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        session_destroy();
+    }
 }
 
 add_action('wp_logout', 'end_session');
@@ -208,8 +209,9 @@ add_action('wp_login', function (): void {
         $params["path"], $params["domain"],
         $params["secure"], $params["httponly"]
     );
-
-    session_destroy();
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        session_destroy();
+    }
 });
 
 

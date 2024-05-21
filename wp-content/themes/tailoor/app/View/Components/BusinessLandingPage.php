@@ -20,7 +20,7 @@ class BusinessLandingPage extends Component
             __('You will have the freedom to choose which product categories you want to make customizable for your customers. You can decide which elements will be customizable, from materials to designs, even down to the smallest details that make your products unique.', 'sage'),
             __('We will take care of digitizing your products, materials, and details in 3D. It will be much easier for your customers to access your entire catalog. Simplify their evaluation and selection process, encouraging the creation of thousands of different configurations.', 'sage'),
             __('With the support of the Dashboard, you can keep track of all orders placed, both online and in-store. Customer data is an incredible asset for your business. You can analyze it to create targeted offers and business strategies, reduce waste through more effective raw material sourcing, and identify sales trends.', 'sage'),
-            __('The benefits you will gain are numerous: from significant time savings to the ability to optimize your sales strategies. You can increase your profits by offering your customers a unique shopping experience, thanks to the complete digitization of your business.', 'sage')
+            __('The benefits you will gain are numerous: from significant time savings to the ability to optimize your sales strategies. You can increase your profits by offering your customers a unique shopping experience, thanks to the complete digitization of your business.', 'sage'),
         ];
 
         add_filter('landing_header', [$this, 'header']);
@@ -29,16 +29,20 @@ class BusinessLandingPage extends Component
     public function header(): string
     {
         ob_start();
-        wp_head('landing');
+        wp_head();
+
         return ob_get_clean();
     }
 
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): View|Closure|string
+    public function render(array|string $attributes = []): View|Closure|string
     {
+        $attributes['show_prices'] = $attributes['show_prices'] === 'true';
+
         return view('components.business-landing-page')->with([
+            'showPrices' => $attributes['show_prices'],
             'features' => $this->features,
             'faqs' => FaqService::landingsFaq(),
             'steps' => addslashes(json_encode([
@@ -74,7 +78,7 @@ class BusinessLandingPage extends Component
                         'sage'
                     ),
                 ],
-            ]))
+            ])),
         ]);
     }
 }

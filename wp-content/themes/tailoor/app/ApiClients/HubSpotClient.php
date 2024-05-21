@@ -53,6 +53,7 @@ class HubSpotClient
         'lifecyclestage',
         'hs_lead_status',
     ];
+
     public array $contactProperties = [
         'firstname',
         'lastname',
@@ -66,8 +67,11 @@ class HubSpotClient
         'hs_legal_basis',
         'hs_analytics_source',
     ];
+
     protected Discovery $hubspot;
+
     protected string $defaultOwnerID;
+
     private string $token;
 
     /**
@@ -116,20 +120,17 @@ class HubSpotClient
         return collect($this->hubspot->crm()->owners()->getAll());
     }
 
-
     /**
      * Updates an existing company based on provided properties or creates a new company if it doesn't exist.
      *
-     * @param array $properties The properties of the company to update or create.
-     *
-     *
+     * @param  array  $properties  The properties of the company to update or create.
      * @return false|Company Returns false if the company could not be updated or created, otherwise returns the updated or newly created Company object.
      */
     public function updateOrCreateCompany(array $properties): false|Company
     {
         $company = $this->companyWhere([
-            'name' => $properties['name'],
-            'domain' => $properties['domain']
+            //            'name' => $properties['name'],
+            'domain' => $properties['domain'],
         ]);
 
         $company = $company === false || $company->isEmpty() ? null : $company->first();
@@ -140,15 +141,16 @@ class HubSpotClient
     /**
      * Filters companies based on the provided properties and returns a collection of matching companies.
      *
-     * @param array $properties The properties to filter the companies by.
-     *                         Each key represents a property name and each value represents the property value.
-     *
+     * @param  array  $properties  The properties to filter the companies by.
+     *                             Each key represents a property name and each value represents the property value.
      * @return bool|Collection Returns a collection of matching companies if successful, otherwise returns false.
-     *                        Each item in the collection is an instance of \HubSpot\Client\Crm\Companies\Model\Company.
+     *                         Each item in the collection is an instance of \HubSpot\Client\Crm\Companies\Model\Company.
      */
     public function companyWhere(array $properties): false|Collection
     {
-        if (empty($properties)) return collect();
+        if (empty($properties)) {
+            return collect();
+        }
         $filters = [];
         foreach ($properties as $propertyName => $propertyValue) {
             $filters[] = (new CompaniesFilter())
@@ -165,6 +167,7 @@ class HubSpotClient
             if (empty($results)) {
                 return false;
             }
+
             return collect($results);
         } catch (CompaniesException $e) {
             return $this->handleExceptions($e);
@@ -184,8 +187,7 @@ class HubSpotClient
     /**
      * Handle exceptions and log error messages.
      *
-     * @param CommunicationPreferencesException|ContactsException|CompaniesException|AssociationsException|DealException $exception The exception to be handled.
-     *
+     * @param  CommunicationPreferencesException|ContactsException|CompaniesException|AssociationsException|DealException  $exception  The exception to be handled.
      * @return bool False to indicate that the exception was handled.
      */
     protected function handleExceptions(CommunicationPreferencesException|ContactsException|CompaniesException|AssociationsException|DealException $exception): false
@@ -216,12 +218,10 @@ class HubSpotClient
         }
     }
 
-
     /**
      * Create a company.
      *
-     * @param array $companyProperties The properties of the company to be created.
-     *
+     * @param  array  $companyProperties  The properties of the company to be created.
      * @return false|Company The created company object on success, or false on failure.
      */
     public function createCompany(array $companyProperties): false|Company
@@ -245,16 +245,16 @@ class HubSpotClient
     public function findContact(string $email): ?Contact
     {
         $exisingContact = $this->searchContactByEmail($email);
+
         return $exisingContact === false ? null : $exisingContact->first();
     }
 
     /**
      * Search for a contact by email.
      *
-     * @param string $email The email address of the contact to search for.
-     *
+     * @param  string  $email  The email address of the contact to search for.
      * @return Collection|false Returns a collection of contact properties if the contact is found,
-     *                                             otherwise returns false.
+     *                          otherwise returns false.
      */
     public function searchContactByEmail(string $email): Collection|false
     {
@@ -277,6 +277,7 @@ class HubSpotClient
             if (empty($results)) {
                 return false;
             }
+
             return collect($response->getResults());
 
         } catch (ContactsException $e) {
@@ -286,26 +287,18 @@ class HubSpotClient
 
     /**
      * Get all contacts from HS
-     *
-     * @return Collection
      */
     public function contacts(): Collection
     {
         return collect($this->hubspot->crm()->contacts()->getAll($this->contactProperties))
-            ->map(fn(SimplePublicObjectWithAssociations $contact) => $contact->getProperties());
+            ->map(fn (SimplePublicObjectWithAssociations $contact) => $contact->getProperties());
     }
 
-    /**
-     * @param Contact $contact
-     * @param array $contactProperties
-     *
-     * @return false|Contact
-     */
     public function updateContact(Contact $contact, array $contactProperties): false|Contact
     {
         try {
             return $this->hubspot->crm()->contacts()->basicApi()->update($contact->getId(), new SimplePublicObjectInput([
-                'properties' => $contactProperties
+                'properties' => $contactProperties,
             ]));
 
         } catch (ContactsException $e) {
@@ -314,14 +307,11 @@ class HubSpotClient
         }
     }
 
-
     /**
      * Create a contact with the given properties.
      *
-     * @param array $contactProperties The properties of the contact to be created.
-     *
+     * @param  array  $contactProperties  The properties of the contact to be created.
      * @return false|Contact Returns the created contact if successful, false otherwise.
-     *
      */
     public function createContact(array $contactProperties): false|Contact
     {
@@ -340,9 +330,10 @@ class HubSpotClient
      * Currently on the Tailoor account we have two subscriptions with purposes "Sales" and "Marketing".
      *          "Sales" is considered a subscription for which legitimate interest is sufficient
      *          "Marketing" is considered a subscription for which explicit user consent is required
-     * @param array $contactProperties The contact properties.
-     *                                - email: The email address of the contact.
-     *                                - newsletter: A flag indicating whether the contact has subscribed to the newsletter.
+     *
+     * @param  array  $contactProperties  The contact properties.
+     *                                    - email: The email address of the contact.
+     *                                    - newsletter: A flag indicating whether the contact has subscribed to the newsletter.
      */
     public function syncSubscriptions(array $contactProperties): bool
     {
@@ -372,6 +363,7 @@ class HubSpotClient
              */
             $response = $this->subscribe($contactProperties['email'], $subscription, $contactProperties['newsletter']) && $response;
         }
+
         return $response;
     }
 
@@ -384,9 +376,10 @@ class HubSpotClient
     {
         try {
             $response = $this->hubspot->communicationPreferences()->definitionApi()->getPage();
-            if (!$response instanceof SubscriptionDefinitionsResponse) {
+            if (! $response instanceof SubscriptionDefinitionsResponse) {
                 return false;
             }
+
             return collect($response->getSubscriptionDefinitions());
         } catch (CommunicationPreferencesException $e) {
             return $this->handleExceptions($e);
@@ -396,18 +389,17 @@ class HubSpotClient
     /**
      * Retrieves the subscription status of a contact based on their email address.
      *
-     * @param string $contactEmail The email address of the contact.
-     *
+     * @param  string  $contactEmail  The email address of the contact.
      * @return bool|Collection Returns false if the subscription status could not be retrieved,
-     *                        otherwise returns a Collection of PublicSubscriptionStatus objects.
-     *                        Each PublicSubscriptionStatus object represents a subscription status for a specific communication category.
-     *                        The collection may be empty if the contact has no subscription statuses.
+     *                         otherwise returns a Collection of PublicSubscriptionStatus objects.
+     *                         Each PublicSubscriptionStatus object represents a subscription status for a specific communication category.
+     *                         The collection may be empty if the contact has no subscription statuses.
      */
     public function contactSubscriptions(string $contactEmail): bool|Collection
     {
         try {
             $status = $this->hubspot->communicationPreferences()->statusApi()->getEmailStatus($contactEmail);
-            if (!$status instanceof PublicSubscriptionStatusesResponse) {
+            if (! $status instanceof PublicSubscriptionStatusesResponse) {
                 return false;
             }
 
@@ -427,7 +419,7 @@ class HubSpotClient
             'legal_basis_explanation' => null,
         ]);
         try {
-            return !$this->hubspot->communicationPreferences()->statusApi()->unsubscribe($publicUpdateSubscriptionStatusRequest) instanceof Error;
+            return ! $this->hubspot->communicationPreferences()->statusApi()->unsubscribe($publicUpdateSubscriptionStatusRequest) instanceof Error;
         } catch (CommunicationPreferencesException $e) {
             return $this->handleExceptions($e);
         }
@@ -436,10 +428,9 @@ class HubSpotClient
     /**
      * Subscribes a user to a specific subscription with the provided email, subscription definition, and consent status.
      *
-     * @param string $email The email address of the user to subscribe.
-     * @param SubscriptionDefinition $subscription The subscription definition to subscribe the user to.
-     * @param bool $consentStatus The consent status for the user's subscription.
-     *
+     * @param  string  $email  The email address of the user to subscribe.
+     * @param  SubscriptionDefinition  $subscription  The subscription definition to subscribe the user to.
+     * @param  bool  $consentStatus  The consent status for the user's subscription.
      * @return bool Returns true if the user was successfully subscribed, false otherwise.
      */
     public function subscribe(string $email, SubscriptionDefinition $subscription, bool $consentStatus): bool
@@ -456,12 +447,13 @@ class HubSpotClient
                 ->communicationPreferences()
                 ->statusApi()
                 ->subscribe($publicUpdateSubscriptionStatusRequest);
-            return !$response instanceof Error;
+
+            return ! $response instanceof Error;
         } catch (CommunicationPreferencesException $e) {
 
-//            if (str_contains($e->getMessage(), 'unsubscribed')) {
-//                $this->resubscribe($email, $subscription, $consentStatus);
-//            }
+            //            if (str_contains($e->getMessage(), 'unsubscribed')) {
+            //                $this->resubscribe($email, $subscription, $consentStatus);
+            //            }
             return $this->handleExceptions($e);
         }
     }
@@ -476,9 +468,8 @@ class HubSpotClient
     /**
      * Assigns a contact to an owner.
      *
-     * @param Contact $contact The contact to assign.
-     * @param string|null $ownerID The ID of the owner to assign the contact to. If null, the default owner ID will be used.
-     *
+     * @param  Contact  $contact  The contact to assign.
+     * @param  string|null  $ownerID  The ID of the owner to assign the contact to. If null, the default owner ID will be used.
      * @return bool Returns true if the contact was successfully assigned, otherwise returns false.
      */
     public function assignContactToOwner(Contact $contact, ?string $ownerID = null): bool
@@ -503,9 +494,8 @@ class HubSpotClient
     /**
      * Assigns a company to an owner.
      *
-     * @param Company $company The company to assign.
-     * @param string|null $ownerID The ID of the owner to assign the company to. If null, the default owner ID will be used.
-     *
+     * @param  Company  $company  The company to assign.
+     * @param  string|null  $ownerID  The ID of the owner to assign the company to. If null, the default owner ID will be used.
      * @return bool Returns true if the assignment was successful, otherwise returns false.
      */
     public function assignCompanyToOwner(Company $company, ?string $ownerID = null): bool
@@ -519,6 +509,7 @@ class HubSpotClient
             ]);
         try {
             $this->hubspot->crm()->companies()->basicApi()->update($company->getId(), $companyToUpdate);
+
             return true;
         } catch (CompaniesException $e) {
             return $this->handleExceptions($e);
@@ -534,6 +525,7 @@ class HubSpotClient
             ->setProperties(['hubspot_owner_id' => $ownerID]);
         try {
             $this->hubspot->crm()->deals()->basicApi()->update($deal->getId(), $dealToUpdate);
+
             return true;
         } catch (DealException $e) {
             return $this->handleExceptions($e);
@@ -543,9 +535,8 @@ class HubSpotClient
     /**
      * Checks if a contact belongs to a company.
      *
-     * @param Company $company The company object.
-     * @param Contact $contact The contact object.
-     *
+     * @param  Company  $company  The company object.
+     * @param  Contact  $contact  The contact object.
      * @return bool Returns true if the contact belongs to the company, otherwise returns false.
      */
     public function contactBelongsToCompany(Company $company, Contact $contact): bool
@@ -559,15 +550,14 @@ class HubSpotClient
                 [
                     new AssociationSpec([
                         'association_category' => AssociationSpecWithLabel::CATEGORY_HUBSPOT_DEFINED,
-                        'association_type_id' => AssociationTypes::CONTACT_TO_COMPANY
-                    ])
+                        'association_type_id' => AssociationTypes::CONTACT_TO_COMPANY,
+                    ]),
                 ]);
 
-            return !$association instanceof Error;
+            return ! $association instanceof Error;
         } catch (AssociationsException $e) {
             return $this->handleExceptions($e);
         }
-
     }
 
     public function associations(string $fromObjectType, string $toObjectType, string $objectID): bool|CollectionResponseMultiAssociatedObjectWithLabelForwardPaging
@@ -580,11 +570,37 @@ class HubSpotClient
     }
 
     /**
+     * Checks if a contact belongs to a company.
+     *
+     * @param  Contact  $contact  The contact object.
+     * @return bool Returns true if the contact belongs to the company, otherwise returns false.
+     */
+    public function dealBelongsToContact(Deal $deal, Contact $contact): bool
+    {
+        try {
+            $association = $this->hubspot->crm()->associations()->v4()->basicApi()->create(
+                'deals',
+                $deal->getId(),
+                'contacts',
+                $contact->getId(),
+                [
+                    new AssociationSpec([
+                        'association_category' => AssociationSpecWithLabel::CATEGORY_HUBSPOT_DEFINED,
+                        'association_type_id' => AssociationTypes::DEAL_TO_CONTACT,
+                    ]),
+                ]);
+
+            return ! $association instanceof Error;
+        } catch (AssociationsException $e) {
+            return $this->handleExceptions($e);
+        }
+    }
+
+    /**
      * Associates a company with a contact in HubSpot.
      *
-     * @param Company $company The company object to associate.
-     * @param Contact $contact The contact object to associate.
-     *
+     * @param  Company  $company  The company object to associate.
+     * @param  Contact  $contact  The contact object to associate.
      * @return bool Returns true if the association is successful, false otherwise.
      */
     public function companyBelongsToContact(Company $company, Contact $contact): bool
@@ -598,11 +614,11 @@ class HubSpotClient
                 [
                     new AssociationSpec([
                         'association_category' => AssociationSpecWithLabel::CATEGORY_HUBSPOT_DEFINED,
-                        'association_type_id' => AssociationTypes::COMPANY_TO_CONTACT
-                    ])
+                        'association_type_id' => AssociationTypes::COMPANY_TO_CONTACT,
+                    ]),
                 ]);
 
-            return !$association instanceof Error;
+            return ! $association instanceof Error;
         } catch (AssociationsException $e) {
             return $this->handleExceptions($e);
         }
@@ -612,6 +628,7 @@ class HubSpotClient
      * Resubscribes a user with the provided email and subscription details.
      *
      * TODO Currently, there seems to be an issue with Hubspot's APIs on this endpoint
+     *
      * @see https://developers.hubspot.com/docs/api/marketing-api/subscriptions-preferences
      *
      * The PHP method mentioned in the documentation (erroneously) does not exist in the SDK, and even when calling
@@ -620,10 +637,9 @@ class HubSpotClient
      * Unhandled case: a contact subscribes with marketing permissions, then subscribes without permissions, and then
      * subscribes again with permissions. At this point, I am no longer able to restore their Marketing subscription.
      *
-     * @param string $email The email address of the user to resubscribe.
-     * @param SubscriptionDefinition $subscription The subscription details.
-     * @param bool $consentStatus The consent status of the user.
-     *
+     * @param  string  $email  The email address of the user to resubscribe.
+     * @param  SubscriptionDefinition  $subscription  The subscription details.
+     * @param  bool  $consentStatus  The consent status of the user.
      * @return bool Returns true if the resubscription is successful, otherwise returns false.
      */
     public function resubscribe(string $email, SubscriptionDefinition $subscription, bool $consentStatus): bool
@@ -638,6 +654,7 @@ class HubSpotClient
                 'legalBasisExplanation' => $this->getLegalBasis($consentStatus),
             ],
         ]);
+
         return $response->getStatusCode() === 200;
     }
 

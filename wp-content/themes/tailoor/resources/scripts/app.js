@@ -38,9 +38,6 @@ Alpine.data('modal', (visible, name) => ({
 
 Alpine.data('steps', (json) => ({
   contents: JSON.parse(json),
-  init() {
-    console.log(this.contents);
-  },
   selected: 0
 }));
 

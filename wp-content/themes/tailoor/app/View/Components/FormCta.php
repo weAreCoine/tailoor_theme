@@ -11,9 +11,9 @@ class FormCta extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(public bool $onPage = false)
     {
-        //
+
     }
 
     /**
@@ -21,6 +21,11 @@ class FormCta extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.form-cta');
+        return view('components.form-cta')->with([
+            'url' => $this->onPage ? '#prices__table' : match (getCurrentLanguage()) {
+                'it' => 'it/pricing',
+                default => 'pricing'
+            },
+        ]);
     }
 }

@@ -119,7 +119,7 @@
       </div>
       <div class="col-span-2 text-center relative z-10">
         <h2
-          class="uppercase text-4xl sm:text-5xl"><?= __('Enhance your customers\' experience with the advice of he virtual tailor', 'sage') ?>
+          class="uppercase text-4xl sm:text-5xl"><?= __('Enhance your customers\' experience with the advice of the virtualtailor', 'sage') ?>
           <span
             class="text-pink text-2x">.</span></h2>
         <p

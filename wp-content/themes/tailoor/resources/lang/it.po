@@ -975,7 +975,7 @@ msgid ""
 msgstr ""
 
 #: resources/views/template-home.blade.php:134
-msgid "Enhance your customers' experience with the advice of he virtual tailor"
+msgid "Enhance your customers' experience with the advice of the virtualtailor"
 msgstr ""
 
 #: resources/views/template-home.blade.php:139

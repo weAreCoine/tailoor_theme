@@ -4,19 +4,24 @@
     id="request_demo">
     <div
       class="absolute top-0 left-0 h-full w-full mix-blend-lighten opacity-20"><?= wp_get_attachment_image(1974, 'full', false, ['alt' => 'Tailoor background', 'class' => 'object-cover w-full h-auto']) ?></div>
-    <div class="text-center container relative">
-      <h1 class="text-4xl text-white uppercase mb-6"><?= __('What is Tailoor', 'sage') ?><span
-          class="text-rose-200">?</span></h1>
-      <p><?= __('Tailoor is the partner that allows you to sell your customized products by integrating an innovative 3D
+    <div class="text-center container relative grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+      <div class="text-center md:text-left">
+        <h1 class="text-5xl text-white uppercase mb-6"><?= __('What is Tailoor', 'sage') ?><span
+            class="text-rose-200">?</span></h1>
+        <p><?= __('Tailoor is the partner that allows you to sell your customized products by integrating an innovative 3D
         configurator into your website or e-commerce platform. We help grow your business and boost sales through
         technology support, harnessing the capabilities of real-time 3D configuration.', 'sage') ?></p>
-      <x-form-cta class="mt-12"/>
+        <x-form-cta :on-page="$showPrices" class="mt-12"/>
+      </div>
+      <div>
+        <?= wp_get_attachment_image(2092, 'full', false, ['alt' => __('Tailoor preview screenshot', 'sage'), 'class' => 'mx-auto']) ?>
+      </div>
     </div>
   </div>
   <div class="my-32 container">
     <?= wp_get_attachment_image(1916, 'full', false, ['alt' => __('Tailoor preview screenshots', 'sage'), 'class' => 'mx-auto']) ?>
   </div>
-  <div class="my-32 boxed text-center wysiwyg scroll-mt-48" id="tailoor">
+  <div class="my-32 container text-center wysiwyg scroll-mt-48" id="tailoor">
     <h2 class="uppercase text-4xl mb-12 text-white"><?= __('What is Tailoor', 'sage') ?><span
         class="text-rose-200">?</span>
     </h2>
@@ -35,7 +40,7 @@
   </div>
   <div class="py-32 scroll-mt-48 bg-gradient-to-b from-mirage to-mirage-900" id="come_funziona">
     <div class="container">
-      <h2 class="uppercase text-4xl mb-12 text-center text-white"><?= (__('How does it work', 'sage')) ?><span
+      <h2 class="uppercase text-4xl mb-12 text-center text-white"><?= __('How does it work', 'sage') ?><span
           class="text-rose-200">?</span>
       </h2>
       <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -49,10 +54,10 @@
     </div>
   </div>
   <div class="py-40 text-center bg-mirage-900">
-    <div class="boxed">
+    <div class="container">
       <p class="uppercase text-2xl mb-8 text-white"><?= __('Request now your <span
           class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') ?></p>
-      <x-form-cta class="mt-12"/>
+      <x-form-cta :on-page="$showPrices" class="mt-12"/>
     </div>
   </div>
   <div class="py-20 relative scroll-mt-48 bg-gradient-to-b from-mirage-900 to-mirage" id="integrazioni">
@@ -154,12 +159,15 @@
       @endforeach
     </div>
   </div>
-
-  <div class="py-40 text-center bg-gradient-to-b from-mirage-900 to-mirage">
-    <div class="container">
-      <p class="uppercase text-2xl mb-8 text-white"><?= __('Request now your <span
+  @unless($showPrices)
+    <div class="py-40 text-center bg-gradient-to-b from-mirage-900 to-mirage">
+      <div class="container">
+        <p class="uppercase text-2xl mb-8 text-white"><?= __('Request now your <span
           class="text-rose-200 font-bold">free demo</span><br>and make your business grow!', 'sage') ?></p>
-      <x-form-cta class="mt-12"/>
+        <x-form-cta :on-page="$showPrices" class="mt-12"/>
+      </div>
     </div>
-
-  </div>
+</div>
+@else
+  <x-prices-table class="bg-gray-100 text-black py-16"/>
+@endunless
