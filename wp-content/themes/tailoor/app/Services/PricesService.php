@@ -53,7 +53,7 @@ class PricesService
                 ],
                 __('E-commerce Platform', 'sage') => [
                     __('E-commerce Module', 'sage'),
-                    __('Drive to Store Module', 'sage'),
+                    __('In-store Module', 'sage'),
                     __('Order Fee 1%', 'sage'),
                     __('Payments Fee starting from 0.2%', 'sage'),
                 ],
@@ -63,7 +63,7 @@ class PricesService
                     __('Sales Countries x 1', 'sage'),
                     __('CRM', 'sage'),
                 ],
-                __('1 Digital Twin', 'sage') => '',
+                //                __('1 Digital Twin', 'sage') => '',
                 __('Platform Analytics', 'sage') => [
                     __('Google Analytics', 'sage'),
                 ],
@@ -106,7 +106,7 @@ class PricesService
                 ],
                 __('E-commerce Platform', 'sage') => [
                     __('E-commerce Module', 'sage'),
-                    __('Drive to Store Module', 'sage'),
+                    __('In-store Module', 'sage'),
                     __('Order Fee 0.8%', 'sage'),
                     __('Payments Fee starting from 0.2%', 'sage'),
                     __('Shopify and Woocommerce Integration', 'sage'),
@@ -119,7 +119,7 @@ class PricesService
                     __('Custom Price for Each Sales Country', 'sage'),
                     __('CRM', 'sage'),
                 ],
-                __('1 Digital Twin', 'sage') => '',
+                //                __('1 Digital Twin', 'sage') => '',
                 __('Platform Analytics', 'sage') => [
                     __('Google Analytics', 'sage'),
                 ],
@@ -163,7 +163,7 @@ class PricesService
                 ],
                 __('E-commerce Platform', 'sage') => [
                     __('E-commerce Module', 'sage'),
-                    __('Drive to Store Module', 'sage'),
+                    __('In-store Module', 'sage'),
                     __('Order Fee 0.6%', 'sage'),
                     __('Payments Fee starting from 0.2%', 'sage'),
                     __('Shopify and Woocommerce Integration', 'sage'),
@@ -176,7 +176,7 @@ class PricesService
                     __('Custom Pricing for Each Sales Country', 'sage'),
                     __('CRM', 'sage'),
                 ],
-                __('1 Digital Twin', 'sage') => '',
+                //                __('1 Digital Twin', 'sage') => '',
                 __('Platform Analytics', 'sage') => [
                     __('Google Analytics', 'sage'),
                     __('Tailoor BI DASHBOARD', 'sage'),
