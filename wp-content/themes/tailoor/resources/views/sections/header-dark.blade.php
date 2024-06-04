@@ -1,6 +1,6 @@
 <header class="banner flex items-center justify-between px-12 py-6 mb-12">
   <a class="brand inline-block" href="{{ home_url('/') }}">
-    {!! wp_get_attachment_image(572, [240, 80], false, ['alt' => $siteName, 'class'=> 'site__logo']) !!}
+    {!! wp_get_attachment_image(2151, [240, 80], false, ['alt' => $siteName, 'class'=> 'site__logo']) !!}
   </a>
 
   @if (has_nav_menu('primary_navigation'))

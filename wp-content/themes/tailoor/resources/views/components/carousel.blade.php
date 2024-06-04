@@ -1,5 +1,5 @@
 <div class="py-32 <?=$attributes->get('class', 'bg-mirage')?>">
-  <section id="clients__carousel" class="splide" aria-label="<?=__('Clients')?>" x-data="bindSlider()">
+  <section id="tailoor__carousel" class="splide" aria-label="<?=__('Clients')?>" x-data="bindSlider()">
     <div class="splide__track">
       <ul class="splide__list">
         @foreach($filenames as $filename)
@@ -7,7 +7,7 @@
             @continue
           @endif
           <li class="splide__slide">
-            <img src="<?=asset("/images/clients-logos/$filename")?>"
+            <img src="<?=asset("$imagesFolderPath/$filename")?>"
                  class="h-12 w-auto"
                  alt="<?=\Illuminate\Support\Str::replace(['-','_'], ' ', $filename)?>">
           </li>

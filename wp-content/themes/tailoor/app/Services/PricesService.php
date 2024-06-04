@@ -29,18 +29,18 @@ class PricesService
             [
                 'monthly' => [
                     'price' => 99,
-                    'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/base/10",
-                    'label' => __('Try for free', 'sage'),
-                    //                    'href' => '#monthly',
-                    //                    'label' => __('Get a free demo', 'sage'),
+                    //                    'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/base/10",
+                    //                    'label' => __('Try for free', 'sage'),
+                    'href' => '#monthly',
+                    'label' => __('Get a free demo', 'sage'),
 
                 ],
                 'annual' => [
                     'price' => 84,
-                    'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/base/20",
-                    'label' => __('Try for free', 'sage'),
-                    //                    'href' => '#annual',
-                    //                    'label' => __('Get a free demo', 'sage'),
+                    //                    'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/base/20",
+                    //                    'label' => __('Try for free', 'sage'),
+                    'href' => '#annual',
+                    'label' => __('Get a free demo', 'sage'),
                 ],
             ],
             [
@@ -74,7 +74,7 @@ class PricesService
             true, // Indica se è il piano consigliato,
             __('Starter', 'sage'),
             true, // Indica se il piano è attivo
-            true, // Se vero, il piano è vendibile direttamente, se falso compare il form di contatto
+            false, // Se vero, il piano è vendibile direttamente, se falso compare il form di contatto
         ];
     }
 

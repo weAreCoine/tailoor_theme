@@ -87,7 +87,7 @@
 
   .pricing__table {
     > ul li {
-      @apply py-4 cursor-pointer select-none text-sm font-header bg-gray-200 font-medium tracking-wide duration-500 border border-gray-100;
+      @apply py-4 cursor-pointer select-none text-xs sm:text-sm font-header bg-gray-200 font-medium tracking-wide duration-500 border border-gray-100;
     }
 
     .active__plan {

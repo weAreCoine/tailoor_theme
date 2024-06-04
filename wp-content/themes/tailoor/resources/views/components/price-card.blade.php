@@ -10,7 +10,7 @@
 
       @if($accent)
         <p
-          class="bg-white border-2 text-pink-500 -rotate-1 shadow-lg border-pink rounded-lg font-header uppercase text-sm py-2 px-8 absolute top-full -translate-y-1/2 left-1/2 -translate-x-1/2"><?= __('Best seller', 'sage') ?></p>
+          class="bg-white border-2 text-pink-500 -rotate-1 shadow-lg border-pink whitespace-nowrap rounded-lg font-header uppercase text-xs sm:text-sm py-2 px-8 absolute top-full -translate-y-1/2 left-1/2 -translate-x-1/2"><?= __('Best seller', 'sage') ?></p>
       @endif
     </div>
     <ul class="px-4 mt-16 font-header">

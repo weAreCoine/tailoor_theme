@@ -1,4 +1,8 @@
-{{--  Template Name: Home page--}}
+<?php
+/**
+ * Template Name: Home page
+ */
+?>
 
 @extends('layouts.home')
 @section('footerWrapper.class', 'gradient')

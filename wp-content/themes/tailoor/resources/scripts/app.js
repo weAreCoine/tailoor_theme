@@ -43,7 +43,7 @@ Alpine.data('steps', (json) => ({
 
 Alpine.data('bindSlider', () => ({
   init() {
-    new Splide('#clients__carousel', {
+    new Splide('#tailoor__carousel', {
       type: 'loop',
       drag: 'free',
       // snap: true,

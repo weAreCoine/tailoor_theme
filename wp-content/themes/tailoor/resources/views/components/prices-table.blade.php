@@ -2,7 +2,7 @@
   <div class="container">
     <div class="text-center">
       <ul
-        class="my-12 inline-grid grid-cols-2  items-center p-1 border-2 border-mirage rounded-full w-[30rem] max-w-full relative">
+        class="my-12 inline-grid grid-cols-2 text-xs sm:text-base items-center p-1 border-2 border-mirage rounded-full w-[30rem] max-w-full relative">
         <li
           class="absolute m-0 bg-gradient-to-bl from-mirage to-slate-500 h-full w-1/2 rounded-full top-0 left-0 duration-300 ease-out border-2 border-white"
           :class="{'translate-x-full': yearlyPrices, 'translate-x-0': !yearlyPrices}"
@@ -13,11 +13,11 @@
           :class="{'rotate-0 -translate-y-1': yearlyPrices, 'rotate-2 grayscale translate-y-1': !yearlyPrices}"
         ><?= __('Save 15%', 'sage') ?></li>
         <li
-          class="px-12 py-2 m-0 relative uppercase font-semibold font-header whitespace-nowrap rounded-full duration-500 select-none underline underline-offset-4 decoration-transparent"
+          class="sm:px-12 py-2 m-0 relative uppercase font-semibold font-header whitespace-nowrap rounded-full duration-500 select-none underline underline-offset-4 decoration-transparent"
           x-on:click="if(yearlyPrices) yearlyPrices = !yearlyPrices"
           :class="{'text-white': !yearlyPrices, 'hover:decoration-mirage cursor-pointer': yearlyPrices}"><?= __('Monthly Plans', 'sage') ?></li>
         <li
-          class="px-12 py-2 m-0 relative uppercase font-semibold whitespace-nowrap font-header rounded-full duration-500 select-none underline underline-offset-4 decoration-transparent"
+          class="sm:px-12 py-2 m-0 relative uppercase font-semibold whitespace-nowrap font-header rounded-full duration-500 select-none underline underline-offset-4 decoration-transparent"
           x-on:click="if(!yearlyPrices) yearlyPrices = !yearlyPrices"
           :class="{'text-white': yearlyPrices, 'hover:decoration-mirage cursor-pointer': !yearlyPrices}"><?= __('Annual Plans', 'sage') ?></li>
       </ul>

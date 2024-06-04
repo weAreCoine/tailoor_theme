@@ -4,11 +4,11 @@ namespace App\View\Components;
 
 use App\Abstracts\Carousel;
 
-class ClientsCarousel extends Carousel
+class PressCarousel extends Carousel
 {
     public function __construct()
     {
-        $this->imagesFolderPath = 'images/clients-logos';
+        $this->imagesFolderPath = 'images/press-logos';
         parent::__construct();
     }
 }
