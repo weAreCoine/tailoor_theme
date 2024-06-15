@@ -5,9 +5,51 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export const TailoorAnimations = {
   bind() {
-    if (tailoor.needAnimations === '1') {
+    if (tailoor.needAnimations === 'home') {
       this.home();
+    } else if (tailoor.needAnimations === 'pricing') {
+      this.pricing();
     }
+  },
+
+  pricing() {
+    this.commons();
+  },
+  commons() {
+    gsap.matchMedia().add(`(min-height: 1200px)`, () => {
+
+      let currentTab = 0;
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: document.querySelector('#phygital'),
+          start: 'top top',
+          end: 'bottom top',
+          markers: false,
+          scrub: 1,
+          pin: document.querySelector('#phygital > .container'),
+          snap: {
+            snapTo: [0, .3333, .6666, 1],
+            duration: 0,
+            directional: true,
+          },
+          onUpdate({progress}) {
+            let currentRealTab = Math.floor(progress / .33);
+            if (currentRealTab !== currentTab) {
+              currentTab = currentRealTab;
+              let changeTabEvent = new CustomEvent('home-new-tab', {
+                detail: {currentTab: currentTab},
+                bubbles: true,
+              });
+              window.dispatchEvent(changeTabEvent);
+            }
+          },
+          invalidateOnRefresh: true,
+          anticipatePin: true,
+          pinSpacing: true,
+        }
+      });
+    });
   },
   home() {
     const productCarousel = document.querySelector('#products__carousel__container');
@@ -77,39 +119,6 @@ export const TailoorAnimations = {
       }
     });
 
-    gsap.matchMedia().add(`(min-height: 1200px)`, () => {
-
-      let currentTab = 0;
-
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: document.querySelector('#phygital'),
-          start: 'top top',
-          end: 'bottom top',
-          markers: false,
-          scrub: 1,
-          pin: document.querySelector('#phygital > .container'),
-          snap: {
-            snapTo: [0, .3333, .6666, 1],
-            duration: 0,
-            directional: true,
-          },
-          onUpdate({progress}) {
-            let currentRealTab = Math.floor(progress / .33);
-            if (currentRealTab !== currentTab) {
-              currentTab = currentRealTab;
-              let changeTabEvent = new CustomEvent('home-new-tab', {
-                detail: {currentTab: currentTab},
-                bubbles: true,
-              });
-              window.dispatchEvent(changeTabEvent);
-            }
-          },
-          invalidateOnRefresh: true,
-          anticipatePin: true,
-          pinSpacing: true,
-        }
-      });
-    });
+    this.commons();
   }
 };

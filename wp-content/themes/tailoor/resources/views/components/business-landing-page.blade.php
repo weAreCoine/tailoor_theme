@@ -148,8 +148,22 @@
         </li>
       </template>
     </ul
-
   </div>
+  <section id="phygital" class="py-32 flex items-center">
+    <div class="container text-center">
+      <p class="uppercase text-xl"><?= __('Tailor made solutions for your business', 'sage') ?></p>
+      <h2 class="uppercase text-6xl"><?= __('Make it phygital', 'sage') ?><span
+          class="text-pink text-2x">.</span></h2>
+      <p
+        class="text-xl max-w-3xl mx-auto mt-8"><?= __('Build customer loyalty by offering your clients the opportunity to have a complete and interactive shopping experience, both online and in-store. They can configure their own products independently from their smartphone or PC in just a few simple steps.', 'sage') ?></p>
+      <x-vertical-tabs
+        :labels="apply_filters('get_home_tabs_labels', [])"
+        :tabs-content="apply_filters('get_home_tabs_contents', [])"
+      />
+      <x-form-cta :on-page="$showPrices" class="mt-12"/>
+    </div>
+  </section>
+
   <div class=" mt-32 pb-32 scroll-mt-48 bg-gradient-to-b from-transparent to-mirage-900" id="faq">
     <div class="container">
       <h2 class="uppercase text-4xl mb-12 text-white text-center">Faq<span

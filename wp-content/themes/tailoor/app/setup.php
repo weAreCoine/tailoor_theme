@@ -7,6 +7,7 @@
 namespace App;
 
 use WP_Scripts;
+
 use function Roots\bundle;
 
 /**
@@ -16,11 +17,15 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue()->localize('tailoor', [
-        'needAnimations' => is_front_page(),
+        'needAnimations' => match (true) {
+            is_front_page() => 'home',
+            request()->path() === 'get-a-tailoor-demo' => 'pricing',
+            default => false
+        },
     ]);
-//    if (is_front_page()) {
-//        bundle('home')->enqueue();
-//    }
+    //    if (is_front_page()) {
+    //        bundle('home')->enqueue();
+    //    }
     bundle('fontawesome')->enqueue();
 }, 100);
 
@@ -135,19 +140,18 @@ add_action('widgets_init', function () {
     ];
 
     register_sidebar([
-            'name' => __('Primary', 'sage'),
-            'id' => 'sidebar-primary',
-        ] + $config);
+        'name' => __('Primary', 'sage'),
+        'id' => 'sidebar-primary',
+    ] + $config);
 
     register_sidebar([
-            'name' => __('Footer', 'sage'),
-            'id' => 'sidebar-footer',
-        ] + $config);
+        'name' => __('Footer', 'sage'),
+        'id' => 'sidebar-footer',
+    ] + $config);
 });
 
-
 add_action('wp_default_scripts', function (WP_Scripts $scripts) {
-    if (!is_admin() && isset($scripts->registered['jquery'])) {
+    if (! is_admin() && isset($scripts->registered['jquery'])) {
         $script = $scripts->registered['jquery'];
         if ($script->deps) {
             $script->deps = array_diff($script->deps, ['jquery-migrate']);
@@ -155,9 +159,8 @@ add_action('wp_default_scripts', function (WP_Scripts $scripts) {
     }
 });
 
-
 add_action('admin_menu', function () {
-    add_menu_page(__(get_bloginfo('name') . ' > Console', 'coine'), __('Console', 'coine'), 'manage_options', 'console', function () {
+    add_menu_page(__(get_bloginfo('name').' > Console', 'coine'), __('Console', 'coine'), 'manage_options', 'console', function () {
         echo '<h1 style="margin-bottom: 2rem">Console</h1>';
         require_once resource_path('views/console/console.php');
     }, 'dashicons-shortcode', 45);
@@ -170,6 +173,7 @@ add_action('pre_http_request', function ($preempt, $args, $url) {
     if (session_status() === PHP_SESSION_ACTIVE) {
         session_write_close();
     }
+
     return $preempt; // Non alterare la risposta predefinita
 }, 10, 3);
 
@@ -177,22 +181,21 @@ add_action('pre_http_request', function ($preempt, $args, $url) {
  * Init session if it doesn't exists
  */
 add_action('init', function () {
-    if (!session_id()) {
+    if (! session_id()) {
         session_start();
     }
 });
 
 /**
  * Close session
- * @return void
  */
 function end_session(): void
 {
 
     $params = session_get_cookie_params();
     setcookie(session_name(), '', time() - 42000,
-        $params["path"], $params["domain"],
-        $params["secure"], $params["httponly"]
+        $params['path'], $params['domain'],
+        $params['secure'], $params['httponly']
     );
     if (session_status() === PHP_SESSION_ACTIVE) {
         session_destroy();
@@ -206,12 +209,10 @@ add_action('wp_login', function (): void {
 
     $params = session_get_cookie_params();
     setcookie(session_name(), '', time() - 42000,
-        $params["path"], $params["domain"],
-        $params["secure"], $params["httponly"]
+        $params['path'], $params['domain'],
+        $params['secure'], $params['httponly']
     );
     if (session_status() === PHP_SESSION_ACTIVE) {
         session_destroy();
     }
 });
-
-

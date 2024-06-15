@@ -22,7 +22,6 @@ class BusinessLandingPage extends Component
             __('With the support of the Dashboard, you can keep track of all orders placed, both online and in-store. Customer data is an incredible asset for your business. You can analyze it to create targeted offers and business strategies, reduce waste through more effective raw material sourcing, and identify sales trends.', 'sage'),
             __('The benefits you will gain are numerous: from significant time savings to the ability to optimize your sales strategies. You can increase your profits by offering your customers a unique shopping experience, thanks to the complete digitization of your business.', 'sage'),
         ];
-
         add_filter('landing_header', [$this, 'header']);
     }
 
