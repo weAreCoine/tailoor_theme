@@ -3,7 +3,10 @@
   <div class="relative">
     <div
       class="font-header flex flex-col justify-center items-center gap-2 bg-gray-50 rounded-2xl tailoor__outline {{$accent ? 'accent' : ''}}  px-4 py-10 border">
-      <p class="text-2xl">{{strtoupper($translatedTitle)}}</p>
+      <p class="text-2xl leading-[0] mb-2">{{strtoupper($translatedTitle)}}</p>
+      @unless(empty($target))
+        <p class="text-xs uppercase font-medium price__description">{{$target}}</p>
+      @endunless
       <p class="text-5xl font-bold" x-text="yearlyPrices ? annual.price : monthly.price"></p>
       <p>€/<?= __('month', 'sage') ?> <span class="text-2xs text-gray-600"
                                             x-text="yearlyPrices ? '(<?= __('yearly billed', 'sage') ?>)': ''"></span>

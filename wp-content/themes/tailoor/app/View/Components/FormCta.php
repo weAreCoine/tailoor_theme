@@ -23,8 +23,8 @@ class FormCta extends Component
     {
         return view('components.form-cta')->with([
             'url' => $this->onPage ? '#prices__table' : match (getCurrentLanguage()) {
-                'it' => 'it/pricing',
-                default => 'pricing'
+                'it' => url('it/pricing'),
+                default => url('pricing')
             },
         ]);
     }

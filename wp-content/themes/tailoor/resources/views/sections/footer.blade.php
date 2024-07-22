@@ -1,10 +1,25 @@
+<?php
+$lang = getCurrentLanguage();
+$privacyPolicy = match ($lang) {
+  'it' => 'https://www.iubenda.com/privacy-policy/75490570',
+  default => 'https://www.iubenda.com/privacy-policy/23976788'
+};
+$cookiePolicy = match ($lang) {
+  'it' => 'https://www.iubenda.com/privacy-policy/75490570/cookie-policy',
+  default => 'https://www.iubenda.com/privacy-policy/23976788/cookie-policy'
+};
+$termsAndConditions = match ($lang) {
+  'it' => 'https://www.iubenda.com/termini-e-condizioni/75490570',
+  default => 'https://www.iubenda.com/terms-and-conditions/23976788'
+};
+?>
+
 <footer class="content-info">
   <div class="colophon">
     <div class="">
       {!! wp_get_attachment_image(574, [40,40], true, ['alt' => $siteName, 'class'=> 'footer__logo']) !!}
       <p class="mt-8">{{__('13 Pietro Maroncelli Street, 20154, Milan, Italy', 'sage')}}</p>
-      <p class="mt-4"><a href="tel:00393461208478">+39 346 – 1208478</a></p>
-      <p class="mt-1"><a href="mailto:info@tailoor.com">info@tailoor.com</a></p>
+      <p class="mt-1"><a href="mailto:commercial@tailoor.com">commercial@tailoor.com</a></p>
       <ul class="flex justify-center items-center gap-6 text-md mt-6">
         <li>
           <a target="_blank" rel="nofollow" href="https://www.linkedin.com/company/tailoor/">
@@ -38,19 +53,19 @@
              title="Privacy Policy ">{{__('GDPR Settings', 'sage')}}</a>
         </li>
         <li class="m-0">
-          <a href="https://www.iubenda.com/privacy-policy/23976788"
+          <a href="{{$privacyPolicy}}"
              class="iubenda__button iubenda-black no-brand iubenda-noiframe iubenda-embed iubenda-noiframe "
              title="Privacy Policy ">Privacy
             Policy</a>
         </li>
         <li class="m-0">
-          <a href="https://www.iubenda.com/privacy-policy/23976788/cookie-policy"
+          <a href="{{$cookiePolicy}}"
              class="iubenda__button iubenda-black no-brand iubenda-noiframe iubenda-embed iubenda-noiframe "
              title="Cookie Policy ">Cookie
             Policy</a>
         </li>
         <li class="m-0">
-          <a href="https://www.iubenda.com/terms-and-conditions/23976788"
+          <a href="{{$termsAndConditions}}"
              class="iubenda__button iubenda-black no-brand iubenda-noiframe iubenda-embed iubenda-noiframe "
              title="Termini e Condizioni ">Terms & conditions</a>
 

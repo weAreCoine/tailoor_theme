@@ -1,4 +1,4 @@
-<div id="prices__table" x-data="{yearlyPrices: true}" <?= $attributes->only('class') ?>>
+<div id="prices__table" x-data="{yearlyPrices: false}" <?= $attributes->only('class') ?>>
   <div class="container">
     <div class="text-center">
       <ul
@@ -34,13 +34,13 @@
       </ul>
       <div class="mt-4 lg:mt-16 mb-16 grid lg:grid-cols-3 items-start gap-12">
         <div x-show="visible === 0 || showAll" class="h-full">
-          <x-price-card :title="'Essential'"/>
+          <x-price-card :title="'Essential'" :target="__('For small business', 'sage')"/>
         </div>
         <div x-show="visible === 1 || showAll" class="h-full">
-          <x-price-card :title="'Starter'"/>
+          <x-price-card :title="'Starter'" :target="__('For solo entrepreneurs', 'sage')"/>
         </div>
         <div x-show="visible === 2 || showAll" class="h-full">
-          <x-price-card :title="'Professional'"/>
+          <x-price-card :title="'Professional'" :target="__('For medium business', 'sage')"/>
         </div>
       </div>
     </div>

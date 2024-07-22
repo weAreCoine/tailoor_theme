@@ -169,7 +169,7 @@ msgstr ""
 
 #: app/Services/FaqService.php:40
 #: app/Services/FaqService.php:78
-msgid "We look forward to connecting with you! For more information, request your free demo through the dedicated form or contact us at info@tailoor.com."
+msgid "We look forward to connecting with you! For more information, request your free demo through the dedicated form or contact us at commercial@tailoor.com."
 msgstr ""
 
 #: app/Services/HomeService.php:10

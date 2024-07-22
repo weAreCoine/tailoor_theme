@@ -4,7 +4,7 @@ namespace App\Services;
 
 final class FaqService
 {
-    static public function generalFaqs(): array
+    public static function generalFaqs(): array
     {
         return [
             [
@@ -37,12 +37,12 @@ final class FaqService
             ],
             [
                 'question' => __('How can I get more information?', 'sage'),
-                'answer' => __('We look forward to connecting with you! For more information, request your free demo through the dedicated form or contact us at info@tailoor.com.', 'sage'),
+                'answer' => __('We look forward to connecting with you! For more information, request your free demo through the dedicated form or contact us at commercial@tailoor.com.', 'sage'),
             ],
         ];
     }
 
-    static public function landingsFaq(): array
+    public static function landingsFaq(): array
     {
         return [
             [
@@ -75,7 +75,7 @@ final class FaqService
             ],
             [
                 'question' => __('How can I get more information?', 'sage'),
-                'answer' => __('We look forward to connecting with you! For more information, request your free demo through the dedicated form or contact us at info@tailoor.com.', 'sage'),
+                'answer' => __('We look forward to connecting with you! For more information, request your free demo through the dedicated form or contact us at commercial@tailoor.com.', 'sage'),
             ],
         ];
     }
