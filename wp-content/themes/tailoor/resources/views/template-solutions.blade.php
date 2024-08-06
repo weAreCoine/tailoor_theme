@@ -162,7 +162,7 @@
     </div>
   </div>
   <div class="mb-32 mx-auto max-w-[2560px]">
-    <?= wp_get_attachment_image(2207, 'full', false, ['alt' => 'Decoration', 'class' => 'w-full h-auto']) ?>
+    <?= wp_get_attachment_image(2239, 'full', false, ['alt' => 'Decoration', 'class' => 'w-full h-auto']) ?>
   </div>
 
   <div class="my-32 container grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-36 items-center xl:items-start">

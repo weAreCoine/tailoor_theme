@@ -1,4 +1,4 @@
-<div class="py-32 <?=$attributes->get('class', 'bg-mirage')?>">
+<div class="@if($addPadding) py-32 @endif <?=$attributes->get('class', 'bg-mirage')?>">
   <section id="tailoor__carousel" class="splide" aria-label="<?=__('Clients')?>" x-data="bindSlider()">
     <div class="splide__track">
       <ul class="splide__list">

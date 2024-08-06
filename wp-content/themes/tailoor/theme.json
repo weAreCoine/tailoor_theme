@@ -1344,8 +1344,8 @@
           "slug": "sans"
         },
         {
-          "fontFamily": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
-          "name": "Ui-serif",
+          "fontFamily": "Libre Caslon Text",
+          "name": "Libre Caslon Text",
           "slug": "serif"
         },
         {
@@ -1354,8 +1354,8 @@
           "slug": "mono"
         },
         {
-          "fontFamily": "Poppins,ui-sans-serif,system-ui,sans-serif",
-          "name": "Poppins",
+          "fontFamily": "Inter,ui-sans-serif,system-ui,sans-serif",
+          "name": "Inter",
           "slug": "header"
         }
       ],

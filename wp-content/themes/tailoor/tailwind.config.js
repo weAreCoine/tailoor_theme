@@ -55,8 +55,9 @@ const config = {
 
       }, // Extend Tailwind's default colors
       fontFamily: {
-        sans: ['Inter',],
-        header: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Inter'],
+        serif: ['Libre Caslon Text'],
+        header: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

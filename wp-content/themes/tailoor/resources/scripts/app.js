@@ -5,7 +5,12 @@ import '@splidejs/splide/css/core';
 import Splide from "@splidejs/splide";
 import {AutoScroll} from '@splidejs/splide-extension-auto-scroll';
 import {TailoorAnimations} from './animations/animations.js'
+import 'highlight.js/styles/github-dark-dimmed.min.css';
 
+// Using ES6 import syntax
+import hljs from 'highlight.js';
+
+window.hljs = hljs;
 TailoorAnimations.bind();
 
 window.Alpine = Alpine;

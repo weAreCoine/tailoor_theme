@@ -1,8 +1,31 @@
-@import url(https://fonts.bunny.net/css?family=inter:400,700|poppins:400,600,700);
+@import url(https://fonts.bunny.net/css?family=inter:400,700|poppins:400,500,600,700|libre-caslon-text:400,400i,700,700i);
 
 @tailwind base;
 @tailwind components;
 @layer components {
+  .code__showcase {
+    @apply relative;
+
+    .code__language__labels {
+      @apply flex text-sm;
+
+      li {
+        @apply px-8 py-2 uppercase font-medium border-x border-t border-white/10 text-white/40 cursor-pointer duration-500 border-b border-b-transparent bg-mirage/80  rounded-t-lg;
+
+        &:not(.active) {
+          @apply hover:border-rose-100/50
+        }
+
+        &.active {
+          @apply border-b-mirage text-white border-rose-100 z-10
+        }
+      }
+    }
+
+    .code__language__tabs {
+      @apply border border-rose-100 p-12 -translate-y-[1px] aspect-video overflow-y-auto bg-mirage/80 backdrop-blur rounded-b-lg rounded-tr-lg;
+    }
+  }
 
   .errors__bag {
     @apply flex flex-col gap-2 mb-8;
@@ -24,7 +47,7 @@
 
 
   .button {
-    @apply duration-500 uppercase font-header inline-block;
+    @apply duration-500 font-sans inline-block uppercase;
     padding-inline: 3em;
     padding-block: .5em;
     border-radius: .5em;
@@ -106,6 +129,11 @@
   .container {
     @apply max-w-8xl mx-auto px-6
   }
+
+  .container-xl {
+    @apply max-w-screen-2xl mx-auto px-6
+  }
+
 
   .burger__icon {
     @apply relative h-4 w-6 lg:hidden cursor-pointer;
@@ -312,6 +340,16 @@
     line-height: 0;
   }
 
+  .animate-ping-custom {
+    animation: ping-custom 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping-custom {
+    75%, 100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
   .tailoor__outline {
     @apply relative z-10;
 
