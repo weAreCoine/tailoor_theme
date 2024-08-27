@@ -3,7 +3,7 @@
 >
   <div
     class="flex items-center justify-between gap-x-8  duration-500">
-    <p class="text-2xl md:text-3xl text-white duration-500">{{$question}}</p>
+    <p class="text-xl md:text-2xl text-white duration-500">{{$question}}</p>
     <div class="relative">
       <div class="h-[3px] w-6 bg-white"></div>
       <div :class="{'rotate-0': open, 'rotate-90':!open}"
@@ -11,5 +11,5 @@
       ></div>
     </div>
   </div>
-  <p x-show="open" x-collapse.duration.500ms class="leading-loose pt-8">{{$answer}}</p>
+  <p x-show="open" x-collapse.duration.500ms class="leading-loose pt-8 text-white/60">{{$answer}}</p>
 </div>

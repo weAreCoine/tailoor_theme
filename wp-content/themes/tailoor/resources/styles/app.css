@@ -4,27 +4,20 @@
 @tailwind components;
 @layer components {
   .code__showcase {
-    @apply relative;
+    @apply text-sm select-none;
 
-    .code__language__labels {
-      @apply flex text-sm;
-
-      li {
-        @apply px-8 py-2 uppercase font-medium border-x border-t border-white/10 text-white/40 cursor-pointer duration-500 border-b border-b-transparent bg-mirage/80  rounded-t-lg;
-
-        &:not(.active) {
-          @apply hover:border-rose-100/50
-        }
-
-        &.active {
-          @apply border-b-mirage text-white border-rose-100 z-10
-        }
-      }
+    .last, .first {
+      @apply rounded bg-[#212632] border-white/10 border h-full overflow-hidden p-12 backdrop-blur-2xl
     }
 
-    .code__language__tabs {
-      @apply border border-rose-100 p-12 -translate-y-[1px] aspect-video overflow-y-auto bg-mirage/80 backdrop-blur rounded-b-lg rounded-tr-lg;
+    .first {
+      @apply relative -translate-x-6 -translate-y-12;
     }
+
+    .last {
+      @apply absolute top-12 left-6 w-full opacity-50;
+    }
+
   }
 
   .errors__bag {

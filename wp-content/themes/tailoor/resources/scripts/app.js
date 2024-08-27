@@ -5,7 +5,7 @@ import '@splidejs/splide/css/core';
 import Splide from "@splidejs/splide";
 import {AutoScroll} from '@splidejs/splide-extension-auto-scroll';
 import {TailoorAnimations} from './animations/animations.js'
-import 'highlight.js/styles/github-dark-dimmed.min.css';
+import 'highlight.js/styles/tokyo-night-dark.min.css';
 
 // Using ES6 import syntax
 import hljs from 'highlight.js';
@@ -21,7 +21,9 @@ Alpine.data('mainNavigation', () => ({
   open: false,
   isLargeScreen: window.innerWidth >= 1024,
   bind(component) {
-    component.querySelectorAll('li > a').forEach(element => element.addEventListener('click', () => this.open = false));
+    this.isLargeScreen = window.innerWidth >= 1024;
+    component.querySelectorAll('li > a')
+      .forEach(element => element.addEventListener('click', () => this.open = false));
   }
 }));
 

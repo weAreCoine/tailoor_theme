@@ -50,7 +50,7 @@ const config = {
           '700': '#2b4e79',
           '800': '#274365',
           '900': '#253a55',
-          '950': '#111a27',
+          '950': '#border-fade',
         },
 
       }, // Extend Tailwind's default colors
