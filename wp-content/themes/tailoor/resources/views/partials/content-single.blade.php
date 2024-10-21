@@ -1,6 +1,6 @@
 <article @php(post_class('h-entry'))>
   <header
-    class="py-6 lg:py-12 relative overflow-hidden min-h-[300px] lg:min-h-[600px] flex flex-col items-center justify-center bg-center bg-cover"
+    class="py-6 lg:py-12 relative overflow-hidden min-h-[300px] lg:min-h-[600px] flex flex-col items-center justify-center bg-center bg-cover mb-12"
     style="background-image: url('<?= wp_get_attachment_image_url( get_post_thumbnail_id(), 'full' ) ?>')">
     <div class="max-w-2xl text-center">
       @include('partials.entry-tags')
@@ -25,3 +25,4 @@
 
   @php(comments_template())
 </article>
+<x-trial-banner/>

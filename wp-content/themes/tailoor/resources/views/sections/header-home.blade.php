@@ -17,7 +17,7 @@
       <div
         x-show="open || isLargeScreen"
         x-transition.opacity.duration.500ms
-        class="nav__container dark bg-mirage">
+        class="nav__container dark">
         {!! wp_nav_menu(['theme_location' => apply_filters('tailoor_navigation', 'home_navigation', url()->current()), 'menu_class' => 'nav', 'echo' => false]) !!}
       </div>
     </nav>

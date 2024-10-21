@@ -6,9 +6,9 @@ import Splide from "@splidejs/splide";
 import {AutoScroll} from '@splidejs/splide-extension-auto-scroll';
 import {TailoorAnimations} from './animations/animations.js'
 import 'highlight.js/styles/tokyo-night-dark.min.css';
-
 // Using ES6 import syntax
 import hljs from 'highlight.js';
+import Player from '@vimeo/player'
 
 window.hljs = hljs;
 TailoorAnimations.bind();
@@ -31,7 +31,11 @@ Alpine.data('modal', (visible, name) => ({
   visible,
   name,
   body: null,
+  visibleForTheFirstTime: true,
   onChangeVisibility(value) {
+    if (this.visibleForTheFirstTime) {
+      this.visibleForTheFirstTime = false;
+    }
     if (this.body === null) {
       this.body = document.querySelector('body');
     }
@@ -42,6 +46,7 @@ Alpine.data('modal', (visible, name) => ({
     }
   }
 }))
+
 
 Alpine.data('steps', (json) => ({
   contents: JSON.parse(json),
@@ -71,7 +76,6 @@ Alpine.data('bindSlider', () => ({
         autoplay: 'pause'
       }
     }).mount({AutoScroll});
-
   }
 }));
 

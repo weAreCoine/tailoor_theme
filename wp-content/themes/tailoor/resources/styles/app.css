@@ -169,6 +169,14 @@
     }
   }
 
+  .footer__menu {
+    @apply flex items-center justify-center gap-4 uppercase font-semibold flex-wrap text-2xs sm:text-base;
+
+    a {
+      @apply whitespace-nowrap;
+    }
+  }
+
   .nav-primary {
     .nav__container {
       @apply fixed text-white lg:text-black top-0 left-0 bg-mirage-950 lg:bg-transparent w-screen h-screen z-20 flex justify-center items-center lg:block lg:static lg:h-auto lg:w-auto lg:top-auto lg:left-auto;
@@ -204,6 +212,7 @@
   }
 
   .e-content {
+    
     strong {
       @apply font-bold
     }
@@ -328,6 +337,10 @@
 
 @tailwind utilities;
 @layer utilities {
+  .whitespace-balance {
+    white-space: balance;
+  }
+
   .text-2x {
     font-size: 2em;
     line-height: 0;

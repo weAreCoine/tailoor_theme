@@ -25,19 +25,19 @@ class HomeService
             HTML;
         }, [
             [
-                'imageID' => 2092,
+                'imageID' => 2336,
                 'p' => __('You will be able to choose which product categories you want your customers to customize by uploading your product catalog. The 3D visualization of the product will be visible in real-time.', 'sage'),
             ],
             [
-                'imageID' => 2088,
+                'imageID' => 2338,
                 'p' => __('All the materials you want to include in the configurator will be digitally rendered by us, offering your customers a wide range of options.', 'sage'),
             ],
             [
-                'imageID' => 2090,
+                'imageID' => 2340,
                 'p' => __('Every detail can be customized, offering your customers a unique result, entirely created by and for them.', 'sage'),
             ],
             [
-                'imageID' => 2094,
+                'imageID' => 2342,
                 'p' => __('Once the order is finalized, you have two options: allow your customers to receive the product at home or enable them to schedule an appointment at your store to review the final details of their purchase together.', 'sage'),
             ],
         ]);

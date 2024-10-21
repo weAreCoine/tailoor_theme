@@ -5,9 +5,10 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export const TailoorAnimations = {
   bind() {
-    if (tailoor.needAnimations === 'home') {
-      this.home();
-    } else if (tailoor.needAnimations === 'pricing') {
+    // if (tailoor.needAnimations === 'home') {
+    // this.home();
+    // } else
+    if (tailoor.needAnimations === 'pricing') {
       this.pricing();
     }
   },

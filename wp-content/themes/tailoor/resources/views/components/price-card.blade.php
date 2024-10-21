@@ -36,10 +36,14 @@
   </div>
 
 
-  <div class="text-center {{$hasOnboarding ?: 'demo_request'}}">
+  <div
+    class="text-center {{$hasOnboarding ? 'inline-flex flex-col items-center justify-center gap-y-2' : 'demo_request'}}">
     <a :href="yearlyPrices ? annual.href : monthly.href"
        x-text="yearlyPrices ? annual.label : monthly.label"
        class="inline-block py-2 px-12 {{$accent ? 'bg-pink border-pink-400 hover:bg-pink-300': 'bg-gray-100 hover:bg-gray-50 border-gray-200'}} border duration-500 text-lg font-header uppercase rounded-lg">
     </a>
+    @if($hasOnboarding)
+      <span class="text-xs"><?= __('No credit card required', 'sage') ?></span>
+    @endif
   </div>
 </div>

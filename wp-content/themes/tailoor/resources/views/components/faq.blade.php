@@ -11,5 +11,6 @@
       ></div>
     </div>
   </div>
-  <p x-show="open" x-collapse.duration.500ms class="leading-loose pt-8 text-white/60">{{$answer}}</p>
+  <p x-show="open" x-collapse.duration.500ms class="leading-loose  text-white/60"><span
+      class="block h-8"></span>{{$answer}}</p>
 </div>
