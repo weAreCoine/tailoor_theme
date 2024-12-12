@@ -196,6 +196,14 @@
       </div>
     </div>
   </div>
+  <section id="press" class="max-w-screen-2xl mx-auto my-16">
+    <p class="text-xs justify-center text-blue-300 font-mono flex items-center gap-4 font-medium mb-1 mt-12"><i
+        class="fa-solid fa-newspaper"></i><?= __('Press', 'sage') ?>
+    </p>
+    <h2
+      class="font-medium text-3xl max-w-4xl mx-auto !leading-normal text-center"><?= sprintf(__('They %swrite%s about us', 'sage'), '<span class="font-serif italic">', '</span>') ?></h2>
+    <x-press-carousel class="bg-mirage mt-20" :add-padding="false"/>
+  </section>
   <section class="bg-gradient-to-b from-mirage to-mirage-900">
     <div class="container grid xl:grid-cols-3 text-white gap-8 py-32">
       <div class="py-12 relative">

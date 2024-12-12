@@ -7,26 +7,14 @@
 @section('footerWrapper.class', 'gradient')
 @section('content')
   <div class="bg-gradient-to-b from-mirage to-mirage-900 ">
-    <section class="container text-center pt-32 pb-56 relative"
+    <section class="container text-center py-12 relative"
              aria-label="<?=__('Tailoor Prices page')?>">
-      <img x-data="animateOnMouseMove($el, false, true)"
-           src="<?=asset('/images/prices-page/sphere_blue.png')?>" alt="blue sphere"
-           class="absolute top-[5%] md:top-[10%] left-[10%] duration-75">
-      <p class="uppercase text-4xl relative z-10"><?= __('Start for free', 'sage') ?><span class="text-pink">!</span>
+      <p class="uppercase text-4xl relative z-10"><?= __('Enhance your business with 3D customization', 'sage') ?><span
+          class="text-pink">!</span>
       </p>
-      <h1
-        class="text-2xl mt-4 text-pink-100"><?= __('Chose the best plan for your business. Change plans as you grow.', 'sage') ?></h1>
-      <div class="mt-12"><a href="#prices__table"
-                            class="bg-pink text-mirage uppercase font-bold inline-block py-3 px-16 rounded-full hover:bg-pink-100 duration-500"><?= __('Start now', 'sage') ?></a>
-      </div>
-
-      <img x-data="animateOnMouseMove($el, false, false)"
-           src="<?=asset('/images/prices-page/torus_blue.png')?>" alt="torus blue"
-           class="absolute bottom-0 right-[8%] translate-y-1/4 opacity-0 md:opacity-100 duration-75">
-      <img x-data="animateOnMouseMove($el, true, true)"
-           src="<?=asset('/images/prices-page/sphere_pink.png')?>" alt="pink sphere"
-           class="absolute top-[75%] md:top-[90%] right-[1%] duration-75">
-    </section>
+      <h1 class="text-2xl mt-4 text-pink-100">
+        <?= __('Choose the best plan for your business. Change plans as you grow.', 'sage') ?>
+      </h1>
   </div>
   <x-prices-table class="bg-gray-100 text-black py-16"/>
   <div class="py-20 bg-gradient-to-b from-mirage-900 to-mirage ">

@@ -10,8 +10,19 @@
       <p class="text-5xl font-bold" x-text="yearlyPrices ? annual.price : monthly.price"></p>
       <p>€/<?= __('month', 'sage') ?> <span class="text-2xs text-gray-600"
                                             x-text="yearlyPrices ? '(<?= __('yearly billed', 'sage') ?>)': ''"></span>
-
-      @if($accent)
+      @if($callToActionOnTop)
+        <div
+          class="text-center mt-8 {{$hasOnboarding ? 'inline-flex flex-col items-center justify-center gap-y-2 r' : 'demo_request'}}">
+          <a :href="yearlyPrices ? annual.href : monthly.href"
+             x-text="yearlyPrices ? annual.label : monthly.label"
+             class="inline-block py-2 px-12 {{$accent ? 'bg-pink border-pink-400 hover:bg-pink-300': 'bg-mirage hover:bg-mirage-900 border-mirage-900 text-white'}} border duration-500 text-base font-header uppercase rounded-lg">
+          </a>
+          @if($hasOnboarding)
+            <span class="text-xs"><?= __('No credit card required', 'sage') ?></span>
+          @endif
+        </div>
+      @endif
+      @if($accent && !$callToActionOnTop)
         <p
           class="bg-white border-2 text-pink-500 -rotate-1 shadow-lg border-pink whitespace-nowrap rounded-lg font-header uppercase text-xs sm:text-sm py-2 px-8 absolute top-full -translate-y-1/2 left-1/2 -translate-x-1/2"><?= __('Best seller', 'sage') ?></p>
       @endif
@@ -35,15 +46,16 @@
     </ul>
   </div>
 
-
-  <div
-    class="text-center {{$hasOnboarding ? 'inline-flex flex-col items-center justify-center gap-y-2' : 'demo_request'}}">
-    <a :href="yearlyPrices ? annual.href : monthly.href"
-       x-text="yearlyPrices ? annual.label : monthly.label"
-       class="inline-block py-2 px-12 {{$accent ? 'bg-pink border-pink-400 hover:bg-pink-300': 'bg-gray-100 hover:bg-gray-50 border-gray-200'}} border duration-500 text-lg font-header uppercase rounded-lg">
-    </a>
-    @if($hasOnboarding)
-      <span class="text-xs"><?= __('No credit card required', 'sage') ?></span>
-    @endif
-  </div>
+  @unless($callToActionOnTop)
+    <div
+      class="text-center {{$hasOnboarding ? 'inline-flex flex-col items-center justify-center gap-y-2' : 'demo_request'}}">
+      <a :href="yearlyPrices ? annual.href : monthly.href"
+         x-text="yearlyPrices ? annual.label : monthly.label"
+         class="inline-block py-2 px-12 {{$accent ? 'bg-pink border-pink-400 hover:bg-pink-300': 'bg-gray-100 hover:bg-gray-50 border-gray-200'}} border duration-500 text-lg font-header uppercase rounded-lg">
+      </a>
+      @if($hasOnboarding)
+        <span class="text-xs"><?= __('No credit card required', 'sage') ?></span>
+      @endif
+    </div>
+  @endunless
 </div>

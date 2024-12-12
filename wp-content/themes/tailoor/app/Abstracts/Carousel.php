@@ -15,12 +15,18 @@ abstract class Carousel extends Component
 
     public string $imagesFolderPath;
 
+    public bool $hasLinks = false;
+
+    public bool $background = false;
+
+    public bool $pauseOnHover = false;
+
     /**
      * Create a new component instance.
      *
      * @throws Exception
      */
-    public function __construct()
+    public function __construct(public bool $addPadding = true)
     {
         $this->sanitizeImagesFolderPath();
         $this->filenames = collect(scandir(resource_path($this->imagesFolderPath)));

@@ -9,8 +9,8 @@
         >
         </li>
         <li
-          class="absolute text-black m-0 left-3/4 -translate-x-1/2 whitespace-nowrap font-header bg-pink px-2 py-1 text-xs uppercase ease-in tracking-widest bottom-full duration-200"
-          :class="{'rotate-0 -translate-y-1': yearlyPrices, 'rotate-2 grayscale translate-y-1': !yearlyPrices}"
+          class="absolute text-black m-0 left-3/4 -translate-x-1/2 whitespace-nowrap font-header px-2 py-1 text-xs uppercase ease-in tracking-widest bottom-full duration-200"
+          :class="{'rotate-0 -translate-y-1 bg-pink': yearlyPrices, 'rotate-2 bg-gray-300': !yearlyPrices}"
         ><?= __('Save 15%', 'sage') ?></li>
         <li
           class="sm:px-12 py-2 m-0 relative uppercase font-semibold font-header whitespace-nowrap rounded-full duration-500 select-none underline underline-offset-4 decoration-transparent"

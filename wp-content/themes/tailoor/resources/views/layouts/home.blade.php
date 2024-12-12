@@ -6,10 +6,16 @@
   @php(do_action('get_header'))
   @php(wp_head())
   @yield('scripts', '')
+  <x-hot-jar/>
+  <x-google-tag-manager :head="true"/>
+  <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+
 </head>
 
 <body @php(body_class('bg-mirage font-header text-white'))>
 @php(wp_body_open())
+<x-google-tag-manager :head="false"/>
+
 <div id="app">
   <a class="sr-only focus:not-sr-only" href="#main">
     <?= __('Skip to content') ?>

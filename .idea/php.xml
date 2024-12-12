@@ -258,8 +258,6 @@
       <extension name="odbc" enabled="false" />
       <extension name="opentelemetry" enabled="false" />
       <extension name="pdflib" enabled="false" />
-      <extension name="pdo_ibm" enabled="false" />
-      <extension name="pdo_pgsql" enabled="false" />
       <extension name="pgsql" enabled="false" />
       <extension name="pspell" enabled="false" />
       <extension name="pthreads" enabled="false" />

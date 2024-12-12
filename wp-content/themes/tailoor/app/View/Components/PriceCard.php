@@ -19,6 +19,8 @@ class PriceCard extends Component
 
     public string $translatedTitle = '';
 
+    public readonly bool $callToActionOnTop;
+
     protected array $prices = [];
 
     /**
@@ -28,6 +30,8 @@ class PriceCard extends Component
         public string $title,
         public string $target = ''
     ) {
+        $this->callToActionOnTop = true;
+
         $data = PricesService::contentsFor($this->title);
         if ($data !== null) {
             [

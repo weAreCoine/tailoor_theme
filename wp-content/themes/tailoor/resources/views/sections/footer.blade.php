@@ -1,21 +1,39 @@
 <?php
 $lang = getCurrentLanguage();
 $privacyPolicy = match ($lang) {
-  'it' => 'https://www.iubenda.com/privacy-policy/13540592',
-  default => 'https://www.iubenda.com/privacy-policy/64818833'
+  'it' => 'https://www.iubenda.com/privacy-policy/12894242',
+  default => 'https://www.iubenda.com/privacy-policy/45370256'
 };
 $cookiePolicy = match ($lang) {
-  'it' => 'https://www.iubenda.com/privacy-policy/13540592/cookie-policy',
-  default => 'https://www.iubenda.com/privacy-policy/64818833/cookie-policy'
+  'it' => 'https://www.iubenda.com/privacy-policy/12894242/cookie-policy',
+  default => 'https://www.iubenda.com/privacy-policy/45370256/cookie-policy'
 };
 $termsAndConditions = match ($lang) {
-  'it' => 'https://www.iubenda.com/termini-e-condizioni/13540592',
-  default => 'https://www.iubenda.com/terms-and-conditions/64818833'
+  'it' => 'https://www.iubenda.com/termini-e-condizioni/12894242',
+  default => 'https://www.iubenda.com/terms-and-conditions/45370256'
 };
 ?>
 
 <footer class="content-info">
   <div class="colophon">
+    <div class="mb-16">
+      <h2 class="text-2xl font-medium"><?= __('Subscribe to our newsletter', 'sage') ?></h2>
+      @if(getCurrentLanguage()==='it')
+        <script>
+          hbspt.forms.create({
+            portalId: "26570211",
+            formId: "e079f158-5f28-46aa-a7be-55860d68566e"
+          });
+        </script>
+      @else
+        <script>
+          hbspt.forms.create({
+            portalId: "26570211",
+            formId: "99d47dcc-5ae7-47cd-84ad-54ef40ef23e3"
+          });
+        </script>
+      @endif
+    </div>
     <div class="">
       {!! wp_get_attachment_image(574, [40,40], true, ['alt' => $siteName, 'class'=> 'footer__logo']) !!}
       <nav id="footer-nav" class="my-12">
@@ -52,26 +70,28 @@ $termsAndConditions = match ($lang) {
       <ul class="grid grid-cols-2 sm:flex items-center justify-center gap-2 sm:gap-6 mt-8">
         <li class="m-0">
           <a href="#"
-             class="iubenda__button iubenda-advertising-preferences-link"
+             class="iubenda__button iubenda-cs-preferences-link"
              title="Privacy Policy ">{{__('GDPR Settings', 'sage')}}</a>
         </li>
         <li class="m-0">
           <a href="{{$privacyPolicy}}"
+             target="_blank"
              class="iubenda__button iubenda-black no-brand iubenda-noiframe iubenda-embed iubenda-noiframe "
              title="Privacy Policy ">Privacy
             Policy</a>
         </li>
         <li class="m-0">
           <a href="{{$cookiePolicy}}"
+             target="_blank"
              class="iubenda__button iubenda-black no-brand iubenda-noiframe iubenda-embed iubenda-noiframe "
              title="Cookie Policy ">Cookie
             Policy</a>
         </li>
         <li class="m-0">
           <a href="{{$termsAndConditions}}"
+             target="_blank"
              class="iubenda__button iubenda-black no-brand iubenda-noiframe iubenda-embed iubenda-noiframe "
              title="Termini e Condizioni ">Terms & conditions</a>
-
         </li>
       </ul>
     </div>

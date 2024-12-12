@@ -6,10 +6,7 @@ use App\Abstracts\Carousel;
 
 class ClientsCarousel extends Carousel
 {
-    public function __construct(public bool $addPadding = true)
-    {
-        $this->imagesFolderPath = 'images/clients-logos';
-        parent::__construct();
+    public string $id = 'clients-carousel';
 
-    }
+    public string $imagesFolderPath = 'images/clients-logos';
 }

@@ -53,9 +53,12 @@ Alpine.data('steps', (json) => ({
   selected: 0
 }));
 
-Alpine.data('bindSlider', () => ({
+Alpine.data('bindSlider', (id, gap = '4rem', pauseOnHover = false) => ({
+  id,
+  gap,
+  pauseOnHover,
   init() {
-    new Splide('#tailoor__carousel', {
+    new Splide(`#${id}`, {
       type: 'loop',
       drag: 'free',
       // snap: true,
@@ -63,13 +66,13 @@ Alpine.data('bindSlider', () => ({
       autoScroll: {
         speed: 1,
         //Attivando pauseOnHover si verifica un bug: se la finestra non ha focus all'hover l'animazione accelera
-        pauseOnHover: false,
+        pauseOnHover: this.pauseOnHover,
         rewindSpeed: 1,
       },
       pagination: false,
       lazyLoad: true,
       autoWidth: true,
-      gap: '4rem',
+      gap: this.gap,
       reducedMotion: {
         speed: 0,
         rewindSpeed: 0,
