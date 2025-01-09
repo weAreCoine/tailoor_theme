@@ -35,8 +35,9 @@
     <p
       class="text-white/60 text-center mb-24"><?= __('Just in case you\'re wondering, we\'ve got a quick list for you.', 'sage') ?></p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-32">
-      <div class="lg:col-span-2 overflow-hidden h-full">
-        <?= wp_get_attachment_image(2332, 'full', false, ['class' => 'w-full h-auto object-cover mix-blend-lighten', 'alt' => 'Tailoor Platform']) ?>
+      <div
+        class="lg:col-span-2 overflow-hidden h-full min-h-72 bg-contain bg-center bg-no-repeat opacity-90 -rotate-12"
+        style="background-image: url(<?= wp_get_attachment_image_url(2391, 'full') ?>)">
       </div>
 
       <div>
@@ -109,27 +110,21 @@
     <div class="grid grid-cols-2 gap-8 md:gap-32 text-center max-w-4xl mx-auto">
       <div>
         <i class="fa-solid text-2xl mb-6 text-white/80 fa-store"></i>
-        <p class="font-bold text-white/80 mb-2"><?= __('Agency Partners') ?></p>
+        <p class="font-bold text-white/80 mb-2"><?= __('Web Agencies') ?></p>
         <p
-          class="text-sm text-white/60"><?= __('Integrate our "AI-powered Virtual Assistant" feature to enable customer chat support for product configuration.', 'sage') ?></p>
+          class="text-sm text-white/60"><?= __('Leverage Tailoor\'s cutting-edge technology to deliver extraordinary, highly personalized user experiences for your clients. By integrating our platform, you can create digital solutions that not only meet current demands but also anticipate future trends, taking user interaction to a whole new level of efficiency and satisfaction.', 'sage') ?></p>
       </div>
       <div>
         <i class="fa-solid text-2xl mb-6 text-white/80 fa-tablet-screen-button"></i>
-        <p class="font-bold text-white/80 mb-2"><?= __('App Partners') ?></p>
+        <p class="font-bold text-white/80 mb-2"><?= __('Software Vendors') ?></p>
         <p
-          class="text-sm text-white/60"><?= __('Incorporate a generative AI-powered digital twin into your products through NFC technology for interactive customer engagement and valuable data generation.', 'sage') ?></p>
+          class="text-sm text-white/60"><?= __('Integrate our SaaS platform into your ecosystem and enhance your software offerings. Tailoor is designed to seamlessly integrate with all major technology and e-commerce platforms, allowing you to provide your clients with powerful, scalable solutions that are always aligned with market needs.', 'sage') ?></p>
       </div>
-      <div>
+      <div class="col-span-2">
         <i class="fa-solid text-2xl mb-6 text-white/80 fa-people-arrows"></i>
-        <p class="font-bold text-white/80 mb-2"><?= __('Consulting Partners') ?></p>
+        <p class="font-bold text-white/80 mb-2"><?= __('Consultancy Companies') ?></p>
         <p
-          class="text-sm text-white/60"><?= __('Integrate our "AI-powered Virtual Assistant" feature to enable customer chat support for product configuration.', 'sage') ?></p>
-      </div>
-      <div>
-        <i class="fa-solid text-2xl mb-6 text-white/80 fa-microchip"></i>
-        <p class="font-bold text-white/80 mb-2"><?= __('Technology Partners') ?></p>
-        <p
-          class="text-sm text-white/60"><?= __('Incorporate a generative AI-powered digital twin into your products through NFC technology for interactive customer engagement and valuable data generation.', 'sage') ?></p>
+          class="text-sm text-white/60"><?= __('With Tailoor, you can help your clients adopt new strategic approaches, develop innovative business models, and optimize their digital operations. Our technology enables you to implement tailored solutions that address unique challenges, creating growth opportunities and adding value to every aspect of their business.', 'sage') ?></p>
       </div>
     </div>
   </div>

@@ -17,9 +17,9 @@
              x-text="yearlyPrices ? annual.label : monthly.label"
              class="inline-block py-2 px-12 {{$accent ? 'bg-pink border-pink-400 hover:bg-pink-300': 'bg-mirage hover:bg-mirage-900 border-mirage-900 text-white'}} border duration-500 text-base font-header uppercase rounded-lg">
           </a>
-          @if($hasOnboarding)
-            <span class="text-xs"><?= __('No credit card required', 'sage') ?></span>
-          @endif
+          {{--          @if($hasOnboarding)--}}
+          {{--            <span class="text-xs"><?= __('No credit card required', 'sage') ?></span>--}}
+          {{--          @endif--}}
         </div>
       @endif
       @if($accent && !$callToActionOnTop)
