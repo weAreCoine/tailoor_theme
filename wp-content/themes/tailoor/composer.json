@@ -4,16 +4,6 @@
   "license": "MIT",
   "description": "WordPress starter theme with a modern development workflow",
   "homepage": "https://roots.io/sage/",
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    },
-    {
-      "type": "composer",
-      "url": "https://packages.metabox.io/6e111883b5443072b57151443a70c5bd"
-    }
-  ],
   "authors": [
     {
       "name": "Ben Word",
@@ -46,23 +36,14 @@
   "autoload": {
     "psr-4": {
       "App\\": "app/"
-    },
-    "files": [
-      "vendor/meta-box/mb-custom-post-type/mb-custom-post-type.php",
-      "vendor/meta-box/mb-settings-page/mb-settings-page.php",
-      "vendor/meta-box/meta-box-group/meta-box-group.php"
-    ]
-
+    }
   },
   "require": {
     "php": ">=8.2",
     "fakerphp/faker": "^1.23",
     "giggsey/libphonenumber-for-php": "^8.13",
     "hubspot/api-client": "^11.0",
-    "meta-box/mb-settings-page": "dev-master",
-    "meta-box/meta-box-group": "dev-master",
-    "roots/acorn": "^4.0",
-    "wpackagist-plugin/mb-custom-post-type": "^2.7"
+    "roots/acorn": "^4.0"
   },
   "require-dev": {
     "laravel/pint": "^1.13"
