@@ -25,25 +25,30 @@ $meta = \App\Services\CaseStudyService::getMeta();
           class="fa-solid fa-diagram-project"></i><?= __('Project description', 'sage') ?></p>
       @php(the_content())
     </div>
-    <div class="border p-6 rounded-lg">
-      <p class="font-mono lowercase text-xl text-slate-600 flex items-center gap-4">
-        <i class="fa-solid fa-bullseye"></i>
-        <?= __('Project Goals', 'sage') ?></p>
-      <?= wpautop($meta->get('project_goals', '')) ?>
-    </div>
-    <div class="border p-6 rounded-lg">
-      <p class="font-mono lowercase text-xl text-slate-600 flex items-center gap-4">
-        <i class="fa-solid fa-microscope"></i>
-        <?= __('Project Features', 'sage') ?></p>
-      <?= wpautop($meta->get('project_features', '')) ?>
-    </div>
-    <div class="border p-6 rounded-lg">
-      <p class="font-mono lowercase text-xl text-slate-600 flex items-center gap-4">
-        <i class="fa-solid fa-chart-pie"></i>
-        <?= __('Project Results', 'sage') ?></p>
-      <?= wpautop($meta->get('project_results', '')) ?>
-    </div>
-
+    @if($meta->has('project_goals'))
+      <div class="border p-6 rounded-lg">
+        <p class="font-mono lowercase text-xl text-slate-600 flex items-center gap-4">
+          <i class="fa-solid fa-bullseye"></i>
+            <?= __('Project Goals', 'sage') ?></p>
+          <?= wpautop($meta->get('project_goals', '')) ?>
+      </div>
+    @endif
+    @if($meta->has('project_features'))
+      <div class="border p-6 rounded-lg">
+        <p class="font-mono lowercase text-xl text-slate-600 flex items-center gap-4">
+          <i class="fa-solid fa-microscope"></i>
+            <?= __('Project Features', 'sage') ?></p>
+          <?= wpautop($meta->get('project_features', '')) ?>
+      </div>
+    @endif
+    @if($meta->has('project_results'))
+      <div class="border p-6 rounded-lg">
+        <p class="font-mono lowercase text-xl text-slate-600 flex items-center gap-4">
+          <i class="fa-solid fa-chart-pie"></i>
+            <?= __('Project Results', 'sage') ?></p>
+          <?= wpautop($meta->get('project_results', '')) ?>
+      </div>
+    @endif
   </div>
   @if ($pagination)
     <footer>
