@@ -18,12 +18,22 @@ Alpine.plugin(collapse);
 window.Splide = Splide;
 window.SplideAutoscroll = AutoScroll;
 Alpine.data('mainNavigation', () => ({
-  open: false,
+  open: true,
   isLargeScreen: window.innerWidth >= 1024,
   bind(component) {
     this.isLargeScreen = window.innerWidth >= 1024;
-    component.querySelectorAll('li > a')
+    component.querySelectorAll('li:not(.menu-item-has-children) > a')
       .forEach(element => element.addEventListener('click', () => this.open = false));
+
+    component.querySelectorAll('li.menu-item-has-children > a')
+      .forEach(element => element.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (window.innerWidth < 1024) {
+          element.closest('li').classList.toggle('mobile-opened');
+        } else {
+          element.closest('li').classList.remove('mobile-opened');
+        }
+      }));
   }
 }));
 

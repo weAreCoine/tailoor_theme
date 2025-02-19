@@ -181,34 +181,35 @@
 
   .nav-primary {
     .nav__container {
-      @apply fixed text-white lg:text-black top-0 left-0 bg-mirage-950 lg:bg-transparent w-screen h-screen z-20 flex justify-center items-center lg:block lg:static lg:h-auto lg:w-auto lg:top-auto lg:left-auto;
+      @apply fixed text-white lg:text-black top-0 left-0 bg-mirage-950 lg:bg-transparent w-screen h-screen z-20 flex justify-start items-start px-6 pt-16 pb-6 lg:p-0 lg:block lg:static lg:h-auto lg:w-auto lg:top-auto lg:left-auto overflow-y-auto lg:overflow-y-visible;
 
       ul {
-        @apply lg:flex flex-col lg:flex-row justify-end gap-x-12;
+        @apply flex flex-col lg:flex-row justify-end gap-x-12 gap-y-3;
 
         li {
           @apply font-header text-sm tracking-wider mb-0;
 
           a {
             @apply decoration-transparent uppercase underline underline-offset-4 decoration-dotted hover:decoration-black duration-500;
-
-            &::after {
-              @apply content-['.'] text-3xl text-pink pl-1
-            }
           }
+
         }
 
         li.menu-item-has-children {
           @apply relative;
 
-          &:hover {
-            .sub-menu {
-              @apply flex
-            }
+          > a:after {
+            content: '\f078';
+            font: var(--fa-font-solid);
+            @apply text-pink pl-2
+          }
+
+          &.mobile-opened > a:after {
+            @apply content-['\f077'] lg:content-['\f078']
           }
 
           .sub-menu {
-            @apply flex flex-col gap-2 absolute top-full p-4 left-1/2 -translate-x-1/2 w-auto bg-white/10 rounded-lg shadow-lg z-50;
+            @apply hidden flex-col gap-2 lg:absolute lg:top-full p-4 lg:left-1/2 lg:-translate-x-1/2 lg:w-auto lg:bg-white/10 lg:rounded-lg lg:shadow-lg;
 
             li {
               a {
@@ -216,6 +217,19 @@
               }
             }
           }
+
+          &.mobile-opened {
+            .sub-menu {
+              @apply flex lg:hidden;
+            }
+          }
+
+          &:hover {
+            .sub-menu {
+              @apply lg:flex
+            }
+          }
+
         }
       }
 
