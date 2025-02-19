@@ -25,4 +25,6 @@
 
   @php(comments_template())
 </article>
-<x-trial-banner/>
+@if(is_singular('post'))
+  <x-trial-banner/>
+@endif

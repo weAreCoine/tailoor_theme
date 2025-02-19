@@ -197,6 +197,26 @@
             }
           }
         }
+
+        li.menu-item-has-children {
+          @apply relative;
+
+          &:hover {
+            .sub-menu {
+              @apply flex
+            }
+          }
+
+          .sub-menu {
+            @apply flex flex-col gap-2 absolute top-full p-4 left-1/2 -translate-x-1/2 w-auto bg-white/10 rounded-lg shadow-lg z-50;
+
+            li {
+              a {
+                @apply whitespace-nowrap after:content-none;
+              }
+            }
+          }
+        }
       }
 
       &.dark {
@@ -478,3 +498,6 @@
     @apply text-sm lowercase mb-2 font-mono;
   }
 }
+
+
+

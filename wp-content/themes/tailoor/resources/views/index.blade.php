@@ -13,7 +13,7 @@
     'meta_value' => '1'
   ]))->get_terms();
   ?>
-  @if(!empty($featuredCategories))
+  @if(is_post_type_archive('post') && !empty($featuredCategories))
     <div class=" bg-gradient-to-b from-white to-gray-50 p-6 mb-8">
       <div class="container">
         <p class="uppercase text-xs text-center font-semibold mb-2 font-title"><?= __('Featured', 'sage') ?></p>
@@ -37,7 +37,7 @@
 
       {!! get_search_form(false) !!}
     @endif
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-20">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-20 mb-24">
       @while(have_posts())
         @php(the_post())
         @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
