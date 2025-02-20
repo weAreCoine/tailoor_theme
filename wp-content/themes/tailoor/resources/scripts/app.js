@@ -18,7 +18,7 @@ Alpine.plugin(collapse);
 window.Splide = Splide;
 window.SplideAutoscroll = AutoScroll;
 Alpine.data('mainNavigation', () => ({
-  open: true,
+  open: false,
   isLargeScreen: window.innerWidth >= 1024,
   bind(component) {
     this.isLargeScreen = window.innerWidth >= 1024;

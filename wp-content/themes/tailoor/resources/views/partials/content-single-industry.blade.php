@@ -43,7 +43,7 @@ $callToAction = [
         @case('l')
         @case('r')
           <div class="py-32 @if($section['bg_gray']) bg-gray-50 @endif">
-            <div class="container mx-auto grid grid-cols-2 gap-8 items-center">
+            <div class="container mx-auto grid md:grid-cols-2 gap-8 items-center">
               <div @class(['order-2'=>$section['template'] === 'l'])>
                 <h2 class="mb-4">{{$section['title']}}</h2>
                   <?= wpautop($section['content']) ?>
@@ -76,7 +76,7 @@ $callToAction = [
               <div class="mt-6 text-center <?= $demoClass ?>">
                 <a href="{{(empty($section['url']) ? '#' : $section['url'])}}"
                    target="_blank"
-                   class="inline-block whitespace-nowrap button bg-pink border-pink-400 hover:bg-pink-300 border text-lg text-mirage font-semibold tracking-wide hover:translate-y-[-2px]">{{$section['call_to_action']}}</a>
+                   class="inline-block whitespace-balance button bg-pink border-pink-400 hover:bg-pink-300 border text-lg text-mirage font-semibold tracking-wide hover:translate-y-[-2px]">{{$section['call_to_action']}}</a>
               </div>
             </div>
           </div>
@@ -114,8 +114,8 @@ $callToAction = [
                 @foreach(range(1,4) as $i)
                   @if(!empty($section['banners_image_' . $i]))
                     <div
-                      class="aspect-square lg:aspect-[9/16] overflow-hidden rounded-lg lg:odd:translate-y-4 lg:even:-translate-y-4 md:block hidden [&:nth-child(-n+2)]:block">
-                        <?= wp_get_attachment_image($section['banners_image_' . $i], 'full', false, ['class' => 'h-full w-auto object-cover', 'alt' => $section['title']]) ?>
+                      class="aspect-[9/16] overflow-hidden rounded-lg lg:odd:translate-y-4 lg:even:-translate-y-4 md:block hidden [&:nth-child(-n+2)]:block">
+                        <?= wp_get_attachment_image($section['banners_image_' . $i], 'full', false, ['class' => 'h-auto w-full lg:h-full lg:w-auto object-cover', 'alt' => $section['title']]) ?>
                     </div>
                   @endif
                 @endforeach
