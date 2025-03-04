@@ -15,6 +15,7 @@
       <h1 class="text-2xl mt-4 text-pink-100">
         <?= __('Choose the best plan for your business. Change plans as you grow.', 'sage') ?>
       </h1>
+    </section>
   </div>
   <x-prices-table class="bg-gray-100 text-black py-16"/>
   <div class="py-20 bg-gradient-to-b from-mirage-900 to-mirage ">
