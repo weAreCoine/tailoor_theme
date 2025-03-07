@@ -111,3 +111,16 @@ function GDPR(): GDPR
 {
     return GDPR::getInstance();
 }
+
+function formatPrice(float $price): string
+{
+    if (getCurrentLanguage() === 'en') {
+        $locale = 'en_US';
+        $currency = 'EUR';
+    } else {
+        $locale = 'it_IT';
+        $currency = 'EUR';
+    }
+    $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
+    return $formatter->formatCurrency($price, $currency);
+}

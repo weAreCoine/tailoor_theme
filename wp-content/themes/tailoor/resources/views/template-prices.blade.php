@@ -116,7 +116,7 @@
   </div>
   <div class="bg-gradient-to-b from-mirage to-mirage-900">
     <div class="py-32 container font-header">
-      <h2 class="font-header text-4xl uppercase text-center"><?= __('FAQ') ?><span
+      <h2 class="font-header text-4xl uppercase text-center"><?= __('FAQ', 'sage') ?><span
           class="text-pink">.</span></h2>
       @foreach(\app\Services\PricesService::faq() as $index => $contents)
         <x-faq :question="$contents['question']" :answer="$contents['answer']" :starts-open="$index === 0"/>

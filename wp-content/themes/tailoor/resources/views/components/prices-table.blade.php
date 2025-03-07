@@ -1,5 +1,5 @@
-<div id="prices__table" x-data="{yearlyPrices: false}" <?= $attributes->only('class') ?>>
-  <div class="container">
+<div id="prices__table" x-data="{yearlyPrices: true}" <?= $attributes->only('class') ?>>
+  <div class="container-xl">
     <div class="text-center">
       <ul
         class="my-12 inline-grid grid-cols-2 text-xs sm:text-base items-center p-1 border-2 border-mirage rounded-full w-[30rem] max-w-full relative">
@@ -22,27 +22,37 @@
           :class="{'text-white': yearlyPrices, 'hover:decoration-mirage cursor-pointer': !yearlyPrices}"><?= __('Annual Plans', 'sage') ?></li>
       </ul>
     </div>
-    <div x-data="{visible: 1, showAll: window.innerWidth >= 1024}"
-         x-on:resize.window="showAll = window.innerWidth >= 1024 " class="pricing__table">
-      <ul class="grid grid-cols-3 items-center text-center uppercase mt-8 lg:hidden">
+    <div x-data="{visible: 0, showAll: window.innerWidth >= 768}"
+         x-on:resize.window="showAll = window.innerWidth >= 768 " class="pricing__table">
+      <ul class="grid grid-cols-4 items-center text-center uppercase mt-8 md:hidden">
         <li :class="{'active__plan': visible === 0}"
-            x-on:click="visible = 0"><?= __('Essential', 'sage') ?></li>
+            x-on:click="visible = 0"><?= __('Starter', 'sage') ?>
+        </li>
         <li :class="{'active__plan': visible === 1}"
-            x-on:click="visible = 1"><?= __('Starter', 'sage') ?></li>
+            x-on:click="visible = 1"><?= __('Essential', 'sage') ?>
+        </li>
         <li :class="{'active__plan': visible === 2}"
-            x-on:click="visible = 2"><?= __('Professional', 'sage') ?></li>
+            x-on:click="visible = 2"><?= __('Professional', 'sage') ?>
+        </li>
+        <li :class="{'active__plan': visible === 3}"
+            x-on:click="visible = 3"><?= __('Plus', 'sage') ?>
+        </li>
       </ul>
-      <div class="mt-4 lg:mt-16 mb-16 grid lg:grid-cols-3 items-start gap-12">
+      <div class="mt-4 lg:mt-16 mb-16 grid md:grid-cols-2 xl:grid-cols-4 items-start gap-6">
         <div x-show="visible === 0 || showAll" class="h-full">
-          <x-price-card :title="'Essential'" :target="__('For small business', 'sage')"/>
+          <x-price-card :title="'Starter'" :target="__('For solo entrepreneurs', 'sage')"/>
         </div>
         <div x-show="visible === 1 || showAll" class="h-full">
-          <x-price-card :title="'Starter'" :target="__('For solo entrepreneurs', 'sage')"/>
+          <x-price-card :title="'Essential'" :target="__('For small business', 'sage')"/>
         </div>
         <div x-show="visible === 2 || showAll" class="h-full">
           <x-price-card :title="'Professional'" :target="__('For medium business', 'sage')"/>
         </div>
+        <div x-show="visible === 3 || showAll" class="h-full">
+          <x-price-card :title="'Plus'" :target="__('Custom for Enterprise', 'sage')"/>
+        </div>
       </div>
+      <x-comparison-table/>
     </div>
   </div>
 </div>

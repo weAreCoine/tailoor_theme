@@ -43,7 +43,8 @@
     "fakerphp/faker": "^1.23",
     "giggsey/libphonenumber-for-php": "^8.13",
     "hubspot/api-client": "^11.0",
-    "roots/acorn": "^4.0"
+    "roots/acorn": "^4.0",
+    "ext-intl": "*"
   },
   "require-dev": {
     "laravel/pint": "^1.13"

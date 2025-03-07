@@ -33,47 +33,29 @@ class PricesService
                     'price' => 99,
                     'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/base/10",
                     'label' => __('Try for free', 'sage'),
-                    //                    'href' => '#monthly',
-                    //                    'label' => __('Get a free demo', 'sage'),
-
                 ],
                 'annual' => [
                     'price' => 84,
                     'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/base/20",
                     'label' => __('Try for free', 'sage'),
-                    //                    'href' => '#annual',
-                    //                    'label' => __('Get a free demo', 'sage'),
                 ],
             ],
             [
-                __('Platform free trial (10 days)', 'sage') => '',
-                __('3D Platform', 'sage') => [
-                    __('Online and In-Store Configurator', 'sage'),
-                    __('Materials Catalog (up to 10)', 'sage'),
-                    __('1 Model Categories', 'sage'),
-                    __('Model Option Management', 'sage'),
-                ],
-                __('E-commerce Platform', 'sage') => [
+                __('Features you\'ll love', 'sage') => [
+                    __('Online and In-Store 3D Configurator', 'sage'),
                     __('E-commerce Module', 'sage'),
-                    __('In-store Module', 'sage'),
-                    __('Order Fee 1%', 'sage'),
+                    __('Model Option Management', 'sage'),
+                    __('Materials Catalog (up to 10)', 'sage'),
+                    __('Up to 100 Yearly orders', 'sage'),
+                    __('Dashboard & CRM', 'sage'),
+
+                ],
+                __('Commissions & Fees', 'sage') => [
+                    __('Orders Fee 1%', 'sage'),
                     __('Payments Fee starting from 0.2%', 'sage'),
                 ],
-                __('Platform Features', 'sage') => [
-                    __('1 Dashboard account', 'sage'),
-                    __('Up to 100 Yearly orders', 'sage'),
-                    __('1 Sales Country', 'sage'),
-                    __('CRM', 'sage'),
-                ],
-                //                __('1 Digital Twin', 'sage') => '',
-                __('Platform Analytics', 'sage') => [
-                    __('Google Analytics', 'sage'),
-                ],
-                __('Platform Support', 'sage') => [
-                    __('Technical support', 'sage'),
-                ],
             ],
-            true, // Indica se è il piano consigliato,
+            false, // Indica se è il piano consigliato,
             __('Starter', 'sage'),
             true, // Indica se il piano è attivo
             true, // Se vero, il piano è vendibile direttamente, se falso compare il form di contatto
@@ -98,52 +80,32 @@ class PricesService
             [
                 'monthly' => [
                     'price' => 329,
-                    //                    'href' => '#monthly',
-                    //                    'label' => __('Get a free demo', 'sage'),
                     'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/essential/10",
                     'label' => __('Try for free', 'sage'),
 
                 ],
                 'annual' => [
                     'price' => 279,
-                    //                    'href' => '#annual',
-                    //                    'label' => __('Get a free demo', 'sage'),
                     'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/essential/20",
                     'label' => __('Try for free', 'sage'),
 
                 ],
             ],
             [
-                __('Platform free trial (10 days)', 'sage') => '',
-                __('3D Platform', 'sage') => [
-                    __('Online and In-Store Configurator', 'sage'),
+                __('Everything included in Starter', 'sage') => [
                     __('Materials Catalog (up to 130)', 'sage'),
-                    __('Up to 4 Model Categories', 'sage'),
-                    __('Model Option Management', 'sage'),
-                ],
-                __('E-commerce Platform', 'sage') => [
-                    __('E-commerce Module', 'sage'),
-                    __('In-store Module', 'sage'),
-                    __('Order Fee 0.8%', 'sage'),
-                    __('Payments Fee starting from 0.2%', 'sage'),
-                    __('Shopify and Woocommerce Integration', 'sage'),
-                ],
-                __('Platform Features', 'sage') => [
-                    __('Up to 3 Dashboard account', 'sage'),
+                    __('Model Categories (up to 4)', 'sage'),
                     __('Up to 350 Yearly orders', 'sage'),
                     __('Up to 3 Sales Countries', 'sage'),
                     __('Multi Currency', 'sage'),
                     __('Custom Price for Each Sales Country', 'sage'),
-                    __('CRM', 'sage'),
-                ],
-                //                __('1 Digital Twin', 'sage') => '',
-                __('Platform Analytics', 'sage') => [
-                    __('Google Analytics', 'sage'),
-                ],
-                __('Platform Support', 'sage') => [
-                    __('Technical support', 'sage'),
-                ],
+                    __('Dashboard Account (up to 3)', 'sage'),
 
+                ],
+                __('Commissions & Fees', 'sage') => [
+                    __('Orders Fee 0.8%', 'sage'),
+                    __('Payments Fee starting from 0.2%', 'sage'),
+                ],
             ],
             false, // Indica se è il piano consigliato
             __('Essential', 'sage'),
@@ -161,57 +123,66 @@ class PricesService
             [
                 'monthly' => [
                     'price' => 799,
-                    //                    'href' => '#monthly',
-                    //                    'label' => __('Get a free demo', 'sage'),
                     'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/professional/10",
                     'label' => __('Try for free', 'sage'),
 
                 ],
                 'annual' => [
                     'price' => 679,
-                    //                    'href' => '#annual',
-                    //                    'label' => __('Get a free demo', 'sage'),
                     'href' => "https://onboarding.tailoor.com/$currentLocale/wizard/landing/professional/10",
                     'label' => __('Try for free', 'sage'),
                 ],
             ],
             [
-                __('Platform free trial (10 days)', 'sage') => '',
-                __('3D Platform', 'sage') => [
-                    __('Online and In-store Configurator', 'sage'),
+                __('Everything included in Starter', 'sage') => [
                     __('Materials Catalog (up to 250)', 'sage'),
-                    __('Up to 8 Model Categories', 'sage'),
-                    __('Model Option Management', 'sage'),
-                ],
-                __('E-commerce Platform', 'sage') => [
-                    __('E-commerce Module', 'sage'),
-                    __('In-store Module', 'sage'),
-                    __('Order Fee 0.6%', 'sage'),
-                    __('Payments Fee starting from 0.2%', 'sage'),
-                    __('Shopify and Woocommerce Integration', 'sage'),
-                ],
-                __('Platform Features', 'sage') => [
-                    __('Up to 9 Dashboard Account', 'sage'),
+                    __('Model Categories (up to 8)', 'sage'),
                     __('Up to 750 Yearly orders', 'sage'),
                     __('Unlimited Sales Countries', 'sage'),
-                    __('Multi-currency', 'sage'),
-                    __('Custom Pricing for Each Sales Country', 'sage'),
-                    __('CRM', 'sage'),
-                ],
-                //                __('1 Digital Twin', 'sage') => '',
-                __('Platform Analytics', 'sage') => [
-                    __('Google Analytics', 'sage'),
-                    __('Tailoor BI DASHBOARD', 'sage'),
-                ],
-                __('Platform Support', 'sage') => [
-                    __('Technical support', 'sage'),
+                    __('Dashboard Account (up to 9)', 'sage'),
                     __('Customer Care Module', 'sage'),
+
                 ],
+                __('Commissions & Fees', 'sage') => [
+                    __('Orders Fee 0.6%', 'sage'),
+                    __('Payments Fee starting from 0.2%', 'sage'),
+                ],
+
             ],
             false, // Indica se è il piano consigliato
             __('Professional', 'sage'),
             true,
             true,
+        ];
+    }
+
+    protected static function plus(): array
+    {
+        $currentLocale = self::getCurrentLocale();
+
+        return [
+            [
+                'monthly' => [
+                    'price' => null,
+                    'href' => '#monthly',
+                    'label' => __('Contact Sales', 'sage'),
+
+                ],
+                'annual' => [
+                    'price' => null,
+                    'href' => '#annual',
+                    'label' => __('Contact Sales', 'sage'),
+                ],
+            ],
+            [
+                __('SEEKING A MORE TAILORED APPROACH FOR YOUR BUSINESS NEEDS?', 'sage') => '',
+                __('Are you in need of a customized plan? Fill out the form with your information, and our team of experts will contact you to define the best solution together with a tailored plan designed to achieve your goals.', 'sage') => '',
+
+            ],
+            true, // Indica se è il piano consigliato
+            __('Tailoor Plus<sup>+</sup>', 'sage'),
+            true,
+            false,
         ];
     }
 }
