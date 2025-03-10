@@ -20,6 +20,8 @@ class PriceCard extends Component
     public string $translatedTitle = '';
 
     public readonly bool $callToActionOnTop;
+    public readonly bool $bestseller;
+    public readonly bool $hasFreeTrial;
 
     protected array $prices = [];
 
@@ -29,7 +31,8 @@ class PriceCard extends Component
     public function __construct(
         public string $title,
         public string $target = ''
-    ) {
+    )
+    {
         $this->callToActionOnTop = true;
 
         $data = PricesService::contentsFor($this->title);
@@ -40,7 +43,9 @@ class PriceCard extends Component
                 $this->accent,
                 $this->translatedTitle,
                 $this->enabled,
-                $this->hasOnboarding
+                $this->hasOnboarding,
+                $this->bestseller,
+                $this->hasFreeTrial,
             ] = $data;
         }
     }

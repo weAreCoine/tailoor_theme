@@ -48,6 +48,7 @@ class PricesService
                     __('Materials Catalog (up to 10)', 'sage'),
                     __('Up to 100 Yearly orders', 'sage'),
                     __('Dashboard & CRM', 'sage'),
+                    __('', 'sage'),
 
                 ],
                 __('Commissions & Fees', 'sage') => [
@@ -59,6 +60,8 @@ class PricesService
             __('Starter', 'sage'),
             true, // Indica se il piano è attivo
             true, // Se vero, il piano è vendibile direttamente, se falso compare il form di contatto
+            false, // Indica se è il piano bestseller
+            true, // Indica se è prevista una free trial
         ];
     }
 
@@ -111,6 +114,8 @@ class PricesService
             __('Essential', 'sage'),
             true,
             true,
+            true, //bestseller
+            true,
 
         ];
     }
@@ -134,13 +139,14 @@ class PricesService
                 ],
             ],
             [
-                __('Everything included in Starter', 'sage') => [
+                __('Everything included in Essential', 'sage') => [
                     __('Materials Catalog (up to 250)', 'sage'),
                     __('Model Categories (up to 8)', 'sage'),
                     __('Up to 750 Yearly orders', 'sage'),
                     __('Unlimited Sales Countries', 'sage'),
                     __('Dashboard Account (up to 9)', 'sage'),
                     __('Customer Care Module', 'sage'),
+                    __('', 'sage'),
 
                 ],
                 __('Commissions & Fees', 'sage') => [
@@ -153,6 +159,8 @@ class PricesService
             __('Professional', 'sage'),
             true,
             true,
+            false,
+            true
         ];
     }
 
@@ -183,6 +191,8 @@ class PricesService
             __('Tailoor Plus<sup>+</sup>', 'sage'),
             true,
             false,
+            false,
+            false
         ];
     }
 }

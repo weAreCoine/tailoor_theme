@@ -27,16 +27,24 @@
       </template>
       @if($callToActionOnTop)
         <div
-          class="text-center mt-8 {{$hasOnboarding ? 'inline-flex flex-col items-center justify-center gap-y-2 r' : 'demo_request'}}">
+          class="text-center mt-8 inline-flex flex-col items-center justify-center gap-y-2 {{$hasOnboarding ? '' : 'demo_request'}}">
           <a :href="yearlyPrices ? annual.href : monthly.href"
              x-text="yearlyPrices ? annual.label : monthly.label"
              class="inline-block py-2 px-12 {{$accent ? 'bg-pink border-pink-400 hover:bg-pink-300': 'bg-mirage hover:bg-mirage-900 border-mirage-900 text-white'}} border duration-500 text-base font-header uppercase rounded-lg">
           </a>
+          <span
+            @class([
+                'text-xs italic' => true,
+                'text-slate-500' => $hasFreeTrial,
+                'text-transparent select-none' => !$hasFreeTrial
+            ])
+          ><?= __('10 days free trial', 'sage') ?></span>
+
         </div>
       @endif
-      @if($accent && !$callToActionOnTop)
+      @if($bestseller ?? false)
         <p
-          class="bg-white border-2 text-pink-500 -rotate-1 shadow-lg border-pink whitespace-nowrap rounded-lg font-header uppercase text-xs sm:text-sm py-2 px-8 absolute top-full -translate-y-1/2 left-1/2 -translate-x-1/2"><?= __('Best seller', 'sage') ?></p>
+          class="bg-pink border-2 text-mirage -rotate-1 shadow-md border-pink whitespace-nowrap rounded-lg font-header uppercase text-xs py-1 px-8 absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2"><?= __('Best seller', 'sage') ?></p>
       @endif
     </div>
     <ul class=" mt-16 font-header">
@@ -49,7 +57,13 @@
             <ul class="mt-3 text-sm flex flex-col gap-2">
               @foreach($subfeatures as $subfeature)
                 <li class="flex items-center gap-2 mb-0">
-                  <i class="fa-solid fa-check text-green-500 text-xl"></i>
+                  <i
+                    @class([
+                        'fa-solid fa-check text-xl' => true,
+                        'text-green-500'=> !empty($subfeature),
+                        'text-transparent select-none' => empty($subfeature)
+                    ])
+                  ></i>
                   <span>{{$subfeature}}</span>
                 </li>
               @endforeach
@@ -69,6 +83,9 @@
       </a>
       @if($hasOnboarding)
         <span class="text-xs"><?= __('No credit card required', 'sage') ?></span>
+      @endif
+      @if($hasFreeTrial)
+        <span class="text-xs"><?= __('10 days free trial', 'sage') ?></span>
       @endif
     </div>
   @endunless

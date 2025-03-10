@@ -209,7 +209,7 @@
           }
 
           .sub-menu {
-            @apply hidden flex-col gap-2 lg:absolute lg:top-full p-4 lg:left-1/2 lg:-translate-x-1/2 lg:w-auto lg:bg-white/10 lg:rounded-lg lg:shadow-lg;
+            @apply hidden flex-col gap-2 lg:absolute lg:top-full p-4 lg:left-1/2 lg:-translate-x-1/2 lg:w-auto lg:bg-mirage lg:text-white lg:rounded-lg lg:shadow-lg;
 
             li {
               a {
@@ -512,6 +512,3 @@
     @apply text-sm lowercase mb-2 font-mono;
   }
 }
-
-
-

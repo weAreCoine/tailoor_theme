@@ -32,7 +32,7 @@
             x-on:click="visible = 1"><?= __('Essential', 'sage') ?>
         </li>
         <li :class="{'active__plan': visible === 2}"
-            x-on:click="visible = 2"><?= __('Professional', 'sage') ?>
+            x-on:click="visible = 2"><?= __('Pro', 'sage') ?>
         </li>
         <li :class="{'active__plan': visible === 3}"
             x-on:click="visible = 3"><?= __('Plus', 'sage') ?>
