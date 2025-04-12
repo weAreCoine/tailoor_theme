@@ -1,11 +1,12 @@
 <div class="my-32" x-show="visible !== 3 || showAll" x-collapse.duration.300ms>
   <h2 class="text-3xl mb-16"><?= __('Compare all plan features', 'sage') ?></h2>
   <div x-data="{index: 0}" class="comparison__table">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-2xl font-medium">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8 text-2xl font-medium">
       <p></p>
       <p class="text-center" x-show="visible === 0 || showAll"><?= __('Starter', 'sage') ?></p>
       <p class="text-center" x-show="visible === 1 || showAll"><?= __('Essential', 'sage') ?></p>
-      <p class="text-center" x-show="visible >= 2 || showAll"><?= __('Professional', 'sage') ?></p>
+      <p class="text-center" x-show="visible === 2 || showAll"><?= __('Professional', 'sage') ?></p>
+      <p class="text-center" x-show="visible === 3 || showAll"><?= __('Unlimited', 'sage') ?></p>
     </div>
     <ul>
       @foreach($plans as $section => $values)
@@ -25,9 +26,15 @@
                  x-bind:class="{'rotate-0': open, 'rotate-90': !open}"></i>
             </template>
           </div>
-          <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4" x-show="open" x-collapse.duration.300ms>
+          <ul class="grid grid-cols-2 md:grid-cols-5 gap-4 px-4" x-show="open" x-collapse.duration.300ms>
             @foreach($values as $feature => $featureValues)
-              <li><p class="font-medium"><?= $feature ?></p></li>
+              <li>
+                <p class="font-medium"><?= $feature ?></p>
+                @php($description = \App\Models\PricePlan::getDescriptionFor($feature))
+                @unless(empty($description))
+                  <p class="text-sm text-gray-400 "><?= $description ?></p>
+                @endunless
+              </li>
               @foreach($featureValues as $index => $value)
                 <li x-data="{i: <?= $index ?>}"
                     x-show="i === visible || showAll || (i===2 && visible===3)"

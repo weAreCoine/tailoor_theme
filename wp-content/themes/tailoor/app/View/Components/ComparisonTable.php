@@ -32,9 +32,6 @@ class ComparisonTable extends Component
      */
     public function render(): View|Closure|string
     {
-        if (current_user_can('administrator')) {
-            return view('components.comparison-table');
-        }
-        return '';
+        return view('components.comparison-table');
     }
 }

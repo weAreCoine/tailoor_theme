@@ -188,7 +188,7 @@ class PricesService
 
             ],
             true, // Indica se è il piano consigliato
-            __('Tailoor Plus<sup>+</sup>', 'sage'),
+            __('Unlimited', 'sage'),
             true,
             false,
             false,
